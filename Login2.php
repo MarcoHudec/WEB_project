@@ -14,8 +14,15 @@
             background: linear-gradient(to right, #007BFF, #6EC1E4, #20C997, #17C671);
         }
 
-        
     </style>
+
+<style>
+    /* Zusätzliches CSS für die Navbar */
+    .navbar.bg-scroll {
+      transition: background 0.5s;
+    }
+  </style>
+    
 </head>
 
 <body>

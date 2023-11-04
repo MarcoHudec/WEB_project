@@ -18,20 +18,10 @@
         
     </style>
 
-<style>
-  body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-
-  footer {
-    margin-top: auto;
-  }
-</style>
+    
 </head>
 
-<body background="Images/Hotel1.jpg">
+<body>
     <?php include("includes/Navbar.php")?>
     
     <section class="h-100 gradient-form" style="background-color: #eee;">
@@ -64,32 +54,32 @@
 
                                         <div class="form-outline mb-4">
                                             <label class="form-label" for="form2Example22">First Name</label>
-                                            <input type="text" id="form2Example22" class="form-control" placeholder="Enter your First Name" required />
+                                            <input type="text" id="form2Example22" class="form-control" placeholder="First Name" required />
                                         </div>
 
                                         <div class="form-outline mb-4">
                                             <label class="form-label" for="form2Example33">Last Name</label>
-                                            <input type="text" id="form2Example33" class="form-control" placeholder="Enter your Last Name" required />
+                                            <input type="text" id="form2Example33" class="form-control" placeholder="Last Name" required />
                                         </div>
 
                                         <div class="form-outline mb-4">
                                             <label class="form-label" for="form2Example44">E-Mail-Adress</label>
-                                            <input type="email" id="form2Example44" class="form-control" placeholder="Enter your E-Mail-Adress" required />
+                                            <input type="email" id="form2Example44" class="form-control" placeholder="E-Mail-Adress" required />
                                         </div>
 
                                         <div class="form-outline mb-4">
                                             <label class="form-label" for="form2Example55">Username</label>
-                                            <input type="text" id="form2Example55" class="form-control" placeholder="Enter your Username" required />
+                                            <input type="text" id="form2Example55" class="form-control" placeholder="Username" required />
                                         </div>
 
                                         <div class="form-outline mb-4">
                                             <label class="form-label" for="form2Example66">Password</label>
-                                            <input type="password" id="form2Example66" class="form-control" placeholder="Enter your password" required />
+                                            <input type="password" id="form2Example66" class="form-control" placeholder="Password" required />
                                         </div>
 
                                         <div class="form-outline mb-4">
                                             <label class="form-label" for="form2Example77">Confirm Password</label>
-                                            <input type="password" id="form2Example77" class="form-control" placeholder="Confirm your password" required />
+                                            <input type="password" id="form2Example77" class="form-control" placeholder="Password" required />
                                         </div>
 
                                         <div class="text-center pt-1 mb-5 pb-1">

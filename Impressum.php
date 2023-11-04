@@ -28,7 +28,7 @@
         <div class="row justify-content-center">
             <div class="col-md-6 text-center">
                 <p>
-                    <strong>Hotel Musterstadt</strong><br>
+                    <strong>Hotel Zadar</strong><br>
                     Hochstädtlplatz 29<br>
                     A-1200 Wien
                 </p>
