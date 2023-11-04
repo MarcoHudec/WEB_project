@@ -4,7 +4,7 @@
 <head>
     <title>Help Page</title>
     <?php include("includes/head.php")?>
-
+    
 </head>
 
 <body>
