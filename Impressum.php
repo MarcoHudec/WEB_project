@@ -6,16 +6,16 @@
     <style>
         .circle-image {
             border-radius: 50%;
-            width: 200px;
-            height: 200px;
-            object-fit: cover;
+            max-width: 100%;
+            height: auto;
         }
         .ceo-card {
             text-align: center;
             margin-bottom: 30px;
             padding: 20px;
-            border: 1px solid #ccc; 
+            border: 1px solid #ccc;
         }
+        
     </style>
 </head>
 
@@ -23,7 +23,7 @@
 <body>
 
 <?php include("includes/Navbar.php")?>
-    <div class="container mt-5">
+<div class="container mt-5">
         <h1 class="text-center">Impressum</h1>
         <div class="row justify-content-center">
             <div class="col-md-6 text-center">
@@ -50,11 +50,10 @@
                     <strong>Haftungsausschluss:</strong><br>
                     Wir übernehmen keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.
                 </p>
-                
                 <div class="row mt-4">
                     <div class="col-md-6">
                         <div class="ceo-card">
-                            <img src="Images/CEO 1.jpg" class="circle-image" alt="CEO 1">
+                            <img src="Images/CEO1.jpg" class="circle-image img-fluid" alt="CEO 1">
                             <h5 class="mt-3">Marcel Ivanić</h5>
                             <p>Geschäftsführer</p>
                             <p>Der Boss.</p>
@@ -62,10 +61,10 @@
                     </div>
                     <div class="col-md-6">
                         <div class="ceo-card">
-                            <img src="Images/CEO 2.jpg" class="circle-image" alt="CEO 2">
+                            <img src="Images/CEO2.jpg" class="circle-image img-fluid" alt="CEO 2">
                             <h5 class="mt-3">Marco Hudec</h5>
                             <p>Geschäftsführer</p>
-                            <p>Der Andere.</p>
+                            <p>Der Nichtvorhandene.</p>
                         </div>
                     </div>
                 </div>
