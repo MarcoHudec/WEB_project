@@ -1,12 +1,52 @@
-<div class="container" bis_skin_checked="1">
-  <footer class="footer sticky-bottom py-0 my-0" style="background-color: white;">
-    <ul class="nav justify-content-center border-bottom pb-1 mb-2">
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Home</a></li>
-      <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Gallery</a></li>
-      <li class="nav-item"><a href="Impressum.html" class="nav-link px-2 text-muted">Impressum</a></li>
-      <li class="nav-item"><a href="Help.php" class="nav-link px-2 text-muted">FAQs</a></li>
-      <li class="nav-item"><a href="Help.php" class="nav-link px-2 text-muted">Help</a></li>
-    </ul>
-    <p class="text-center text-muted">© 2023 Hotel Zadar, Inc</p>
+
+
+  <footer class="text-center text-white" style="background-color: #3f51b5">
+   
+    <div class="container">
+     
+      <section class="mt-2">
+       
+        <div class="row text-center d-flex justify-content-center pt-4">
+         
+          <div class="col-md-2">
+            <h6 class="text-uppercase font-weight-bold">
+              <a href="Frontpage.php" class="text-white">Home</a>
+            </h6>
+          </div>
+          
+          <div class="col-md-2">
+            <h6 class="text-uppercase font-weight-bold">
+              <a href="#!" class="text-white">About us</a>
+            </h6>
+          </div>
+          
+          <div class="col-md-2">
+            <h6 class="text-uppercase font-weight-bold">
+              <a href="Impressum.php" class="text-white">Impressum</a>
+            </h6>
+          </div>
+          
+          <div class="col-md-2">
+            <h6 class="text-uppercase font-weight-bold">
+              <a href="Help.php" class="text-white">Help</a>
+            </h6>
+          </div>
+
+          <div class="col-md-2">
+            <h6 class="text-uppercase font-weight-bold">
+              <a href="#!" class="text-white">Contact</a>
+            </h6>
+          </div>
+        </div>
+      </section>
+
+      <hr class="my-2" />
+
+    </div>
+
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+         © 2023 Hotel Zadar, Inc
+    </div>
+    
   </footer>
-</div>
+  

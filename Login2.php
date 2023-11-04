@@ -5,25 +5,16 @@
     <title>Login Page</title>
     <?php include("includes/head.php")?>
     <style>
+        
         .gradient-custom-2 {
-background: #fccb90;
+            background: #fccb90;
 
-background: -webkit-linear-gradient(to right, #007BFF, #6EC1E4, #20C997, #17C671);
+            background: -webkit-linear-gradient(to right, #007BFF, #6EC1E4, #20C997, #17C671);
 
-background: linear-gradient(to right, #007BFF, #6EC1E4, #20C997, #17C671);
-}
+            background: linear-gradient(to right, #007BFF, #6EC1E4, #20C997, #17C671);
+        }
 
-@media (min-width: 768px) {
-.gradient-form {
-height: 100vh !important;
-}
-}
-@media (min-width: 769px) {
-.gradient-custom-2 {
-border-top-right-radius: .3rem;
-border-bottom-right-radius: .3rem;
-}
-}
+        
     </style>
 </head>
 

@@ -6,8 +6,15 @@
     <?php include("includes/head.php")?>
 
     <style>
-       
         
+        .gradient-custom-2 {
+            background: #fccb90;
+
+            background: -webkit-linear-gradient(to right, #007BFF, #6EC1E4, #20C997, #17C671);
+
+            background: linear-gradient(to right, #007BFF, #6EC1E4, #20C997, #17C671);
+        }
+
         
     </style>
 </head>
@@ -15,55 +22,85 @@
 <body background="Images/Hotel1.jpg">
     <?php include("includes/Navbar.php")?>
     
-    
-    <div class="container mt-4">
-        <div class="row justify-content-center">
-            <div class="col-md-6 registration-box">
-                <div class="card">
-                    <div class="card-body">
-                        <h2 class="text-center">Registration</h2>
-                        <form id="registrationForm">
-                            <div class="mb-3">
-                                <label for="salutation" class="form-label">Salutation</label>
-                                <select class="form-select" id="salutation" required>
-                                    <option value="">Select</option>
-                                    <option value="Mr.">Mr.</option>
-                                    <option value="Mrs.">Mrs.</option>
-                                </select>
+    <section class="h-100 gradient-form" style="background-color: #eee;">
+        <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-xl-10">
+                    <div class="card rounded-3 text-black">
+                        <div class="row g-0">
+                            <div class="col-lg-6">
+                                <div class="card-body p-md-5 mx-md-4">
+
+                                    <div class="text-center">
+                                        <img src="Images/Logo2.png"
+                                            style="width: 100px;" alt="logo">
+                                        <h4 class="mt-1 mb-5 pb-1">Registration</h4>
+                                    </div>
+
+                                    <form id="registrationForm">
+                                        <p>Please fill in the registration details</p>
+
+                                        <div class="form-outline mb-4">
+                                            <label class="form-label" for="form2Example11">Salutation</label>
+                                            <select id="form2Example11" class="form-select" required>
+                                                <option value="">Select</option>
+                                                <option value="Mr">Mr</option>
+                                                <option value="Mrs">Mrs</option>
+                                                <option value="Other">Other</option>
+                                            </select>
+                                        </div>
+
+                                        <div class="form-outline mb-4">
+                                            <label class="form-label" for="form2Example22">First Name</label>
+                                            <input type="text" id="form2Example22" class="form-control" placeholder="Enter your First Name" required />
+                                        </div>
+
+                                        <div class="form-outline mb-4">
+                                            <label class="form-label" for="form2Example33">Last Name</label>
+                                            <input type="text" id="form2Example33" class="form-control" placeholder="Enter your Last Name" required />
+                                        </div>
+
+                                        <div class="form-outline mb-4">
+                                            <label class="form-label" for="form2Example44">E-Mail-Adress</label>
+                                            <input type="email" id="form2Example44" class="form-control" placeholder="Enter your E-Mail-Adress" required />
+                                        </div>
+
+                                        <div class="form-outline mb-4">
+                                            <label class="form-label" for="form2Example55">Username</label>
+                                            <input type="text" id="form2Example55" class="form-control" placeholder="Enter your Username" required />
+                                        </div>
+
+                                        <div class="form-outline mb-4">
+                                            <label class="form-label" for="form2Example66">Password</label>
+                                            <input type="password" id="form2Example66" class="form-control" placeholder="Enter your password" required />
+                                        </div>
+
+                                        <div class="form-outline mb-4">
+                                            <label class="form-label" for="form2Example77">Confirm Password</label>
+                                            <input type="password" id="form2Example77" class="form-control" placeholder="Confirm your password" required />
+                                        </div>
+
+                                        <div class="text-center pt-1 mb-5 pb-1">
+                                            <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit">Register</button>
+                                        </div>
+                                    </form>
+
+                                </div>
                             </div>
-                            <div class="mb-3">
-                                <label for="firstName" class="form-label">First Name</label>
-                                <input type="text" class="form-control" id="firstName" required>
+                            <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
+                                <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                                    <h4 class="mb-4">We are more than just a company</h4>
+                                    <p class="small mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                                        exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                                </div>
                             </div>
-                            <div class="mb-3">
-                                <label for="lastName" class="form-label">Last Name</label>
-                                <input type="text" class="form-control" id="lastName" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Email Address</label>
-                                <input type="email" class="form-control" id="email" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="username" class="form-label">Username</label>
-                                <input type="text" class="form-control" id="username" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="password" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="password" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="confirmPassword" class="form-label">Confirm Password</label>
-                                <input type="password" class="form-control" id="confirmPassword" required>
-                            </div>
-                            <button type="submit" class="btn btn-primary btn-block">Register</button>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-
-
+    </section>
 
 
 
