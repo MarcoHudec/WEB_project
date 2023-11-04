@@ -18,7 +18,7 @@
     margin-top: auto;
   }
   .transparent-navbar {
-      background: transparent !important;
+      background: #3498db !important;
       transition: background 0.5s;
     }
   

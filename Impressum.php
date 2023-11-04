@@ -7,6 +7,7 @@
         .circle-image {
             border-radius: 50%;
             max-width: 100%;
+            max-height: 200px;
             height: auto;
         }
         .ceo-card {
@@ -64,7 +65,7 @@
                             <img src="Images/CEO2.jpg" class="circle-image img-fluid" alt="CEO 2">
                             <h5 class="mt-3">Marco Hudec</h5>
                             <p>Geschäftsführer</p>
-                            <p>Der Nichtvorhandene.</p>
+                            <p>Der Andere.</p>
                         </div>
                     </div>
                 </div>
