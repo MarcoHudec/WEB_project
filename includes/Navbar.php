@@ -7,7 +7,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav mx-auto">
         <li class="nav-item mx-3">
-          <a class="nav-link" href="Frontpage.php">Home</a>
+          <a class="nav-link" href="index.php">Home</a>
         </li>
         <li class="nav-item mx-3">
           <a class="nav-link" href="Impressum.php">Impressum</a>
