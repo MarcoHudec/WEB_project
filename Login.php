@@ -41,11 +41,11 @@
 
                                     <?php
                                     // Include your database connection file here
-                                    // Replace placeholders with actual database credentials
-                                    $db_host = "localhost"; // Change this if your MySQL server is on a different host
-                                    $db_username = "daxact"; // Replace with the username you created
-                                    $db_password = "Asdfg12345"; // Replace with the password you set
-                                    $db_name = "register"; // Replace with the name of the database you created
+                                    // Database credentials
+                                    $db_host = "localhost"; 
+                                    $db_username = "daxact"; 
+                                    $db_password = "Asdfg12345"; 
+                                    $db_name = "register"; 
 
                                     // Establish a connection to the database
                                     $conn = new mysqli($db_host, $db_username, $db_password, $db_name);
@@ -115,10 +115,7 @@
                             <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
                                 <div class="text-white px-3 py-4 p-md-5 mx-md-4">
                                     <h4 class="mb-4">We are more than just a company</h4>
-                                    <p class="small mb-0">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
-                                        do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-                                        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                                        consequat.</p>
+                                    <p class="small mb-0">Sign up for our experience and make use of our booking service!</p>
                                 </div>
                             </div>
                         </div>
