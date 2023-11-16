@@ -41,11 +41,19 @@
 
                                     <?php
                                     // Include your database connection file here
+<<<<<<< HEAD
                                     // Database credentials
                                     $db_host = "localhost"; 
                                     $db_username = "daxact"; 
                                     $db_password = "Asdfg12345"; 
                                     $db_name = "register"; 
+=======
+                                    // Replace placeholders with actual database credentials
+                                    $db_host = "localhost"; // Change this if your MySQL server is on a different host
+                                    $db_username = "admin"; // Replace with the username you created
+                                    $db_password = "Asdfg12345"; // Replace with the password you set
+                                    $db_name = "hotellogin"; // Replace with the name of the database you created
+>>>>>>> 530841219638e1a448e5bb228fc8314053094266
 
                                     // Establish a connection to the database
                                     $conn = new mysqli($db_host, $db_username, $db_password, $db_name);
