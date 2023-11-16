@@ -104,37 +104,37 @@
                                         </div>
 
                                         <div class="form-outline mb-4">
-                                            <label class="form-label" for="form2Example22">First Name</label>
-                                            <input type="text" name="firstName" id="form2Example22" class="form-control" placeholder="First Name" required />
+                                            <label class="form-label" for="firstname">First Name</label>
+                                            <input type="text" name="firstName" id="firstname" class="form-control" placeholder="First Name" required />
                                         </div>
 
                                         <div class="form-outline mb-4">
-                                            <label class="form-label" for="form2Example33">Last Name</label>
-                                            <input type="text" name="lastName" id="form2Example33" class="form-control" placeholder="Last Name" required />
+                                            <label class="form-label" for="lastname">Last Name</label>
+                                            <input type="text" name="lastName" id="lastname" class="form-control" placeholder="Last Name" required />
                                         </div>
 
                                         <div class="form-outline mb-4">
-                                            <label class="form-label" for="form2Example44">E-Mail-Adress</label>
-                                            <input type="email" name="email" id="form2Example44" class="form-control" placeholder="E-Mail-Adress" required />
+                                            <label class="form-label" for="email">E-Mail-Adress</label>
+                                            <input type="email" name="email" id="email" class="form-control" placeholder="E-Mail-Adress" required />
                                         </div>
 
                                         <div class="form-outline mb-4">
-                                            <label class="form-label" for="form2Example55">Username</label>
-                                            <input type="text" name="username" id="form2Example55" class="form-control" placeholder="Username" required />
+                                            <label class="form-label" for="username">Username</label>
+                                            <input type="text" name="username" id="username" class="form-control" placeholder="Username" required />
                                         </div>
 
                                         <div class="form-outline mb-4">
-                                            <label class="form-label" for="form2Example66">Password</label>
-                                            <input type="password" name="password" id="form2Example66" class="form-control" placeholder="Password" required />
+                                            <label class="form-label" for="password">Password</label>
+                                            <input type="password" name="password" id="password" class="form-control" placeholder="Password" required />
                                         </div>
 
                                         <div class="form-outline mb-4">
-                                            <label class="form-label" for="form2Example77">Confirm Password</label>
-                                            <input type="password" name="confirmPassword" id="form2Example77" class="form-control" placeholder="Password" required />
+                                            <label class="form-label" for="conpassword">Confirm Password</label>
+                                            <input type="password" name="confirmPassword" id="conpassword" class="form-control" placeholder="Password" required />
                                         </div>
 
                                         <div class="text-center pt-1 mb-5 pb-1">
-                                            <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit">Register</button>
+                                            <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit" style="width: 100%;">Register</button>
                                         </div>
                                     </form>
 
@@ -142,7 +142,7 @@
                             </div>
                             <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
                                 <div class="text-white px-3 py-4 p-md-5 mx-md-4">
-                                    <h4 class="mb-4">Hotel Zadar</h4>
+                                    <h4 class="mb-4 text-center">Hotel Zadar</h4>
                                     <p class="small mb-0">Sign up for our experience and make
                                         use of our booking service!
                                     </p>

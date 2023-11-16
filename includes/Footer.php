@@ -38,7 +38,7 @@
         </div>
       </section>
 
-      <hr class="my-3 nav-link" />
+      <hr class="my-2 nav-link" />
 
     </div>
 

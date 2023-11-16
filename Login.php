@@ -13,7 +13,7 @@
     </style>
 
     <style>
-        /* Zusätzliches CSS für die Navbar */
+        /* Additional CSS for the Navbar */
         .navbar.bg-scroll {
             transition: background 0.5s;
         }
@@ -87,20 +87,23 @@
                                         <p>Please login to your account</p>
 
                                         <div class="form-outline mb-4">
-                                            <label class="form-label" for="form2Example11">Username</label>
-                                            <input type="text" name="username" id="form2Example11" class="form-control"
+                                            <label class="form-label" for="username">Username</label>
+                                            <input type="text" name="username" id="username" class="form-control"
                                                 placeholder="Enter your Username" required />
                                         </div>
 
                                         <div class="form-outline mb-4">
-                                            <label class="form-label" for="form2Example22">Password</label>
-                                            <input type="password" name="password" id="form2Example22" class="form-control"
+                                            <label class="form-label" for="password">Password</label>
+                                            <input type="password" name="password" id="password" class="form-control"
                                                 placeholder="Enter your password" required />
                                         </div>
 
+                                        <div class="text-center pt-1 mb-3 pb-1">
+                                            <button class="btn btn-primary fa-lg gradient-custom-2"
+                                                type="submit" style="width: 100%;">Log in</button>
+                                        </div>
+
                                         <div class="text-center pt-1 mb-5 pb-1">
-                                            <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3"
-                                                type="submit">Log in</button>
                                             <a class="text-muted" href="#!">Forgot password?</a>
                                         </div>
 
@@ -114,7 +117,7 @@
                             </div>
                             <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
                                 <div class="text-white px-3 py-4 p-md-5 mx-md-4">
-                                    <h4 class="mb-4">Hotel Zadar</h4>
+                                    <h4 class="mb-4 text-center">Hotel Zadar</h4>
                                     <p class="small mb-0">Sign up for our experience and make use of our booking service!</p>
                                 </div>
                             </div>
