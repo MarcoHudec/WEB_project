@@ -15,7 +15,7 @@
             margin-bottom: 30px;
             padding: 20px;
             border: 1px solid #333;
-            background-color: #fff;
+            background-color: #eee;
         }
         body {
             background-color: #eee; /* Dunkle Hintergrundfarbe (z.B., #333 für Schwarz) */
