@@ -52,27 +52,60 @@
     </div>
 </header>
 
+
     <section class="py-5">
         <div class="container my-5">
             <div class="row justify-content-center">
                 <div class="col-lg-6">
-                    <h2>Hotel Zadar</h2>
+                <h2>Hotel Zadar</h2>
                     <br></br>
                     <p class="lead">Treat yourself with an experience</p>
                     <p class="lead">Discover Mexico's warmest hospitality at our hotel. Immerse yourself in local culture and relax in our elegant facilities. Welcome to an unforgettable experience in the heart of Mexico</p>
-                    
+                        
+
                 </div>
             </div>
         </div>
     </section>
 
-    <div class="py-5 bg-image-full" style="background-image: url('https://source.unsplash.com/4ulffa6qoKA/1200x800')">
-
-        <div style="height: 20rem"></div>
-    </div>
 
     <section class="py-5">
-        <div class "container my-5">
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <h2>Our Rooms</h2>
+                <p class="lead">We make sure you feel relaxed and have a pleasant stay</p>
+                <p class="lead">Experience luxurious comfort in our hotel rooms. Enjoy an array of fun activities, from exploring local markets to relaxing by the pool and savoring Mexican cuisine. Your stay with us promises both relaxation and adventure</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-md-4">
+                <img src="Images/HotelRoom1.jpeg" class="img-fluid rounded img-hover" alt="Image 1">
+                <p>Single Deluxe Room with sea view</p>
+                <a href="#" class="btn btn-primary">Book Now</a>
+            </div>
+            <div class="col-md-4">
+                <img src="Images/HotelRoom2.jpeg" class="img-fluid rounded img-hover" alt="Image 2">
+                <p>Family Deluxe Room with sea view</p>
+                <a href="#" class="btn btn-primary">Book Now</a>
+            </div>
+            <div class="col-md-4">
+                <img src="Images/HotelRoom3.jpeg" class="img-fluid rounded img-hover" alt="Image 3">
+                <p>Pesidential sweet with sea view and complementary butler</p>
+                <a href="" class="btn btn-primary">Book Now</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+    
+
+    <section class="py-5">
+        <div class="container my-5">
             <div class="row justify-content-center">
                 <div class="col-lg-6">
                     <h2>Our facilities</h2>
@@ -82,11 +115,28 @@
                 </div>
             </div>
         </div>
-    </section>
+    
+
+    <div class="container py-5">
+    <div class="row">
+        <div class="col-md-4">
+            <img src="Images/Hotel1.jpg" class="img-fluid rounded img-hover" alt="Image 1">
+        </div>
+        <div class="col-md-4">
+            <img src="Images/Hotel2.jpg" class="img-fluid rounded img-hover" alt="Image 2">
+        </div>
+        <div class="col-md-4">
+            <img src="Images/Hotel3.jpg" class="img-fluid rounded img-hover" alt="Image 3">
+        </div>
+    </div>
+</div>
+</section>
+
+
 
     
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script> 
 
     <script src="js/scripts.js"></script>
 
