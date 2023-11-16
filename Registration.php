@@ -141,7 +141,7 @@
                             </div>
                             <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
                                 <div class="text-white px-3 py-4 p-md-5 mx-md-4">
-                                    <h4 class="mb-4">We are more than just a company</h4>
+                                    <h4 class="mb-4">Hotel Zadar</h4>
                                     <p class="small mb-0">Sign up for our experience and make
                                         use of our booking service!
                                     </p>
@@ -153,6 +153,10 @@
             </div>
         </div>
     </section>
+
+    <?php include("includes/Footer.php")?>
+
+    <?php include("includes/scripts.php")?>
 </body>
 
 </html>

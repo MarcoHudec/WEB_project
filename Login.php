@@ -36,24 +36,16 @@
 
                                     <div class="text-center">
                                         <img src="Images/Logo2.png" style="width: 100px;" alt="logo">
-                                        <h4 class="mt-1 mb-5 pb-1">We are The Lotus Team</h4>
+                                        <h4 class="mt-1 mb-5 pb-1">Login</h4>
                                     </div>
 
                                     <?php
                                     // Include your database connection file here
-<<<<<<< HEAD
-                                    // Database credentials
-                                    $db_host = "localhost"; 
-                                    $db_username = "daxact"; 
-                                    $db_password = "Asdfg12345"; 
-                                    $db_name = "register"; 
-=======
                                     // Replace placeholders with actual database credentials
                                     $db_host = "localhost"; // Change this if your MySQL server is on a different host
                                     $db_username = "admin"; // Replace with the username you created
                                     $db_password = "Asdfg12345"; // Replace with the password you set
                                     $db_name = "hotellogin"; // Replace with the name of the database you created
->>>>>>> 530841219638e1a448e5bb228fc8314053094266
 
                                     // Establish a connection to the database
                                     $conn = new mysqli($db_host, $db_username, $db_password, $db_name);
@@ -122,7 +114,7 @@
                             </div>
                             <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
                                 <div class="text-white px-3 py-4 p-md-5 mx-md-4">
-                                    <h4 class="mb-4">We are more than just a company</h4>
+                                    <h4 class="mb-4">Hotel Zadar</h4>
                                     <p class="small mb-0">Sign up for our experience and make use of our booking service!</p>
                                 </div>
                             </div>

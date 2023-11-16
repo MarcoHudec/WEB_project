@@ -8,7 +8,7 @@
          
           <div class="col-md-2">
             <h6 class="text-uppercase font-weight-bold">
-              <a href="Frontpage.php" class="text-white nav-link">Home</a>
+              <a href="index.php" class="text-white nav-link">Home</a>
             </h6>
           </div>
           
