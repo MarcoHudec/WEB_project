@@ -7,13 +7,13 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item mx-3">
-          <a class="nav-link" href="Help.php">About Us</a>
+          <a class="text-white nav-link" href="Help.php">About Us</a>
         </li>
         <li class="nav-item mx-3">
-          <a class="nav-link" href="Login.php">Sign in</a>
+          <a class="text-white nav-link" href="Login.php">Sign in</a>
         </li>
         <li class="nav-item mx-3">
-          <a class="nav-link" href="Registration.php">Registration</a>
+          <a class="text-white nav-link" href="Registration.php">Registration</a>
         </li>
       </ul>
     </div>
