@@ -16,7 +16,10 @@
             padding: 20px;
             border: 1px solid #ccc;
         }
-        
+        body {
+            background-color: #f5f5f5; /* Dunkle Hintergrundfarbe (z.B., #333 für Schwarz) */
+            color: #333; /* Weiße Textfarbe für den Kontrast */
+        }
     </style>
 </head>
 
@@ -24,6 +27,8 @@
 <body>
 
 <?php include("includes/Navbar.php")?>
+
+
 <div class="container mt-5">
         <h1 class="text-center">Impressum</h1>
         <div class="row justify-content-center">

@@ -83,7 +83,7 @@
                 </h2>
                 <div id="faqCollapse5" class="accordion-collapse collapse" aria-labelledby="faqHeading5" data-bs-parent="#faqAccordion">
                     <div class="accordion-body">
-                        Details about the hotel staff can be found in <a href="Impressum.html">the imprint.</a>
+                        Details about the hotel staff can be found in <a href="Impressum.php">the imprint.</a>
                     </div>
                 </div>
             </div>
