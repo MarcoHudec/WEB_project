@@ -14,10 +14,11 @@
             text-align: center;
             margin-bottom: 30px;
             padding: 20px;
-            border: 1px solid #ccc;
+            border: 1px solid #333;
+            background-color: #fff;
         }
         body {
-            background-color: #f5f5f5; /* Dunkle Hintergrundfarbe (z.B., #333 für Schwarz) */
+            background-color: #D3D3D3; /* Dunkle Hintergrundfarbe (z.B., #333 für Schwarz) */
             color: #333; /* Weiße Textfarbe für den Kontrast */
         }
     </style>

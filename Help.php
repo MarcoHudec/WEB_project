@@ -11,7 +11,7 @@
     <?php include("includes/Navbar.php")?>
 
 
-    <header class="bg-primary text-white text-center py-4">
+    <header class=" text-black text-center py-4">
         <h1>Help-Page</h1>
     </header>
 
@@ -25,7 +25,7 @@
                         How do I sign in?
                     </button>
                 </h2>
-                <div id="faqCollapse1" class="accordion-collapse collapse show" aria-labelledby="faqHeading1" data-bs-parent="#faqAccordion">
+                <div id="faqCollapse1" class="accordion-collapse collapse" aria-labelledby="faqHeading1" data-bs-parent="#faqAccordion">
                     <div class="accordion-body">
                         To sign in, click the "Sign In" button and enter your login information.
                     </div>
