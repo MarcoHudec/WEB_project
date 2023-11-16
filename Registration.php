@@ -11,6 +11,7 @@
             background: -webkit-linear-gradient(to right, #007BFF, #6EC1E4, #20C997, #17C671);
             background: linear-gradient(to right, #007BFF, #6EC1E4, #20C997, #17C671);
         }
+        
     </style>
 
 </head>

@@ -18,7 +18,7 @@
             background-color: #fff;
         }
         body {
-            background-color: #D3D3D3; /* Dunkle Hintergrundfarbe (z.B., #333 für Schwarz) */
+            background-color: #eee; /* Dunkle Hintergrundfarbe (z.B., #333 für Schwarz) */
             color: #333; /* Weiße Textfarbe für den Kontrast */
         }
     </style>

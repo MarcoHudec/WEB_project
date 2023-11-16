@@ -4,7 +4,12 @@
 <head>
     <title>Help Page</title>
     <?php include("includes/head.php")?>
-    
+    <style>
+        body {
+            background-color: #eee; /* Dunkle Hintergrundfarbe (z.B., #333 für Schwarz) */
+            color: #333; /* Weiße Textfarbe für den Kontrast */
+        }
+    </style>
 </head>
 
 <body>
@@ -21,7 +26,7 @@
 
             <div class="accordion-item">
                 <h2 class="accordion-header" id="faqHeading1">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse1" aria-expanded="true" aria-controls="faqCollapse1">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faqCollapse1" aria-expanded="false" aria-controls="faqCollapse1">
                         How do I sign in?
                     </button>
                 </h2>
