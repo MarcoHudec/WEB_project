@@ -28,124 +28,68 @@
                             <div class="col-lg-6">
                                 <div class="card-body p-md-5 mx-md-4">
                                     <div class="text-center">
-                                        <img src="Images/Logo2.png" style="width: 100px;" alt="logo">
+                                        <img src="Images/Logo.png" style="width: 100px;" alt="logo">
                                         <h4 class="mt-1 mb-5 pb-1">Registration</h4>
                                     </div>
 
                                     <?php
-session_start();
-$_SESSION["role"]="";
-$validity=TRUE;
-$firstname=$lastname=$email=$username=$password=$repassword="";
-$fnameErr= $lnameErr= $emailErr= $useErr= $passErr= $repassErr="";
-$fname_val= $lnameval= $emailval= $useval= $passval= $repassval="valid";
+                                    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+                                        // Include your database connection file here
+                                        // Replace placeholders with actual database credentials
+                                        $db_host = "localhost";
+                                        $db_username = "daxact";
+                                        $db_password = "Asdfg12345";
+                                        $db_name = "register";
 
-$firstname=$_POST["fname"];
-//if($_SERVER["REQUEST_METHOD"]=="POST"){
-  if (empty($_POST["fname"])) {
-      $fnameErr = "First name is required";
-      $fname_val="invalid";
-    } else {
-      $firstname = test_input($_POST["fname"]);
-      if(!preg_match("/^[a-zA-Z-']*$/",$firstname)){
-        $fnameErr="Only letters and white spaces allowed";
-        $fname_val="invalid";
-        $validity=FALSE;
-      }
-    }
+                                        // Establish a connection to the database
+                                        $conn = new mysqli($db_host, $db_username, $db_password, $db_name);
 
-  $lastname=$_POST["lname"];
-  if (empty($_POST["fname"])) {
-    $lastnameErr = "First name is required";
-    $validity=FALSE;
-    $lnameval="invalid";
-  } else {
-    $lastname = test_input($_POST["lname"]);
-    if(!preg_match("/^[a-zA-Z-']*$/",$lastname)){
-      $fnameErr="Only letters and white spaces allowed";
-      $lnameval="invalid";
-    }
-  }
+                                        // Check the connection
+                                        if ($conn->connect_error) {
+                                            die("Connection failed: " . $conn->connect_error);
+                                        }
 
-  $email=$_POST["email"];
-  if (empty($_POST["email"])) {
-      $emailErr = "Email is required";
-      $emailval="invalid";
-    } else {
-      $email = test_input($_POST["email"]);
-      }
-    
-  $username=$_POST["username"];
-  if (empty($_POST["username"])) {
-     $useErr = "Username is required";
-     $useval="invalid";
-   } else {
-      $username = test_input($_POST["username"]);
-      if(test_length($username)===FALSE){
-        $useval="invalid";
-        $useErr="Username Has to be at least 6 long";
-      }
-    }
+                                        // Validate form data
+                                        $salutation = $_POST["salutation"];
+                                        $firstName = $_POST["firstName"];
+                                        $lastName = $_POST["lastName"];
+                                        $email = $_POST["email"];
+                                        $username = $_POST["username"];
+                                        $password = $_POST["password"];
+                                        $confirmPassword = $_POST["confirmPassword"];
 
-  $password =$_POST["password"];
-  if (empty($_POST["password"])) {
-      $nameErr = "Password is required";
-      $passval="invalid";
-    } else {
-      $password = test_input($_POST["password"],);
-      if(test_length($password)===FALSE){
-        $passval="invalid";
-        $passErr="password Has to be at least 6 long";
-      }
-      if(!preg_match('/[0-9]/',$password)){
-        $passErr="Enter at least one number in your password";
-        $passval="invalid";
-      }
-   }
+                                        // Perform server-side validation
+                                        // Add code to check uniqueness of username in the database
+                                        $checkUsernameQuery = "SELECT * FROM users WHERE username = '$username'";
+                                        $result = $conn->query($checkUsernameQuery);
 
-  $repassword=$_POST["reenteredpassword"];
-  if (empty($_POST["reenteredpassword"])) {
-      $repassErr = "Password is required";
-      $repassval="invalid";
-    } else {
-      $repassword = test_input($_POST["reenteredpassword"]);
-      if(test_length($repassword)===FALSE){
-        $repassval="invalid";
-        $repassErr="reenteredpassword Has to be at least 6 long";
-      }
-      if($repassword===$password){
+                                        if ($result->num_rows > 0) {
+                                            echo "<p style='color: red;'>Username is already taken. Please choose another one.</p>";
+                                        } else {
+                                            // Add code to compare passwords
+                                            if ($password != $confirmPassword) {
+                                                echo "<p style='color: red;'>Passwords do not match. Please try again.</p>";
+                                            } else {
+                                                // Hash the password for security
+                                                $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-      }else{
-          $repassval="invalid";
-          $repassErr="passwords have to match";
-      }
-  }
-  if($fnameval=="invalid"|| $lnameval=="invalid"|| $emailval=="invalid"|| $useval=="invalid"|| $passval=="invalid"|| $repassval =="invalid"){
-    header("Location: ../loginform.php?&fnamevalid=".$fname_val."&firstname=".$firstname."&firstnameErr=".$fnameErr.
-    "&lnamevalid=".$lnameval."&lastname=".$lastname."&lastnameErr=".$lnameErr.
-    "&emailval=".$emailval."&email=".$email."&emailErr=".$emailErr.
-    "&usernameval=".$useval."&username=".$username."&usernameErr=".$useErr.
-    "&passwordval=".$passval."&password=".$password."&passwordErr=".$passErr.
-    "&repasswordval=".$repassval."&repassword=".$repassword."&repasswordErr=".$repassErr);
-  }else{
-    header("Location: ../home.php");
-    //$_SESSION["role"]=;
-  }
+                                                // Insert data into the database
+                                                $insertQuery = "INSERT INTO users (salutation, first_name, last_name, email, username, password) VALUES ('$salutation', '$firstName', '$lastName', '$email', '$username', '$hashedPassword')";
 
+                                                if ($conn->query($insertQuery) === TRUE) {
+                                                    echo "<p style='color: green;'>Registration successful!</p>";
+                                                    // You can redirect the user to a success page if needed
+                                                } else {
+                                                    echo "<p style='color: red;'>Error: " . $insertQuery . "<br>" . $conn->error . "</p>";
+                                                }
+                                            }
+                                        }
 
-function test_input($data){
-    $data = trim($data);
-    $data = stripslashes($data);
-    $data = htmlspecialchars($data);
-    return $data;
-}
-function test_length($data){
-  if(strlen($data)<6){
-    $validity=false;
-  }
-  return $validity;
-}
-?>
+                                        // Close the database connection
+                                        $conn->close();
+                                    }
+                                    ?>
+
                                     <form id="registrationForm" method="post">
                                         <p>Please fill in the registration details</p>
 

@@ -35,7 +35,7 @@
                                 <div class="card-body p-md-5 mx-md-4">
 
                                     <div class="text-center">
-                                        <img src="Images/Logo2.png" style="width: 100px;" alt="logo">
+                                        <img src="Images/Logo.png" style="width: 100px;" alt="logo">
                                         <h4 class="mt-1 mb-5 pb-1">Login</h4>
                                     </div>
 
