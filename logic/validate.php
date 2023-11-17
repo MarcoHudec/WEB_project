@@ -1,6 +1,5 @@
 <?php
 //GENDER
-/*
 $gender_valid = $gender_error = $gender = "";
 
 if (isset($_GET['genderErr']) && !empty($_GET['genderErr'])) {
@@ -13,7 +12,7 @@ if (isset($_GET['genderErr']) && !empty($_GET['genderErr'])) {
 if (isset($_GET["gender"])) {
   $gender = $_GET["gender"];
 }
-*/
+
 //FNAME
 $fname_valid = $fname_error = $fname = "";
 if (isset($_GET['fnameErr']) && !empty($_GET['fnameErr'])) {

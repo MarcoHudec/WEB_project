@@ -1,6 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<?php
+session_start();
+$error = "";
+$_mail = "";
+
+if (isset($_SESSION["error"])) {
+    $error = $_SESSION["error"];
+    unset($_SESSION["error"]); // Fehlermeldung aus der Session entfernen
+}
+
+if (isset($_SESSION["mail"])) {
+    $_mail = $_SESSION["mail"];
+    unset($_SESSION["mail"]);
+}
+?>
 <head>
     <title>Login Page</title>
     <?php include("includes/head.php")?>
@@ -25,6 +40,7 @@
 
     <?php include("includes/Navbar.php")?>
 
+    
     <section class="h-100 gradient-form" style="background-color: #eee;">
         <div class="container py-5 h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">

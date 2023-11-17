@@ -5,14 +5,14 @@ $gender = $fname = $lname = $uname = $mail = $pw = $re_pw = "";
 $registration_success = true;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  /*
+  
   // GENDER
-  if ($_POST["gender"] == "Gender") {
+  if ($_POST["gender"] == "Select") {
     $genderErr = "Gender is required";
   } else {
     $gender = test_input($_POST["gender"]);
   }
-*/
+
   // FNAME
   if (empty($_POST["fname"])) {
     $fnameErr = "First Name is required";
@@ -89,3 +89,4 @@ function check_passwort($password) {
   return ($uppercase && $lowercase && $number && $specialChars && strlen($password) >= 8);
 }
 ?>
+

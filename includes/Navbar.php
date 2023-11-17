@@ -12,12 +12,22 @@
         <li class="nav-item mx-3">
           <a class="text-white nav-link" href="Help.php">About Us</a>
         </li>
+        <?php if(!isset($_SESSION["mail"])): ?>
         <li class="nav-item mx-3">
           <a class="text-white nav-link" href="Login.php">Sign in</a>
         </li>
         <li class="nav-item mx-3">
-          <a class="text-white nav-link" href="Registration.php">Registration</a>
+          <a class="text-white nav-link" href="Registration.php">Register</a>
         </li>
+        <?php endif; ?>
+        <?php if(isset($_SESSION["mail"])): ?>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="Profil.php">Profile</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-white" href="logout.php">Logout</a>
+          </li>
+        <?php endif; ?>
       </ul>
     </div>
   </div>
