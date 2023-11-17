@@ -8,13 +8,13 @@
          
           <div class="col-md-2">
             <h6 class="text-uppercase font-weight-bold">
-              <a href="index.php" class="text-white nav-link">Home</a>
+              <a href="Registration3.php" class="text-white nav-link">Home</a>
             </h6>
           </div>
           
           <div class="col-md-2">
             <h6 class="text-uppercase font-weight-bold">
-              <a href="#!" class="text-white nav-link">About us</a>
+              <a href="Registration2.php" class="text-white nav-link">About us</a>
             </h6>
           </div>
           
@@ -32,7 +32,7 @@
 
           <div class="col-md-2">
             <h6 class="text-uppercase font-weight-bold">
-              <a href="#!" class="text-white nav-link">Contact</a>
+              <a href="Login2.php" class="text-white nav-link">Contact</a>
             </h6>
           </div>
         </div>
