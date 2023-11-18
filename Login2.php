@@ -4,16 +4,16 @@
 <?php
 session_start();
 $error = "";
-$_mail = "";
+$_username = "";
 
 if (isset($_SESSION["error"])) {
     $error = $_SESSION["error"];
     unset($_SESSION["error"]); // Fehlermeldung aus der Session entfernen
 }
 
-if (isset($_SESSION["mail"])) {
-    $_mail = $_SESSION["mail"];
-    unset($_SESSION["mail"]);
+if (isset($_SESSION["username"])) {
+    $_username = $_SESSION["username"];
+    unset($_SESSION["username"]);
 }
 ?>
 <head>

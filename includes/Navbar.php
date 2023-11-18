@@ -12,7 +12,7 @@
         <li class="nav-item mx-3">
           <a class="text-white nav-link" href="Help.php">About Us</a>
         </li>
-        <?php if(!isset($_SESSION["mail"])): ?>
+        <?php if(!isset($_SESSION["username"])): ?>
         <li class="nav-item mx-3">
           <a class="text-white nav-link" href="Login.php">Sign in</a>
         </li>
@@ -20,7 +20,7 @@
           <a class="text-white nav-link" href="Registration.php">Register</a>
         </li>
         <?php endif; ?>
-        <?php if(isset($_SESSION["mail"])): ?>
+        <?php if(isset($_SESSION["username"])): ?>
           <li class="nav-item">
             <a class="nav-link text-white" href="Profil.php">Profile</a>
           </li>
