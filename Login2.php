@@ -1,6 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
 <?php
 session_start();
 $error = "";
@@ -16,6 +13,10 @@ if (isset($_SESSION["username"])) {
     unset($_SESSION["username"]);
 }
 ?>
+<!DOCTYPE html>
+<html lang="en">
+
+
 <head>
     <title>Login Page</title>
     <?php include("includes/head.php")?>
@@ -55,18 +56,18 @@ if (isset($_SESSION["username"])) {
                                         <h4 class="mt-1 mb-5 pb-1">Login</h4>
                                     </div>
 
-                                    <form method="post" action="logic/validate.php">
+                                    <form method="post" action="logic/loginvalidation.php">
                                         <p>Please login to your account</p>
 
                                         <div class="form-outline mb-4" >
                                             <label class="form-label" for="username">Username</label>
-                                            <input type="text" name="username" id="username" class="form-control" placeholder="Enter your Username" required/>
+                                            <input type="text" name="username" id="username" class="form-control" placeholder="Enter your Username" />
                                         </div>
 
                                         <div class="form-outline mb-4">
                                             <label class="form-label" for="password">Password</label>
                                             <input type="password" name="password" id="password" class="form-control"
-                                                placeholder="Enter your password" required />
+                                                placeholder="Enter your password"  />
                                         </div>
 
                                         <div class="text-center pt-1 mb-3 pb-1">
