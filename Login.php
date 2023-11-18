@@ -1,5 +1,20 @@
+<?php
+$error = "";
+$_username = "";
+
+if (isset($_SESSION["error"])) {
+    $error = $_SESSION["error"];
+    unset($_SESSION["error"]); // Fehlermeldung aus der Session entfernen
+}
+
+if (isset($_SESSION["username"])) {
+    $_username = $_SESSION["username"];
+    unset($_SESSION["username"]);
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
+
 
 <head>
     <title>Login Page</title>
@@ -20,11 +35,12 @@
     </style>
 
 </head>
-
+ 
 <body>
 
     <?php include("includes/Navbar.php")?>
 
+    
     <section class="h-100 gradient-form" style="background-color: #eee;">
         <div class="container py-5 h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
@@ -39,63 +55,18 @@
                                         <h4 class="mt-1 mb-5 pb-1">Login</h4>
                                     </div>
 
-                                    <?php
-                                    // Include your database connection file here
-                                    // Replace placeholders with actual database credentials
-                                    $db_host = "localhost"; // Change this if your MySQL server is on a different host
-                                    $db_username = "admin"; // Replace with the username you created
-                                    $db_password = "Asdfg12345"; // Replace with the password you set
-                                    $db_name = "hotellogin"; // Replace with the name of the database you created
-
-                                    // Establish a connection to the database
-                                    $conn = new mysqli($db_host, $db_username, $db_password, $db_name);
-
-                                    // Check the connection
-                                    if ($conn->connect_error) {
-                                        die("Connection failed: " . $conn->connect_error);
-                                    }
-
-                                    // Check if the form is submitted
-                                    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                                        $username = $_POST["username"];
-                                        $password = $_POST["password"];
-
-                                        // Perform server-side validation
-                                        // Add code to check the user's credentials in the database
-                                        $checkUserQuery = "SELECT * FROM users WHERE username = '$username'";
-                                        $result = $conn->query($checkUserQuery);
-
-                                        if ($result->num_rows > 0) {
-                                            $row = $result->fetch_assoc();
-                                            $hashedPassword = $row["password"];
-
-                                            // Verify the password
-                                            if (password_verify($password, $hashedPassword)) {
-                                                // Password is correct, redirect to a success page
-                                                header("Location: success.php");
-                                                exit();
-                                            } else {
-                                                echo "<p style='color: red;'>Incorrect password. Please try again.</p>";
-                                            }
-                                        } else {
-                                            echo "<p style='color: red;'>Username not found. Please check your username.</p>";
-                                        }
-                                    }
-                                    ?>
-
-                                    <form method="post">
+                                    <form method="post" action="logic/loginvalidation.php">
                                         <p>Please login to your account</p>
 
-                                        <div class="form-outline mb-4">
+                                        <div class="form-outline mb-4" >
                                             <label class="form-label" for="username">Username</label>
-                                            <input type="text" name="username" id="username" class="form-control"
-                                                placeholder="Enter your Username" required />
+                                            <input type="text" name="username" id="username" class="form-control" placeholder="Enter your Username" />
                                         </div>
 
                                         <div class="form-outline mb-4">
                                             <label class="form-label" for="password">Password</label>
                                             <input type="password" name="password" id="password" class="form-control"
-                                                placeholder="Enter your password" required />
+                                                placeholder="Enter your password"  />
                                         </div>
 
                                         <div class="text-center pt-1 mb-3 pb-1">

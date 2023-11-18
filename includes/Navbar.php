@@ -1,3 +1,7 @@
+<?php 
+session_start();
+?>
+
 <nav class="navbar sticky-top navbar-expand-lg navbar-dark transparent-navbar">
   <div class="container-fluid">
     <a class="navbar-brand" href="index.php">
