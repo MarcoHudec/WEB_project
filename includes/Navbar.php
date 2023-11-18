@@ -26,7 +26,7 @@ session_start();
         <?php endif; ?>
         <?php if(isset($_SESSION["username"])): ?>
           <li class="nav-item">
-            <a class="nav-link text-white" href="Profil.php">Profile</a>
+            <a class="nav-link text-white" href="Profile.php">Profile</a>
           </li>
           <li class="nav-item">
             <a class="nav-link text-white" href="logic/logout.php">Logout</a>
