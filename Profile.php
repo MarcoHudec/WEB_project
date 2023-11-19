@@ -22,7 +22,7 @@
                                         <h4 class="mt-1 mb-5 pb-1">User Profile</h4>
                                     </div>
 
-                                    <form id="profileForm" action="/logic/file_upload.php" method="post" enctype="multipart/form-data">
+                                    <form id="profileForm" action="logic/file_upload.php" method="post" enctype="multipart/form-data">
 
 
                                     <div class="profile-picture">
@@ -40,6 +40,17 @@
                                             ?>
                                     </div>
                                     
+
+                                    <!-- Profile Picture Upload -->
+                                    <form action="logic/file_upload.php" method="POST" enctype="multipart/form-data">
+                                        <div class="mb-3">
+            
+                                                <input type="file" name="file" accept="image/*">
+                                        </div>
+                                            <button type="submit" name="submit">Upload Image</button>
+                                        </form>
+
+                                        
                                         
 
                                         <!-- Display user information fetched from session variables -->
@@ -67,14 +78,12 @@
                                         </div>
                                         -->
 
-                                        <!-- Profile Picture Upload -->
+
 
                                         
-                                        <div class="form-outline mb-4">
-                                            <label class="form-label" for="profilePic">Profile Picture</label>
-                                            <input type="file" name="profilePic" id="profilePic" class="form-control">
-                                            
-                                        </div>
+
+
+                                        
                                         
 
                                         
@@ -86,12 +95,8 @@
                                     </form>
                                 </div>
                             </div>
-                            <!-- Display user's current profile picture or any other information you'd like to show -->
-                            <div class="col-lg-6">
-                                <div class="text-white px-3 py-4 p-md-5 mx-md-4">
-                                    <!-- Display user's current profile picture or any other information you'd like to show -->
-                                </div>
-                            </div>
+                            
+                            
                         </div>
                     </div>
                 </div>

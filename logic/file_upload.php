@@ -8,33 +8,37 @@ if (isset($_POST["submit"])) {
     $fileError = $_FILES['file']['error'];
     $fileType = $_FILES['file']['type'];
 
-    $fileExt = explode('.', $fileName );
+    $fileExt = explode('.', $fileName);
     $fileActualExt = strtolower(end($fileExt));
 
     $allowed = array('jpg', 'jpeg', 'png', 'pdf', 'docx');
 
-    if(in_array($fileActualExt, $allowed)){
-        if($fileError === 0) 
-            {
-                if($fileSize < 102400){
-                    $fileNameNew= uniqid('', true).".".$fileActualExt;
-                    $fileDestination = '../news/'.$fileNameNew;
-                    move_uploaded_file($fileTmpName, $fileDestination);
-                    header("Location: ../Career.php?uploadsuccess");
+    if (in_array($fileActualExt, $allowed)) {
+        if ($fileError === 0) {
+            if ($fileSize < 102400) {
+                $directory = '../news/';
+                $fileNameNew = 'profile_picture.' . $fileActualExt;
+                $fileDestination = $directory . $fileNameNew;
+
+                // Delete existing file
+                if (file_exists($fileDestination)) {
+                    unlink($fileDestination);
                 }
-                else{
-                    echo "Your File is too big";
-                }
-        }
-        else{
+
+                // Move uploaded file to the destination
+                move_uploaded_file($fileTmpName, $fileDestination);
+                header("Location: ../Profile.php?uploadsuccess");
+            } else {
+                echo "Your file is too big";
+            }
+        } else {
             echo "There was an error uploading your file";
         }
-    }
-    else{
+    } else {
         echo "You cannot upload files of this type";
     }
-
-} ?>
+}
+?>
 
 
 
