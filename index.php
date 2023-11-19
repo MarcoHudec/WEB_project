@@ -25,7 +25,7 @@
     include('includes/Navbar.php');
     ?>
 
-    <header class="py-5">
+<header class="py-5">
     <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
         <ol class="carousel-indicators">
             <li data-bs-target="#carouselExample" data-bs-slide-to="0" class="active"></li>
@@ -44,15 +44,16 @@
             </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExample" role="button" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="carousel-control-prev-icon" aria-hidden="true" style="filter: invert(1);"></span>
             <span class="visually-hidden">Previous</span>
         </a>
         <a class="carousel-control-next" href="#carouselExample" role="button" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="carousel-control-next-icon" aria-hidden="true" style="filter: invert(1);"></span>
             <span class="visually-hidden">Next</span>
         </a>
     </div>
 </header>
+
 
 
     <section class="py-5">
