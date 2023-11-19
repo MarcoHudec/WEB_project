@@ -8,38 +8,46 @@ if (isset($_POST["submit"])) {
     $fileError = $_FILES['file']['error'];
     $fileType = $_FILES['file']['type'];
 
-    $fileExt = explode('.', $fileName);
-    $fileActualExt = strtolower(end($fileExt));
+    // Set allowed file extensions
+    $allowed = array('jpg', 'jpeg', 'png', 'gif');
 
-    $allowed = array('jpg', 'jpeg', 'png', 'pdf', 'docx');
+    // Path to the directory and default image
+    $directory = '../news/';
+    $defaultImage = 'Images/defaultPB.jpg';
 
-    if (in_array($fileActualExt, $allowed)) {
-        if ($fileError === 0) {
-            if ($fileSize < 102400) {
-                $directory = '../news/';
-                $fileNameNew = 'profile_picture.' . $fileActualExt;
-                $fileDestination = $directory . $fileNameNew;
+    // Delete the existing image if present
+    $images = scandir($directory);
+    foreach ($images as $image) {
+        if ($image != "." && $image != ".." && in_array(pathinfo($image, PATHINFO_EXTENSION), $allowed)) {
+            unlink($directory . $image);
+        }
+    }
 
-                // Delete existing file
-                if (file_exists($fileDestination)) {
-                    unlink($fileDestination);
+    // Check if an image is uploaded
+    if (!empty($fileName)) {
+        $fileExt = explode('.', $fileName);
+        $fileActualExt = strtolower(end($fileExt));
+
+        if (in_array($fileActualExt, $allowed)) {
+            if ($fileError === 0) {
+                if ($fileSize < 302400) {
+                    $fileNameNew = uniqid('', true) . "." . $fileActualExt;
+                    $fileDestination = $directory . $fileNameNew;
+                    move_uploaded_file($fileTmpName, $fileDestination);
+                    header("Location: ../Profile.php?uploadsuccess");
+                } else {
+                    echo "Your file is too big.";
                 }
-
-                // Move uploaded file to the destination
-                move_uploaded_file($fileTmpName, $fileDestination);
-                header("Location: ../Profile.php?uploadsuccess");
             } else {
-                echo "Your file is too big";
+                echo "There was an error uploading your file.";
             }
         } else {
-            echo "There was an error uploading your file";
+            echo "You cannot upload files of this type.";
         }
     } else {
-        echo "You cannot upload files of this type";
+        // If no image is uploaded, set default profile picture
+        copy($defaultImage, $directory . 'defaultPB.jpg');
+        header("Location: ../Profile.php?uploadsuccess");
     }
 }
 ?>
-
-
-
-
