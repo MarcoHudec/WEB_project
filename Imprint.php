@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>Impressum</title>
+<title>Imprint</title>
     <?php include("includes/head.php")?>
     <style>
         .circle-image {
@@ -31,7 +31,7 @@
 
 
 <div class="container mt-5">
-        <h1 class="text-center">Impressum</h1>
+        <h1 class="text-center">Imprint</h1>
         <div class="row justify-content-center">
             <div class="col-md-6 text-center">
                 <p>
@@ -41,37 +41,40 @@
                 </p>
                 <p>
                     <strong>Contact:</strong><br>
-                    Telefon: +49 123 456789<br>
+                    Phone: +49 123 456789<br>
                     E-Mail: info@zadarhotel.hr
                 </p>
                 <p>
-                    <strong>Handelsregister:</strong><br>
-                    Registergericht: Zadar<br>
-                    Registernummer: 75235
+                <strong>Commercial Register:</strong><br>
+                    Court of Registration: Zadar<br>
+                    Registration Number: 75235
                 </p>
                 <p>
-                    <strong>Zuständige Aufsichtsbehörde:</strong><br>
-                    Zadar Tourismusamt
+                    <strong>Competent Supervisory Authority:</strong><br>
+                    Zadar Tourism Office
                 </p>
                 <p>
-                    <strong>Haftungsausschluss:</strong><br>
-                    Wir übernehmen keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.
+                    <strong>Disclaimer:</strong><br>
+                    We do not assume liability for the content of external links. The operators of the linked pages are solely responsible for their content.
                 </p>
                 <div class="row mt-4">
                     <div class="col-md-6">
                         <div class="ceo-card">
                             <img src="Images/CEO1.jpg" class="circle-image img-fluid" alt="CEO 1">
                             <h5 class="mt-3">Marcel Ivanić</h5>
-                            <p>Geschäftsführer</p>
-                            <p>Der Boss.</p>
+                            <p>CEO</p>
+                            <p>The Boss.</p>
                         </div>
                     </div>
                     <div class="col-md-6">
                         <div class="ceo-card">
                             <img src="Images/CEO2.jpg" class="circle-image img-fluid" alt="CEO 2">
                             <h5 class="mt-3">Marco Hudec</h5>
-                            <p>Geschäftsführer</p>
-                            <p>Der Andere.</p>
+                            <p>CEO</p>
+                            <p>The Other One.</p>
+                        </div>
+                    </div>
+                </div>
                         </div>
                     </div>
                 </div>

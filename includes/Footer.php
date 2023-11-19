@@ -20,7 +20,7 @@
           
           <div class="col-md-2">
             <h6 class="text-uppercase font-weight-bold">
-              <a href="Impressum.php" class="text-white nav-link">Impressum</a>
+              <a href="Imprint.php" class="text-white nav-link">Imprint</a>
             </h6>
           </div>
           

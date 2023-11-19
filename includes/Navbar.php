@@ -20,7 +20,7 @@ session_start();
           <a class="text-white nav-link" href="Reservation.php">Reservation</a>
         </li>
         <li class="nav-item mx-2">
-          <a class="text-white nav-link" href="Impressum.php">Impressum</a>
+          <a class="text-white nav-link" href="Imprint.php">Impressum</a>
         </li>
         <?php if(!isset($_SESSION["username"])): ?>
         <li class="nav-item mx-2">
