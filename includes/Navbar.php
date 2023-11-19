@@ -13,22 +13,28 @@ session_start();
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav ms-auto">
-        <li class="nav-item mx-3">
-          <a class="text-white nav-link" href="Help.php">About Us</a>
+        <li class="nav-item mx-2">
+          <a class="text-white nav-link" href="index.php">Home</a>
+        </li>
+        <li class="nav-item mx-2">
+          <a class="text-white nav-link" href="Reservation.php">Reservation</a>
+        </li>
+        <li class="nav-item mx-2">
+          <a class="text-white nav-link" href="Impressum.php">Impressum</a>
         </li>
         <?php if(!isset($_SESSION["username"])): ?>
-        <li class="nav-item mx-3">
+        <li class="nav-item mx-2">
           <a class="text-white nav-link" href="Login.php">Sign in</a>
         </li>
-        <li class="nav-item mx-3">
+        <li class="nav-item mx-2">
           <a class="text-white nav-link" href="Registration.php">Register</a>
         </li>
         <?php endif; ?>
         <?php if(isset($_SESSION["username"])): ?>
-          <li class="nav-item">
+          <li class="nav-item mx-2">
             <a class="nav-link text-white" href="Profile.php">Profile</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item mx-2">
             <a class="nav-link text-white" href="logic/logout.php">Logout</a>
           </li>
         <?php endif; ?>
