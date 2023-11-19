@@ -116,13 +116,13 @@
     <div class="container py-5">
     <div class="row">
         <div class="col-md-4">
-            <img src="Images/Hotel1.jpg" class="img-fluid rounded img-hover" alt="Image 1">
+            <img src="Images/Hotel2.jpg" class="img-fluid rounded img-hover" alt="Image 1">
         </div>
         <div class="col-md-4">
-            <img src="Images/Hotel2.jpg" class="img-fluid rounded img-hover" alt="Image 2">
+            <img src="Images/Hotel3.jpg" class="img-fluid rounded img-hover" alt="Image 2">
         </div>
         <div class="col-md-4">
-            <img src="Images/Hotel3.jpg" class="img-fluid rounded img-hover" alt="Image 3">
+            <img src="Images/Hotel4.jpg" class="img-fluid rounded img-hover" alt="Image 3">
         </div>
     </div>
 </div>

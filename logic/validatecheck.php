@@ -70,7 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 
   
-  header("Location: ../Registration.php?gender=".$gender."&fname=".$fname."&lname=".$lname."&uname=".$uname."&mail=".$mail."&pw=".$pw."&re_pw=".$re_pw."&genderErr=".$genderErr."&fnameErr=".$fnameErr."&lnameErr=".$lnameErr."&unameErr=".$unameErr."&mailErr=".$mailErr."&pwErr=".$pwErr."&re_pwErr=".$re_pwErr);
+  header("Location: ../Login.php?gender=".$gender."&fname=".$fname."&lname=".$lname."&uname=".$uname."&mail=".$mail."&pw=".$pw."&re_pw=".$re_pw."&genderErr=".$genderErr."&fnameErr=".$fnameErr."&lnameErr=".$lnameErr."&unameErr=".$unameErr."&mailErr=".$mailErr."&pwErr=".$pwErr."&re_pwErr=".$re_pwErr);
 
 }
 

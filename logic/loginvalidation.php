@@ -18,11 +18,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Fehlermeldung wenn Username oder Passwort falsch
         $_SESSION["error"] = "Falscher Username oder Passwort";
         $_SESSION["username"] = $_username; // Gesendeten Username behalten
-        header("Location: ../Login2.php");
+        header("Location: ../Login.php");
         exit();
     }
 } else {
-    header("Location: ../Login2.php");
+    header("Location: ../Login.php");
     exit();
 }
 ?>
