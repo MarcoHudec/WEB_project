@@ -24,32 +24,7 @@
     // Include the navbar from Navbar.php
     include('includes/Navbar.php');
     ?>
-<!--
-<header>
-    <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
-        
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="Images/Hotel1.jpg" class="d-block w-100 h-10 mx-auto" alt="Hotel1">
-            </div>
-            <div class="carousel-item">
-                <img src="Images/Hotel2.jpg" class="d-block w-100 mx-auto" alt="Hotel2">
-            </div>
-            <div class="carousel-item">
-                <img src="Images/Hotel3.jpg" class="d-block w-100 mx-auto" alt="Hotel3">
-            </div>
-        </div>
-        <a class="carousel-control-prev" href="#carouselExample" role="button" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true" style="filter: invert(1);"></span>
-            <span class="visually-hidden">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExample" role="button" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true" style="filter: invert(1);"></span>
-            <span class="visually-hidden">Next</span>
-        </a>
-    </div>
-</header>
--->
+
 <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active" data-bs-interval="5000">
@@ -74,8 +49,8 @@
 
 
 
-    <section class="py-5">
-        <div class="container my-5">
+    <section >
+        <div class="container my-4">
             <div class="row justify-content-center">
                 <div class="col-lg-6">
                 <h2>Hotel Zadar</h2>
