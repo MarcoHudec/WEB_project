@@ -82,7 +82,7 @@
 
                                         <div class="form-outline mb-4">
                                             <label class="form-label" for="re_pw">Confirm Password</label>
-                                            <input type="password" name="re_pw" id="re_pw" class="form-control <?php echo $re_pw_valid?>" <?php echo 'value="'.$re_pw.'"' ?> placeholder="Password"  />
+                                            <input type="password" name="re_pw" id="re_pw" class="form-control <?php echo $re_pw_valid?>" <?php echo 'value="'.$re_pw.'"' ?> placeholder="Password" />
                                             <div class="invalid-feedback" ><?php echo $re_pw_error ?></div>
                                         </div>
 
