@@ -24,23 +24,19 @@
     // Include the navbar from Navbar.php
     include('includes/Navbar.php');
     ?>
-
-<header class="py-5">
+<!--
+<header>
     <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
-        <ol class="carousel-indicators">
-            <li data-bs-target="#carouselExample" data-bs-slide-to="0" class="active"></li>
-            <li data-bs-target="#carouselExample" data-bs-slide-to="1"></li>
-            <li data-bs-target="#carouselExample" data-bs-slide-to="2"></li>
-        </ol>
+        
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="Images/Hotel1.jpg" class="d-block w-50 mx-auto" alt="Hotel1">
+                <img src="Images/Hotel1.jpg" class="d-block w-100 h-10 mx-auto" alt="Hotel1">
             </div>
             <div class="carousel-item">
-                <img src="Images/Hotel2.jpg" class="d-block w-50 mx-auto" alt="Hotel2">
+                <img src="Images/Hotel2.jpg" class="d-block w-100 mx-auto" alt="Hotel2">
             </div>
             <div class="carousel-item">
-                <img src="Images/Hotel3.jpg" class="d-block w-50 mx-auto" alt="Hotel3">
+                <img src="Images/Hotel3.jpg" class="d-block w-100 mx-auto" alt="Hotel3">
             </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExample" role="button" data-bs-slide="prev">
@@ -53,6 +49,28 @@
         </a>
     </div>
 </header>
+-->
+<div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active" data-bs-interval="5000">
+      <img src="Images/Hotel2.jpg" class="d-block w-100" style="max-height: 800px" alt="...">
+    </div>
+    <div class="carousel-item" data-bs-interval="5000">
+      <img src="Images/Hotel3.jpg" class="d-block w-100" style="max-height: 800px" alt="...">
+    </div>
+    <div class="carousel-item" data-bs-interval="5000">
+      <img src="Images/Hotel4.jpg" class="d-block w-100" style="max-height: 800px" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
 
 
 
