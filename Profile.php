@@ -34,23 +34,25 @@
 
                                             foreach ($images as $image) {
                                                 if ($image != "." && $image != "..") {
-                                                    echo '<img src="' . $directory . $image . '" alt="' . $image . '" style="width: 200px; height: 150px; margin: 10px;">';
+                                                    echo '<img src="' . $directory . $image . '" alt="' . $image . '" style="width: 200px; height: 200px; margin: 10px;">';
                                                 }
                                             }
                                             ?>
                                     </div>
                                     
 
-                                    <!-- Profile Picture Upload -->
-                                    <form action="logic/file_upload.php" method="POST" enctype="multipart/form-data">
+                                        <!-- Profile Picture Upload -->
+                                        <form action="logic/file_upload.php" method="POST" enctype="multipart/form-data">
+                                        
                                         <div class="mb-3">
-            
-                                                <input type="file" name="file" accept="image/*">
+                                            <label for="fileInput" class="form-label">Choose File</label>
+                                            <input type="file" name="file" class="form-control" id="fileInput" accept="image/*">
                                         </div>
-                                            <button type="submit" name="submit">Upload Image</button>
+                                        
+                                            <button type="submit" name="submit" class="btn btn-primary">Upload Image</button>
                                         </form>
 
-                                        
+
                                         
 
                                         <!-- Display user information fetched from session variables -->

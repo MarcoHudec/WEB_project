@@ -2,13 +2,14 @@
 session_start();
 
 $_validity = false;
+$_username_global = "Marcel";
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $_username = $_POST["username"];
     $_password = $_POST["password"];
 
-    if ($_username === "Marcel" && $_password === "12345") {
+    if ($_username === $_username_global && $_password === "12345") {
         $_SESSION["username"] = $_username;
         $_validity = true;
         header("Location: ../index.php"); // Weiterleitung, wenn die Anmeldedaten korrekt sind
