@@ -42,7 +42,7 @@
                 <p>
                     <strong>Contact:</strong><br>
                     Phone: +49 123 456789<br>
-                    E-Mail: info@zadarhotel.hr
+                    E-Mail: info@zadarhotel.at
                 </p>
                 <p>
                 <strong>Commercial Register:</strong><br>
