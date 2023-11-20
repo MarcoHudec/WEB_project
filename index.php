@@ -56,7 +56,7 @@
                 <h2>Hotel Zadar</h2>
                     <br></br>
                     <p class="lead">Treat yourself with an experience</p>
-                    <p class="lead">Discover Mexico's warmest hospitality at our hotel. Immerse yourself in local culture and relax in our elegant facilities. Welcome to an unforgettable experience in the heart of Mexico</p>
+                    <p class="lead">Discover Croatia's warmest hospitality at our hotel. Immerse yourself in local culture and relax in our elegant facilities. Welcome to an unforgettable experience in the heart of Croatia</p>
                         
 
                 </div>
@@ -73,7 +73,7 @@
                 <div class="col-lg-6">
                     <h2>Our Rooms</h2>
                     <p class="lead">We make sure you feel relaxed and have a pleasant stay</p>
-                    <p class="lead">Experience luxurious comfort in our hotel rooms. Enjoy an array of fun activities, from exploring local markets to relaxing by the pool and savoring Mexican cuisine. Your stay with us promises both relaxation and adventure</p>
+                    <p class="lead">Experience luxurious comfort in our hotel rooms. Enjoy an array of fun activities, from exploring local markets to relaxing by the pool and savoring Croatian cuisine. Your stay with us promises both relaxation and adventure</p>
                 </div>
             </div>
         </div>
@@ -137,7 +137,7 @@
                 <div class="col-lg-6">
                     <h2>Our Facilities</h2>
                     <p class="lead">We make sure you feel relaxed and have a pleasant stay</p>
-                    <p class="lead">Experience luxurious comfort in our hotel rooms. Enjoy an array of fun activities, from exploring local markets to relaxing by the pool and savoring Mexican cuisine. Your stay with us promises both relaxation and adventure</p>
+                    <p class="lead">Experience luxurious comfort in our hotel rooms. Enjoy an array of fun activities, from exploring local markets to relaxing by the pool and savoring Croatian cuisine. Your stay with us promises both relaxation and adventure</p>
                 </div>
             </div>
         </div>
@@ -178,11 +178,10 @@
 
 
     
-
+    <!--
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script> 
-
     <script src="js/scripts.js"></script>
-
+    --> 
     <?php include("includes/Footer.php")?>
 
     <?php include("includes/scripts.php")?>

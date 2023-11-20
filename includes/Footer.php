@@ -14,7 +14,7 @@
           
           <div class="col-md-2">
             <h6 class="text-uppercase font-weight-bold">
-              <a href="Aboutus.php" class="text-white nav-link">About us</a>
+              <a href="Reservation.php" class="text-white nav-link">Reservation</a>
             </h6>
           </div>
           
