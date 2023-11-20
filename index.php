@@ -86,7 +86,7 @@
                             <h5 class="card-title">Single Deluxe Room with sea view</h5>
                             <p class="card-text">Enjoy breathtaking views from this single deluxe room overlooking the sea.</p>
                             <img src="Images/HotelRoom1.jpeg" class="card-img-top img-fluid" alt="Image 1">
-                            <a href="#" class="btn btn-primary mt-3">Book Now</a>
+                            <a href="Reservation.php" class="btn btn-primary mt-3">Check Availability</a>
                         </div>
                     </div>
                 </div>
@@ -96,7 +96,7 @@
                             <h5 class="card-title">Family Deluxe Room with sea view</h5>
                             <p class="card-text">Spacious family deluxe room with a stunning view of the sea</p>
                             <img src="Images/HotelRoom2.jpeg" class="card-img-top img-fluid" alt="Image 2">
-                            <a href="#" class="btn btn-primary mt-3">Book Now</a>
+                            <a href="Reservation.php" class="btn btn-primary mt-3">Check Availability</a>
                         </div>
                     </div>
                 </div>
@@ -106,7 +106,7 @@
                             <h5 class="card-title">Presidential suite with sea view and complementary butler</h5>
                             <p class="card-text">Indulge in luxury with this presidential suite offering stunning sea views and personalized butler service.</p>
                             <img src="Images/HotelRoom3.jpeg" class="card-img-top img-fluid" alt="Image 3">
-                            <a href="#" class="btn btn-primary mt-3">Book Now</a>
+                            <a href="Reservation.php" class="btn btn-primary mt-3">Check Availability</a>
                         </div>
                     </div>
                 </div>
@@ -116,7 +116,7 @@
                             <h5 class="card-title">Presidential suite 2</h5>
                             <p class="card-text">Another luxurious presidential suite option for an opulent stay with all services compilent to our presidential suits.</p>
                             <img src="Images/HotelRoom4.jpeg" class="card-img-top img-fluid" alt="Image 4">
-                            <a href="#" class="btn btn-primary mt-3">Book Now</a>
+                            <a href="Reservation.php" class="btn btn-primary mt-3">Check Availability</a>
                         </div>
                     </div>
                 </div>
