@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>Full Width Pics - Start Bootstrap Template</title>
+    <title>Homepage</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
     <!-- Core theme CSS (includes Bootstrap)-->
@@ -65,68 +65,115 @@
     </section>
 
 
-    <section class="py-5">
-    <div class="container my-5">
-        <div class="row justify-content-center">
-            <div class="col-lg-6">
-                <h2>Our Rooms</h2>
-                <p class="lead">We make sure you feel relaxed and have a pleasant stay</p>
-                <p class="lead">Experience luxurious comfort in our hotel rooms. Enjoy an array of fun activities, from exploring local markets to relaxing by the pool and savoring Mexican cuisine. Your stay with us promises both relaxation and adventure</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="container py-5">
-        <div class="row">
-            <div class="col-md-4">
-                <img src="Images/HotelRoom1.jpeg" class="img-fluid rounded img-hover" alt="Image 1">
-                <p>Single Deluxe Room with sea view</p>
-                <a href="#" class="btn btn-primary">Book Now</a>
-            </div>
-            <div class="col-md-4">
-                <img src="Images/HotelRoom2.jpeg" class="img-fluid rounded img-hover" alt="Image 2">
-                <p>Family Deluxe Room with sea view</p>
-                <a href="#" class="btn btn-primary">Book Now</a>
-            </div>
-            <div class="col-md-4">
-                <img src="Images/HotelRoom3.jpeg" class="img-fluid rounded img-hover" alt="Image 3">
-                <p>Pesidential sweet with sea view and complementary butler</p>
-                <a href="" class="btn btn-primary">Book Now</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-
     
 
     <section class="py-5">
         <div class="container my-5">
             <div class="row justify-content-center">
                 <div class="col-lg-6">
-                    <h2>Our facilities</h2>
-                    <br></br>
+                    <h2>Our Rooms</h2>
                     <p class="lead">We make sure you feel relaxed and have a pleasant stay</p>
                     <p class="lead">Experience luxurious comfort in our hotel rooms. Enjoy an array of fun activities, from exploring local markets to relaxing by the pool and savoring Mexican cuisine. Your stay with us promises both relaxation and adventure</p>
                 </div>
             </div>
         </div>
+
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Single Deluxe Room with sea view</h5>
+                            <p class="card-text">Enjoy breathtaking views from this single deluxe room overlooking the sea.</p>
+                            <img src="Images/HotelRoom1.jpeg" class="card-img-top img-fluid" alt="Image 1">
+                            <a href="#" class="btn btn-primary mt-3">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Family Deluxe Room with sea view</h5>
+                            <p class="card-text">Spacious family deluxe room with a stunning view of the sea</p>
+                            <img src="Images/HotelRoom2.jpeg" class="card-img-top img-fluid" alt="Image 2">
+                            <a href="#" class="btn btn-primary mt-3">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Presidential suite with sea view and complementary butler</h5>
+                            <p class="card-text">Indulge in luxury with this presidential suite offering stunning sea views and personalized butler service.</p>
+                            <img src="Images/HotelRoom3.jpeg" class="card-img-top img-fluid" alt="Image 3">
+                            <a href="#" class="btn btn-primary mt-3">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="card mb-4">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Presidential suite 2</h5>
+                            <p class="card-text">Another luxurious presidential suite option for an opulent stay with all services compilent to our presidential suits.</p>
+                            <img src="Images/HotelRoom4.jpeg" class="card-img-top img-fluid" alt="Image 4">
+                            <a href="#" class="btn btn-primary mt-3">Book Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+</section>
+
+
     
 
-    <div class="container py-5">
-    <div class="row">
-        <div class="col-md-4">
-            <img src="Images/Hotel2.jpg" class="img-fluid rounded img-hover" alt="Image 1">
+<section class="py-5">
+<div class="container my-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-6">
+                    <h2>Our Facilities</h2>
+                    <p class="lead">We make sure you feel relaxed and have a pleasant stay</p>
+                    <p class="lead">Experience luxurious comfort in our hotel rooms. Enjoy an array of fun activities, from exploring local markets to relaxing by the pool and savoring Mexican cuisine. Your stay with us promises both relaxation and adventure</p>
+                </div>
+            </div>
         </div>
-        <div class="col-md-4">
-            <img src="Images/Hotel3.jpg" class="img-fluid rounded img-hover" alt="Image 2">
+
+        <div class="container py-5">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Golf</h5>
+                            <p class="card-text">Get out and do sports with out golfing activity.</p>
+                            <img src="Images/golf.jpeg" class="card-img-top" alt="Pool Image">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Waterpark</h5>
+                            <p class="card-text">Enjoy thrilling rides and activities in our waterpark.</p>
+                            <img src="Images/waterslides.jpg" class="card-img-top" alt="Waterpark Image">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Beach</h5>
+                            <p class="card-text">Experience the serenity of our private beach.</p>
+                            <img src="Images/Beach.jpg" class="card-img-top" alt="Beach Image">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="col-md-4">
-            <img src="Images/Hotel4.jpg" class="img-fluid rounded img-hover" alt="Image 3">
-        </div>
-    </div>
-</div>
-</section>
+    </section>
 
 
 
