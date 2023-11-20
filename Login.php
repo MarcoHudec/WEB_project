@@ -1,17 +1,4 @@
-<?php
-$error = "";
-$_username = "";
 
-if (isset($_SESSION["error"])) {
-    $error = $_SESSION["error"];
-    unset($_SESSION["error"]); // Fehlermeldung aus der Session entfernen
-}
-
-if (isset($_SESSION["username"])) {
-    $_username = $_SESSION["username"];
-    unset($_SESSION["username"]);
-}
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -39,7 +26,20 @@ if (isset($_SESSION["username"])) {
 <body>
 
     <?php include("includes/Navbar.php")?>
+    <?php
+        $error = "";
+        $_username = "";
 
+        if (isset($_SESSION["error"])) {
+         $error = $_SESSION["error"];
+        unset($_SESSION["error"]); // Fehlermeldung aus der Session entfernen
+        }
+
+        if (isset($_SESSION["username"])) {
+            $_username = $_SESSION["username"];
+        unset($_SESSION["username"]);
+        }
+    ?>   
     
     <section class="h-100 gradient-form" style="background-color: #eee;">
         <div class="container py-5 h-100">
@@ -61,19 +61,20 @@ if (isset($_SESSION["username"])) {
                                         <div class="form-outline mb-4" >
                                             <label class="form-label" for="username">Username</label>
                                             <input type="text" name="username" id="username" class="form-control" placeholder="Enter your Username" />
+                                            
                                         </div>
 
                                         <div class="form-outline mb-4">
                                             <label class="form-label" for="password">Password</label>
-                                            <input type="password" name="password" id="password" class="form-control"
-                                                placeholder="Enter your password"  />
+                                            <input type="password" name="password" id="password" class="form-control" placeholder="Enter your password"  />
                                         </div>
 
                                         <div class="text-center pt-1 mb-3 pb-1">
-                                            <button class="btn btn-primary fa-lg gradient-custom-2"
-                                                type="submit" style="width: 100%;">Log in</button>
+                                            <button class="btn btn-primary fa-lg gradient-custom-2" type="submit" style="width: 100%;">Log in</button>
                                         </div>
-
+                                        <?php if ($error): ?>
+                                            <p class="text-center" style="color: red;"><?php echo $error; ?></p>
+                                        <?php endif; ?>                            
                                         <div class="text-center pt-1 mb-5 pb-1">
                                             <a class="text-muted" href="#!">Forgot password?</a>
                                         </div>

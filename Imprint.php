@@ -63,7 +63,7 @@
                             <img src="Images/CEO1.jpg" class="circle-image img-fluid" alt="CEO 1">
                             <h5 class="mt-3">Marcel Ivanić</h5>
                             <p>CEO</p>
-                            <p>The Boss.</p>
+                            
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -71,7 +71,7 @@
                             <img src="Images/CEO2.jpg" class="circle-image img-fluid" alt="CEO 2">
                             <h5 class="mt-3">Marco Hudec</h5>
                             <p>CEO</p>
-                            <p>The Other One.</p>
+                            
                         </div>
                     </div>
                 </div>
