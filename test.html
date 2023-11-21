@@ -1,69 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <title>Registration Page</title>
+<title>Imprint</title>
     <?php include("includes/head.php")?>
+    <style>
+        .circle-image {
+            border-radius: 50%;
+            max-width: 100%;
+            max-height: 200px;
+            height: auto;
+        }
+        .ceo-card {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #333;
+            background-color: #eee;
+        }
+        body {
+            background-color: #eee; /* Dunkle Hintergrundfarbe (z.B., #333 für Schwarz) */
+            color: #333; /* Weiße Textfarbe für den Kontrast */
+        }
+    </style>
 </head>
 
+
 <body>
-    <?php include("includes/Navbar.php")?>
-    <div class="container mt-4">
+
+<?php include("includes/Navbar.php")?>
+
+
+<div class="container mt-5">
+        <h1 class="text-center">Imprint</h1>
         <div class="row justify-content-center">
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h2 class="text-center">Registration</h2>
-                        <form id="registrationForm">
-                            <div class="mb-3">
-                                <label for="salutation" class="form-label">Salutation</label>
-                                <select class="form-select" id="salutation" required>
-                                    <option value="">Select</option>
-                                    <option value="Mr.">Mr.</option>
-                                    <option value="Mrs.">Mrs.</option>
-                                </select>
-                            </div>
-                            <div class="mb-3">
-                                <label for="firstName" class="form-label">First Name</label>
-                                <input type="text" class="form-control" id="firstName" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="lastName" class="form-label">Last Name</label>
-                                <input type="text" class="form-control" id="lastName" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Email Address</label>
-                                <input type="email" class="form-control" id="email" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="username" class="form-label">Username</label>
-                                <input type="text" class="form-control" id="username" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="password" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="password" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="confirmPassword" class="form-label">Confirm Password</label>
-                                <input type="password" class="form-control" id="confirmPassword" required>
-                            </div>
-                            <button type="submit" class="btn btn-primary btn-block">Register</button>
-                        </form>
+            <div class="col-md-6 text-center">
+                <p>
+                    <strong>Hotel Zadar</strong><br>
+                    Hochstädtlplatz 29<br>
+                    A-1200 Wien
+                </p>
+                <p>
+                    <strong>Contact:</strong><br>
+                    Phone: +49 123 456789<br>
+                    E-Mail: info@zadarhotel.hr
+                </p>
+                <p>
+                <strong>Commercial Register:</strong><br>
+                    Court of Registration: Zadar<br>
+                    Registration Number: 75235
+                </p>
+                <p>
+                    <strong>Competent Supervisory Authority:</strong><br>
+                    Zadar Tourism Office
+                </p>
+                <p>
+                    <strong>Disclaimer:</strong><br>
+                    We do not assume liability for the content of external links. The operators of the linked pages are solely responsible for their content.
+                </p>
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <div class="ceo-card">
+                            <img src="Images/CEO1.jpg" class="circle-image img-fluid" alt="CEO 1">
+                            <h5 class="mt-3">Marcel Ivanić</h5>
+                            <p>CEO</p>
+                            <p>The Boss.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="ceo-card">
+                            <img src="Images/CEO2.jpg" class="circle-image img-fluid" alt="CEO 2">
+                            <h5 class="mt-3">Marco Hudec</h5>
+                            <p>CEO</p>
+                            <p>The Other One.</p>
+                        </div>
+                    </div>
+                </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-
-
-
-
-
-
-
-
-
 
     <?php include("includes/Footer.php")?>
 

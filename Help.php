@@ -99,7 +99,7 @@
     
     <?php include("includes/Footer.php")?>
 
-<?php include("includes/scripts.php")?>
+    <?php include("includes/scripts.php")?>
 </body>
 
 </html>
