@@ -16,7 +16,7 @@
             <a class="nav-link text-white" href="Administrationindex.php">Dashboard</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white" href="users.php">Bookings</a>
+            <a class="nav-link text-white" href="allBookings.php">Bookings</a>
           </li>
           <li class="nav-item">
             <a class="nav-link text-white" href="users.php">Users</a>

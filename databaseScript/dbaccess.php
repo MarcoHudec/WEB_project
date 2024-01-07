@@ -5,7 +5,7 @@
 $dbhost = "localhost";
 $dbuser = "root";
 $dbpassword = "";
-$dbname = "hoteldb";
+$dbname = "hotelwebsite";
 
 mysqli_report(MYSQLI_REPORT_ERROR ^ MYSQLI_REPORT_STRICT); //später optional auskommentierbar
 $db = new mysqli($dbhost, $dbuser, $dbpassword, $dbname);

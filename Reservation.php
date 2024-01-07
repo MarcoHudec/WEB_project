@@ -581,7 +581,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="total-price">
                     <?php
                     if(!isset($_POST['calculate-price'])) {
-                        echo'Gesamtpreis:';
+                        echo'Total:';
                     }
                     ?>
                 </div>
@@ -596,7 +596,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <br>
 
         <div class="text-center">
-        <a class="btn btn-secondary text-white" href="mybookings.php" role="button">Meine Buchungen</a>
+        <a class="btn btn-secondary text-white" href="mybookings.php" role="button">My bookings</a>
         </div>
 
 
