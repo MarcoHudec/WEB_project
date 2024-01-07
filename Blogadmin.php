@@ -67,17 +67,17 @@ require_once("dbaccess.php");
 <div class="container">
 
     <main class="form-signin">
-        <h1 class="custom-heading text-center">Blogbeitrag hinzufügen</h1>
+        <h1 class="custom-heading text-center">Add Blogpost</h1>
 
 
         <form action="" id="ticketform" method="POST" enctype="multipart/form-data">
-            <div class="form-floating">
-                <input type="text" class="form-control" name="title" id="title" placeholder="Überschrift" value="<?= !empty($_POST["title"]) ? ($_POST["title"]) : '' ?>">
-                <label for="title">Überschrift</label>
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" name="title" id="title" placeholder="Headline" value="<?= !empty($_POST["title"]) ? ($_POST["title"]) : '' ?>">
+                <label for="title">Headline</label>
             </div>
             <div class="form-floating">
                 <div>
-                    <textarea class="form-control" name="text" form="ticketform" id="text" rows="6" placeholder="Text hinzufügen"><?php echo isset($_POST['text']) ? htmlspecialchars($_POST['text']) : ''; ?></textarea>
+                    <textarea class="form-control" name="text" form="ticketform" id="text" rows="6" placeholder="Add Text"><?php echo isset($_POST['text']) ? htmlspecialchars($_POST['text']) : ''; ?></textarea>
                     <label for="text"></label>
                 </div>
             </div>
@@ -88,8 +88,9 @@ require_once("dbaccess.php");
             <input type="file" class="form-control" id="inputGroupFile04" name="picture" required accept="image/jpeg, image/png, image/gif">
             <label for="inputGroupFile04"></label>
 
-            <input class="btn btn-primary" name="submit" type="submit" value="Hochladen">
-
+            <div class="text-center">
+                <input class="btn btn-primary" name="submit" type="submit" value="Upload">
+            </div>
         </form>
 
 

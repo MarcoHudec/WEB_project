@@ -14,7 +14,7 @@ require_once("dbaccess.php");
 
         .blog-entry img {
             width: 200px;
-            height: auto;
+            height: 200px;
             display: inline-block;
             margin-bottom: 5px;
         }
@@ -32,10 +32,8 @@ require_once("dbaccess.php");
 
 
         .card-img-top {
-            width: 100%;
-            height: auto;
-            max-width: 300px;
-            max-height: 300px;
+            width: 300px;
+            height: 300px;
         }
 
 
@@ -75,7 +73,7 @@ require_once("dbaccess.php");
             while ($stmt->fetch()) {
                 echo "<div class='col-md-12 mb-4'>"; // Display one post per row
                 echo "<div class='card shadow-sm'>";
-                echo "<a href='$bild_url'><img src='$bild_url' class='card-img-top' alt='picture'></a>";
+                echo "<a href='$bild_url'><img src='$bild_url' class='card-img-top' alt='picture' ></a>";
                 echo "<div class='card-body'>";
                 echo "<h5 class='card-title'>$title</h5>";
                 echo "<p class='card-text'>$text</p>";
