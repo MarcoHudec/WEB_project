@@ -30,10 +30,13 @@
             width: 100%;
             max-width: 450px;
             padding: 15px;
-            margin: auto;
+            max-height: 1000px;
             border: 1px solid #ccc;
             border-radius: 5px;
             background-color: #f9f9f9;
+            flex: 0 0 300px;
+            margin-top: 50px; 
+            
         }
 
         .form-label {
@@ -196,11 +199,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Room is not available for the selected dates
             // Handle the unavailability scenario here
             // Example: Display an error message
-            $dateError3 = 'In diesem Zeitraum liegt bereits eine Reservierung vor';
+            $dateError3 = 'Room not availibe in during the selected dates. Please try other dates or another room';
         } elseif (empty($_POST['start-date']) || empty($_POST['end-date'])) {
-            $dateError = 'Bitte wählen Sie sowohl das Startdatum als auch das Enddatum aus.';
+            $dateError = 'Select a Check-in and Check-out date';
         } elseif ($_POST['start-date'] > $_POST['end-date']) {
-            $dateError2 = 'Das Startdatum muss vor dem Enddatum liegen.';
+            $dateError2 = 'Check-in must be before Check-out';
 
 
         }
@@ -322,17 +325,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 
-<main class="container" style="display: flex;">
+<main class="container" style="display: flex; flex-wrap: wrap;">
     
 
+    <h1 class="custom-heading">
+        Reservation
+    </h1>
 
 
     <!-- Card Section -->
-    <div class="card-section" style="flex: 1; margin-right: 20px;">
-    <h1 class="custom-heading">
-        Reservieren
-    </h1>
-
+    <div class="card-section" style="flex-basis: 50%; margin-right: 20px;">
+    
 
     <?php
     // Fetch room types from the database
@@ -362,61 +365,47 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
         switch ($type) {
             case 'Standard mit Kingsize-Bett':
-                $imageURL = 'https://www.betten.at/magazin/wp-content/uploads/kingsize-boxspringbett-galicia-wildeiche.jpg'; // Replace with your image URL
-                $cardTitle = 'Standard mit Kingsize-Bett';
-                $cardText = 'Erleben Sie Komfort und Raum in unserem Standardzimmer mit einem luxuriösen Kingsize-Bett, ideal für einen entspannten Aufenthalt.';
-    
+                $imageURL = 'Images/HotelRoom1.jpeg';
+                $cardTitle = 'Standard with King-size Bed';
+                $cardText = 'Experience comfort and space in our standard room with a luxurious king-size bed, ideal for a relaxed stay.';
                 break;
             case 'Deluxe mit Kingsize-Bett':
-                $imageURL = 'https://as1.ftcdn.net/v2/jpg/01/28/70/64/1000_F_128706446_5wlTHAPqyYdnoyP5BVtMACk6sT0N56Y1.jpg';
-                $cardTitle = 'Deluxe mit Kingsize-Bett';
-                $cardText = 'Genießen Sie Eleganz und Raffinesse in unserem Deluxe-Zimmer, ausgestattet mit einem geräumigen Kingsize-Bett für einen luxuriösen Rückzugsort.';
-    
+                $imageURL = 'Images/HotelRoom2.jpeg';
+                $cardTitle = 'Deluxe with King-size Bed';
+                $cardText = 'Enjoy elegance and sophistication in our deluxe room, equipped with a spacious king-size bed for a luxurious retreat.';
                 break;
-    
             case 'Standard mit Queensize-Bett':
-                $imageURL = 'https://www.atlantic-hotels.de/fileadmin/AHS/Zimmer/Kategorie_2/atlantic-hotel-sail-city-bremerhaven-zimmer-comfort-queensize-zimmer.jpg'; // Replace with your image URL
-                $cardTitle = 'Standard mit Queensize-Bett';
-                $cardText = 'Genießen Sie einen gemütlichen Aufenthalt in unserem Standardzimmer mit einem bequemen Queensize-Bett für eine erholsame Ruhe.';
-    
+                $imageURL = 'Images/HotelRoom3.jpeg';
+                $cardTitle = 'Standard with Queen-size Bed';
+                $cardText = 'Enjoy a cozy stay in our standard room with a comfortable queen-size bed for a restful sleep.';
                 break;
             case 'Deluxe mit Queensize-Bett':
-                $imageURL = 'https://cf.bstatic.com/xdata/images/hotel/max1024x768/496645457.jpg?k=540cc876a71dbafea8722ef2ec999bb54614bf875a315f6655028e39ff23c0b2&o=&hp=1'; // Replace with your image URL
-                $cardTitle = 'Deluxe mit Queensize-Bett';
-                $cardText = 'Erleben Sie Luxus und Stil in unserem Deluxe-Zimmer, das mit einem flauschigen Queensize-Bett für ein wirklich komfortables Erlebnis ausgestattet ist.';
-    
+                $imageURL = 'Images/HotelRoom4.jpeg';
+                $cardTitle = 'Deluxe with Queen-size Bed';
+                $cardText = 'Experience luxury and style in our deluxe room, furnished with a plush queen-size bed for a truly comfortable experience.';
                 break;
             case 'Executive Suite':
-                $imageURL = 'https://www.raffel.at/wp-content/uploads/Raffel-Zimmer-Landhaus-2021-109.jpg'; // Replace with your image URL
+                $imageURL = 'Images/HotelRoom5.jpeg';
                 $cardTitle = 'Executive Suite';
-                $cardText = 'Ein anspruchsvoller Raum für Komfort und Produktivität, ideal für Geschäftsreisende, die nach Raffinesse suchen.';
-    
+                $cardText = 'A sophisticated space for comfort and productivity, ideal for business travelers seeking refinement.';
                 break;
             case 'Premier Suite':
-                $imageURL = 'https://www.dilly.at/images/content/99550_11664_1_C_2500_992_2175_1884801/mk-03582.jpg'; // Replace with your image URL
+                $imageURL = 'Images/HotelRoom6.jpeg';
                 $cardTitle = 'Premier Suite';
-                $cardText = 'Eine exklusive Unterkunft mit Premium-Annehmlichkeiten und einem gehobenen Erlebnis für anspruchsvolle Gäste.';
-    
+                $cardText = 'An exclusive accommodation with premium amenities and an elevated experience for discerning guests.';
                 break;
             case 'Signature Suite':
-                $imageURL = 'https://storage.kempinski.com/cdn-cgi/image/w=1920,f=auto,g=auto,fit=scale-down/ki-cms-prod/images/8/6/5/7/197568-1-eng-GB/0a74f06e09c7-73661321_4K.jpg'; // Replace with your image URL
+                $imageURL = 'Images/HotelRoom7.jpeg';
                 $cardTitle = 'Signature Suite';
-                $cardText = 'Eine unverwechselbare und individuell gestaltete Suite, die einzigartige Designelemente und luxuriöse Akzente präsentiert.';
-    
-                break;
-            case 'Deluxe Suite':
-                $imageURL = 'https://www.dasgerstl.com/fileadmin/_processed_/5/0/csm_2020_Loft_Suite_Bad_und_Wohnbereich_c9865dc9f5.jpg'; // Replace with your image URL
-                $cardTitle = 'Deluxe Suite';
-                $cardText = 'Eine geräumige und komfortable Suite, die einen luxuriösen Aufenthalt mit erweiterten Annehmlichkeiten und Stil bietet.';
-    
+                $cardText = 'A distinctive and individually designed suite showcasing unique design elements and luxurious accents.';
                 break;
             default:
-                $imageURL = 'https://www.betten.at/magazin/wp-content/uploads/kingsize-boxspringbett-galicia-wildeiche.jpg'; // Replace with your image URL
-                $cardTitle = 'Standard mit Kingsize-Bett';
-                $cardText = 'Erleben Sie Komfort und Raum in unserem Standardzimmer mit einem luxuriösen Kingsize-Bett, ideal für einen entspannten Aufenthalt.';
-    
+                $imageURL = 'Images/HotelRoom1.jpeg';
+                $cardTitle = 'Standard with King-size Bed';
+                $cardText = 'Experience comfort and space in our standard room with a luxurious king-size bed, ideal for a relaxed stay.';
                 break;
         }
+        
 
         echo '<div class="card">
                 <img src="' . $imageURL . '" class="card-img-top" alt="...">
@@ -424,12 +413,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <h5 class="card-title">' . $cardTitle . '</h5>
                     <p class="card-text">' . $cardText . '</p>
                     <form method="get" action="">
-                        <input type="hidden" name="room-type" value="' . $type . '">
-                        <button type="submit" class="btn btn-primary" name="room-selected">Zimmer auswählen</button>
+                        <p2 class="custom-price">' . $cardPrice . '€ per night</p2>
                     </form>
                 </div>
                 <div class="card-footer text-center">
-                    <p2 class="custom-price">' . $cardPrice . '€ pro Nacht</p2>
+                    <input type="hidden" name="room-type" value="' . $type . '">
+                    <button type="submit" class="btn btn-primary" name="room-selected">Selec room</button>
                 </div>
               </div>';
 
@@ -504,15 +493,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <br>
 
     <!-- Form Section -->
+    
+    
     <div class="reservation-form" style="flex: 0 0 300px;">
         <form method="post" action="">
             <div class="center-elements">
+                <h5 class="card-title">Complete your reservation</h5>
+                <br></br>
                 <div class="mb-3">
-                    <label for="start-date" class="form-label">Startdatum</label>
+                    <label for="start-date" class="form-label">Check-in</label>
                     <input type="date" class="form-control" id="start-date" name="start-date" value="<?php echo isset($_POST['start-date']) ? $_POST['start-date'] : ''; ?>">
                 </div>
                 <div class="mb-3">
-                    <label for="end-date" class="form-label">Enddatum</label>
+                    <label for="end-date" class="form-label">Check-out</label>
                     <input type="date" class="form-control" id="end-date" name="end-date" value="<?php echo isset($_POST['end-date']) ? $_POST['end-date'] : ''; ?>">
                 </div>
 
@@ -537,29 +530,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
                 <div class="mb-3">
-                    <label for="breakfast" class="form-label">Frühstückspension</label>
+                    <label for="breakfast" class="form-label">Board option</label>
                     <span class="price-container"><?php echo "(".$breakfastPrice. "€ pro Nacht)"; ?></span>
                     <select class="form-select" id="breakfast" name="breakfast">
-                        <option value="yes" <?php echo (isset($_POST['breakfast']) && $_POST['breakfast'] === 'yes') ? 'selected' : ''; ?>>Ja</option>
-                        <option value="no" <?php echo (isset($_POST['breakfast']) && $_POST['breakfast'] === 'no') ? 'selected' : ''; ?>>Nein</option>
+                        <option value="yes" <?php echo (isset($_POST['breakfast']) && $_POST['breakfast'] === 'yes') ? 'selected' : ''; ?>>Yes</option>
+                        <option value="no" <?php echo (isset($_POST['breakfast']) && $_POST['breakfast'] === 'no') ? 'selected' : ''; ?>>No</option>
                     </select>
                 </div>
                 <div class="mb-3">
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="yes" id="pets" name="pets" <?php echo (isset($_POST['pets']) && $_POST['pets'] === 'yes') ? 'checked' : ''; ?>>
-                        <label class="form-check-label" for="pets">Haustiere <span class="price-container"><?php echo "(".$petsPrice. "€ pro Nacht)"; ?></span></label>
+                        <label class="form-check-label" for="pets">Pets <span class="price-container"><?php echo "(".$petsPrice. "€ per night)"; ?></span></label>
                     </div>
                 </div>
                 <div class="mb-3">
                     <div class="form-check">
                         <input class="form-check-input" type="checkbox" value="yes" id="parking" name="parking" <?php echo (isset($_POST['parking']) && $_POST['parking'] === 'yes') ? 'checked' : ''; ?>>
-                        <label class="form-check-label" for="parking">Parkplatzreservierung <span class="price-container"><?php echo "(".$parkingPrice. "€ pro Nacht)"; ?></span></label>
+                        <label class="form-check-label" for="parking">Parking<span class="price-container"><?php echo "(".$parkingPrice. "€ per night)"; ?></span></label>
                     </div>
                 </div>
             </div>
             <div class="text-center">
                 <!-- Button to calculate price -->
-                <button type="submit" class="btn btn-primary" name="calculate-price">Preis berechnen</button>
+                <button type="submit" class="btn btn-primary" name="calculate-price">Calculate total price</button>
 
 
                 <!-- Display total price -->
@@ -568,9 +561,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <?php
                         if ((isset($_POST['calculate-price'])) && empty($dateError) && empty($dateError2) && empty($dateError3)) {
 
-                            echo 'Gesamtpreis: ' . number_format($totalPrice, 2) . ' Euro';
+                            echo 'total price: ' . number_format($totalPrice, 2) . ' Euro';
                         } else {
-                            echo 'Gesamtpreis: ';
+                            echo 'total price: ';
                         }
                         ?>
 
