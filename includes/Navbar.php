@@ -20,17 +20,22 @@ session_start();
           <a class="text-white nav-link" href="Reservation.php">Reservation</a>
         </li>
         <li class="nav-item mx-2">
-          <a class="text-white nav-link" href="Imprint.php">Imprint</a>
+          <a class="text-white nav-link" href="blog.php">Blog</a>
         </li>
         <?php if(!isset($_SESSION["username"])): ?>
         <li class="nav-item mx-2">
-          <a class="text-white nav-link" href="Login.php">Sign in</a>
+          <a class="text-white nav-link" href="ourlogin.php">Sign in</a>
         </li>
         <li class="nav-item mx-2">
-          <a class="text-white nav-link" href="Registration.php">Register</a>
+          <a class="text-white nav-link" href="ourregister.php">Register</a>
         </li>
         <?php endif; ?>
         <?php if(isset($_SESSION["username"])): ?>
+          <?php if(isset($_SESSION["admin"])): ?>
+            <li class="nav-item mx-2">
+            <a class="nav-link text-white" href="Administrationindex.php">Administration</a>
+          </li>
+          <?php endif; ?>
           <li class="nav-item mx-2">
             <a class="nav-link text-white" href="Profile.php">Profile</a>
           </li>
