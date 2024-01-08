@@ -8,46 +8,18 @@
     <!-- Include necessary CSS or Bootstrap for styling -->
 
     <style>
-        #dashboard-menu {
-            /* Set appropriate width and height */
-            width: 250px;
-            height: 100vh; /* Adjust height as needed */
-            overflow-y: auto; /* Add scroll if content overflows */
-        }
-
-        /* Adjust the main content area to fit the remaining space */
-        .col-lg-10 {
-            /* Use calc to ensure the table takes the remaining space */
-            width: calc(100% - 250px);
-            height: 100vh; /* Adjust height as needed */
-            overflow-y: auto; /* Add scroll if content overflows */
-        }
-
-        .container {
-            display: flex;
-            justify-content: center;
-        }
-
-        .col-lg-10 {
-            /* Add your specific styles for col-lg-10 here */
-            /* For centering, you can add margin or padding as needed */
-            /* Example: */
-            margin: 0 auto; /* This will horizontally center the element */
-            
-        }
-
-        .user-card {
+        .reservation-card {
             margin-bottom: 20px;
             padding: 15px;
             border: 1px solid #ccc;
         }
         .fixed-width-table {
-            width: 100%; /* Setzt die Breite der Tabelle auf 100% des Elternelements */
-            table-layout: fixed; /* Ermöglicht gleichmäßige Spaltenbreiten */
-            word-wrap: break-word; /* Stellt sicher, dass lange Wörter innerhalb der Zelle umgebrochen werden */
-            overflow: hidden; /* Verhindert, dass Inhalt aus der Zelle herausragt */
-            text-align: center; /* Ausrichtung des Textes */
-        }
+        width: 100%; /* Setzt die Breite der Tabelle auf 100% des Elternelements */
+        table-layout: fixed; /* Ermöglicht gleichmäßige Spaltenbreiten */
+        word-wrap: break-word; /* Stellt sicher, dass lange Wörter innerhalb der Zelle umgebrochen werden */
+        overflow: hidden; /* Verhindert, dass Inhalt aus der Zelle herausragt */
+        text-align: center; /* Ausrichtung des Textess */
+    }
 
     </style>
 
@@ -57,10 +29,12 @@
 
 <body>
 <?php include("includes/navbaradmin.php") ?>
+
+<div class="col-lg-10 ms-auto p-4 overflow-hidden">
     <div class="container">
-        <div class="row">
         
-        <h1>Bookings List</h1>
+        
+        <h1 class="custom-heading text-center">Bookings List</h1>
         
         
         
@@ -73,7 +47,7 @@
 
     
     // Fetch all bookings from the 'reservations' table
-    $query = "SELECT * FROM reservations";
+    $query = "SELECT * FROM reservations ORDER BY id ASC";
     $result = $db->query($query);
 
     if ($result->num_rows > 0) {
@@ -122,12 +96,13 @@
     // Close database connection
     $db->close();
     ?>
-
+</div>
+</div>
+</div>
     <!-- Add filter options or search functionality here -->
     <?php include("includes/scripts.php") ?>
 
-        </div>
-    </div>
-</div>
+    
+    
 </body>
 </html>
