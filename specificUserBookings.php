@@ -57,9 +57,10 @@
 
 <body>
     <?php include("includes/navbaradmin.php") ?>
+    <div class="col-lg-10 ms-auto p-4 overflow-hidden">
     <div class="container">
         <div class="row">
-            <h1>Bookings List</h1>
+            <h1 class="text-center">Bookings List</h1>
             <div class="col-lg-10">
                 <?php
                 // Include database connection file
@@ -132,7 +133,7 @@
             </div>
         </div>
     </div>
-</body>
+            </div>
 
 </html>
 
