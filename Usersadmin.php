@@ -70,11 +70,6 @@ require_once("dbaccess.php");
     <div style="display: flex; justify-content: center; gap: 100px;">
         <form method="post" action="useredit.php">
             <input type="hidden" name="edit_user_id" value="<?php echo $userid; ?>">
-            <button type="submit" class="btn btn-primary">Edit User</button>
-        </form>
-        
-        <form method="post" action="specificUserBookings.php?user_id=<?php echo $userid; ?>">
-            <input type="hidden" name="edit_user_id" value="<?php echo $userid; ?>">
             <input type="hidden" name="username" value="<?php echo $username; ?>">
             <input type="hidden" name="useremail" value="<?php echo $useremail; ?>">
             <input type="hidden" name="userfirstname" value="<?php echo $userfirstname; ?>">
@@ -82,6 +77,11 @@ require_once("dbaccess.php");
             <input type="hidden" name="usersalutation" value="<?php echo $usersalutation; ?>">
             <input type="hidden" name="userrole" value="<?php echo $userrole; ?>">
             <input type="hidden" name="userstatus" value="<?php echo $userstatus; ?>">
+            <button type="submit" class="btn btn-primary">Edit User</button>
+        </form>
+        
+        <form method="post" action="specificUserBookings.php?user_id=<?php echo $userid; ?>">
+            <input type="hidden" name="edit_user_id" value="<?php echo $userid; ?>">
             <button type="submit" class="btn btn-primary">This users reservations</button>
         </form>
     </div>
