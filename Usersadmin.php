@@ -19,7 +19,7 @@ require_once("dbaccess.php");
         table-layout: fixed; /* Ermöglicht gleichmäßige Spaltenbreiten */
         word-wrap: break-word; /* Stellt sicher, dass lange Wörter innerhalb der Zelle umgebrochen werden */
         overflow: hidden; /* Verhindert, dass Inhalt aus der Zelle herausragt */
-        text-align: center; /* Ausrichtung des Textes */
+        text-align: center; /* Ausrichtung des Textess */
     }
     </style>
 </head>
