@@ -173,7 +173,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
                     <div class="form-signin">
-                        <button class="w-100 btn btn-lg btn-primary" name="search" type="submit">Suchen</button>
+                        <button class="w-100 btn btn-lg btn-primary" name="search" type="submit">Search</button>
                     </div>
 
 
@@ -232,15 +232,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 (isset($_GET["salutation"])) { echo 'is-invalid' ; } else { echo "" ; } } else if
                                 (isset($_GET["salutation"])) { echo 'is-valid' ; } else { echo '' ; } ?>"
                                 aria-label="Default select example" name="salutation">
-                                <option value="" <?php if (!isset($susersalutation)) { echo 'selected' ; } else { echo "" ;}
+                                <option value="" <?php if (!isset($susersalutation)) { echo 'selected' ;} else { echo "" ;} 
                                     ?>>Select</option>
                                 <option value="male" <?php if (isset($susersalutation)){if ($susersalutation=='male' ) {
-                                    echo 'selected' ; } else { echo "" ;}} ?>>Mr</option>
+                                    echo 'selected' ; } else { echo "" ;}} elseif(isset($_POST['usersalutation']) && ($_POST['usersalutation']=='male')) {echo 'selected';} else{"";} ?>>Mr</option>
                                 <option value="female" <?php if(isset($susersalutation)){if ($susersalutation=='female' ) {
-                                    echo 'selected' ; } else { echo "" ;}} ?>>Mrs</option>
+                                    echo 'selected' ; } else { echo "" ;}} elseif(isset($_POST['usersalutation']) && ($_POST['usersalutation']=='female')) {echo 'selected';} else{"";} ?>>Mrs</option>
                                 <option value="divers" <?php if(isset($susersalutation)){if ($susersalutation=='divers' )
-                                    {echo 'selected' ; } else { echo "" ;}} ?>>Divers</option>
-
+                                    {echo 'selected' ; } else { echo "" ;}} elseif(isset($_POST['usersalutation']) && ($_POST['usersalutation']=='divers')) {echo 'selected';} else{"";} ?>>Divers</option>
                             </select>
                         </div>
 
@@ -254,9 +253,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <option value="" <?php if (!isset($suserrole)) {echo 'selected' ; } else { echo "" ;} ?>
                                     >Rolle wählen:</option>
                                 <option value="user" <?php if (isset($suserrole)){if ($suserrole=='user' ) {
-                                    echo 'selected' ; } else { echo "" ;}} ?>>User</option>
+                                    echo 'selected' ; } else { echo "" ;}} elseif(isset($_POST['userrole']) && ($_POST['userrole']=='user')) {echo 'selected';} else{"";}?>>User</option>
                                 <option value="admin" <?php if (isset($suserrole)){if ($suserrole=='admin' ) {
-                                    echo 'selected' ; } else { echo "" ;}} ?>>Admin</option>
+                                    echo 'selected' ; } else { echo "" ;}} elseif(isset($_POST['userrole']) && ($_POST['userrole']=='admin')) {echo 'selected';} else{"";}?>>Admin</option>
                             </select>
                         </div>
                         <div class="col-md-6">
@@ -267,14 +266,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 <option value="" <?php if (!isset($suserstatus)) {echo 'selected' ; } else { echo "" ;}
                                     ?>>Status wählen:</option>
                                 <option value="active" <?php if (isset($suserstatus)){if ($suserstatus=='active' ) {
-                                    echo 'selected' ; } else { echo "" ;}} ?>>Aktiv</option>
+                                    echo 'selected' ; } else { echo "" ;}} elseif(isset($_POST['userstatus']) && ($_POST['userstatus']=='active')) {echo 'selected';} else{"";}?>>Active</option>
                                 <option value="inactive" <?php if (isset($suserstatus)){if ($suserstatus=='inactive' ) {
-                                    echo 'selected' ; } else { echo "" ;}} ?>>Inaktiv</option>
+                                    echo 'selected' ; } else { echo "" ;}} elseif(isset($_POST['userstatus']) && ($_POST['userstatus']=='inactive')) {echo 'selected';} else{"";}?>>Inactive</option>
                             </select>
                         </div>
 
                         <div class="form-signin">
-                            <button class="w-100 btn btn-lg btn-primary" name="update" type="submit">Speichern</button>
+                            <button class="w-100 btn btn-lg btn-primary" name="update" type="submit">Safe</button>
                         </div>
 
                 </form>
