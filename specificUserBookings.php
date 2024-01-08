@@ -5,49 +5,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="CSS/common.css">
     <!-- Include necessary CSS or Bootstrap for styling -->
 
     <style>
-        #dashboard-menu {
-            /* Set appropriate width and height */
-            width: 250px;
-            height: 100vh; /* Adjust height as needed */
-            overflow-y: auto; /* Add scroll if content overflows */
-        }
-
-        /* Adjust the main content area to fit the remaining space */
-        .col-lg-10 {
-            /* Use calc to ensure the table takes the remaining space */
-            width: calc(100% - 250px);
-            height: 100vh; /* Adjust height as needed */
-            overflow-y: auto; /* Add scroll if content overflows */
-        }
-
-        .container {
-            display: flex;
-            justify-content: center;
-        }
-
-        .col-lg-10 {
-            /* Add your specific styles for col-lg-10 here */
-            /* For centering, you can add margin or padding as needed */
-            /* Example: */
-            margin: 0 auto; /* This will horizontally center the element */
-            
-        }
-
-        .user-card {
+        .reservation-card {
             margin-bottom: 20px;
             padding: 15px;
             border: 1px solid #ccc;
         }
         .fixed-width-table {
-            width: 100%; /* Setzt die Breite der Tabelle auf 100% des Elternelements */
-            table-layout: fixed; /* Ermöglicht gleichmäßige Spaltenbreiten */
-            word-wrap: break-word; /* Stellt sicher, dass lange Wörter innerhalb der Zelle umgebrochen werden */
-            overflow: hidden; /* Verhindert, dass Inhalt aus der Zelle herausragt */
-            text-align: center; /* Ausrichtung des Textes */
-        }
+        width: 100%; /* Setzt die Breite der Tabelle auf 100% des Elternelements */
+        table-layout: fixed; /* Ermöglicht gleichmäßige Spaltenbreiten */
+        word-wrap: break-word; /* Stellt sicher, dass lange Wörter innerhalb der Zelle umgebrochen werden */
+        overflow: hidden; /* Verhindert, dass Inhalt aus der Zelle herausragt */
+        text-align: center; /* Ausrichtung des Textess */
+    }
 
     </style>
 
@@ -61,7 +34,7 @@
     <div class="container">
         <div class="row">
             <h1 class="text-center">Bookings List</h1>
-            <div class="col-lg-10">
+            <div class="col-lg-12">
                 <?php
                 // Include database connection file
                 require_once("databaseScript/dbaccess.php");
