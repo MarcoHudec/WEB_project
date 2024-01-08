@@ -418,7 +418,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </div>
                 <div class="card-footer text-center">
                     <input type="hidden" name="room-type" value="' . $type . '">
-                    <button type="submit" class="btn btn-primary" name="room-selected">Selec room</button>
+                    <button type="submit" class="btn btn-primary" name="room-selected">Select room</button>
                 </div>
               </div>';
 

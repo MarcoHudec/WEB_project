@@ -36,6 +36,19 @@
             
         }
 
+        .user-card {
+            margin-bottom: 20px;
+            padding: 15px;
+            border: 1px solid #ccc;
+        }
+        .fixed-width-table {
+            width: 100%; /* Setzt die Breite der Tabelle auf 100% des Elternelements */
+            table-layout: fixed; /* Ermöglicht gleichmäßige Spaltenbreiten */
+            word-wrap: break-word; /* Stellt sicher, dass lange Wörter innerhalb der Zelle umgebrochen werden */
+            overflow: hidden; /* Verhindert, dass Inhalt aus der Zelle herausragt */
+            text-align: center; /* Ausrichtung des Textes */
+        }
+
     </style>
 
 </head>
@@ -64,31 +77,46 @@
     $result = $db->query($query);
 
     if ($result->num_rows > 0) {
-        // Display table header
-        echo "<table border='1'>";
-        echo "<tr><th>ID</th><th>User ID</th><th>Room ID</th><th>Date Start</th><th>Date End</th><th>Status</th><th>Date Reservation</th><th>Breakfast</th><th>Parking Spot</th><th>Pet</th><th>Total Price</th><th>Actions</th></tr>";
-
-        // Display data rows
         while ($row = $result->fetch_assoc()) {
-            echo "<tr>";
-            echo "<td>" . $row["id"] . "</td>";
-            echo "<td>" . $row["user_id"] . "</td>";
-            echo "<td>" . $row["room_id"] . "</td>";
-            echo "<td>" . $row["date_start"] . "</td>";
-            echo "<td>" . $row["date_end"] . "</td>";
-            echo "<td>" . $row["status"] . "</td>";
-            echo "<td>" . $row["date_reservation"] . "</td>";
-            echo "<td>" . $row["breakfast"] . "</td>";
-            echo "<td>" . $row["parkingspot"] . "</td>";
-            echo "<td>" . $row["pet"] . "</td>";
-            echo "<td>" . $row["totalprice"] . "</td>";
-            // Add edit/delete buttons or links in the last column
-            echo "<td><a href='edit_booking.php?id=" . $row["id"] . "'>Edit</a> | <a href='delete_booking.php?id=" . $row["id"] . "'>Delete</a></td>";
-            echo "</tr>";
+            ?>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="reservation-card">
+                        <table class="table fixed-width-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>User ID</th>
+                                    <th>Room ID</th>
+                                    <th>Date Start</th>
+                                    <th>Date End</th>
+                                    <th>Status</th>
+                                    <th>Date Reservation</th>
+                                    <th>Total Price</th>
+                                    <th>Details</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><?php echo $row['id']; ?></td>
+                                    <td><?php echo $row['user_id']; ?></td>
+                                    <td><?php echo $row['room_id']; ?></td>
+                                    <td><?php echo $row['date_start']; ?></td>
+                                    <td><?php echo $row['date_end']; ?></td>
+                                    <td><?php echo $row['status']; ?></td>
+                                    <td><?php echo $row['date_reservation']; ?></td>
+                                    <td><?php echo $row['totalprice']; ?></td>
+                                    <td><a href="adminBookingsDetailed.php?id=<?php echo $row['id']; ?>">Details anzeigen</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <?php
         }
-        echo "</table>";
     } else {
-        echo "No bookings found.";
+        echo "No results found";
     }
 
     // Close database connection

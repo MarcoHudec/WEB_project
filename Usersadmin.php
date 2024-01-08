@@ -73,9 +73,9 @@ require_once("dbaccess.php");
             <button type="submit" class="btn btn-primary">Edit User</button>
         </form>
         
-        <form method="post" action="admin_bookings.php?user_iid=<?php echo $userid; ?>">
+        <form method="post" action="specificUserBookings.php?user_id=<?php echo $userid; ?>">
             <input type="hidden" name="edit_user_id" value="<?php echo $userid; ?>">
-            <button type="submit" class="btn btn-primary">Reservations</button>
+            <button type="submit" class="btn btn-primary">This users reservations</button>
         </form>
     </div>
 </div>
