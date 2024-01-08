@@ -1,3 +1,7 @@
+<?php
+require_once("databaseScript/dbaccess.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,20 +36,11 @@
 
 <div class="col-lg-10 ms-auto p-4 overflow-hidden">
     <div class="container">
+        <h1 class="custom-heading text-center">
+            Bookings List
+        </h1>
         
-        
-        <h1 class="custom-heading text-center">Bookings List</h1>
-        
-        
-        
-        
-        
-        <div class="col-lg-10">
         <?php
-        // Include database connection file
-        require_once("databaseScript/dbaccess.php");
-
-    
     // Fetch all bookings from the 'reservations' table
     $query = "SELECT * FROM reservations ORDER BY id ASC";
     $result = $db->query($query);
@@ -79,8 +74,8 @@
                                     <td><?php echo $row['date_end']; ?></td>
                                     <td><?php echo $row['status']; ?></td>
                                     <td><?php echo $row['date_reservation']; ?></td>
-                                    <td><?php echo $row['totalprice']; ?></td>
-                                    <td><a href="adminBookingsDetailed.php?id=<?php echo $row['id']; ?>">Details anzeigen</a></td>
+                                    <td><?php echo $row['totalprice']; ?>€</td>
+                                    <td><a href="adminBookingsDetailed.php?id=<?php echo $row['id']; ?>">Show Details</a></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -96,7 +91,6 @@
     // Close database connection
     $db->close();
     ?>
-</div>
 </div>
 </div>
     <!-- Add filter options or search functionality here -->

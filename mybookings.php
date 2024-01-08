@@ -12,11 +12,8 @@ require_once("databaseScript/dbaccess.php");
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>My Bookings - Hotel Zadar</title>
-    <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-    <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    
+    
     <style>
         .form-signin {
             width: 100%;
@@ -71,11 +68,11 @@ require_once("databaseScript/dbaccess.php");
                 <div class="row">
                     <div class="col-md-12">
                         <div class="user-card">
-                            <p>Zimmer/Suite: <?php if ($row['room_id'] ==1) {echo 'Standard mit Kingsize-Bett';} else if ($row['room_id'] ==2) {echo 'Standard mit Queensize-Bett';} else if ($row['room_id'] ==3) {echo 'Deluxe mit Kingsize-Bett';} else if ($row['room_id'] ==4) {echo 'Deluxe mit Queensize-Bett';} else if ($row['room_id'] ==5) {echo 'Executive Suite';} else if ($row['room_id'] ==6) {echo 'Premier Suite';} else if ($row['room_id'] ==7) {echo 'Signature Suite';} else if ($row['room_id'] ==8) {echo 'Deluxe Suite';}?></p>
-                            <p>Anfangsdatum: <?php echo $row['date_start']; ?></p>
-                            <p>Enddatum: <?php echo $row['date_end']; ?></p>
+                            <p>Suite: <?php if ($row['room_id'] ==1) {echo 'Standard mit Kingsize-Bett';} else if ($row['room_id'] ==2) {echo 'Standard mit Queensize-Bett';} else if ($row['room_id'] ==3) {echo 'Deluxe mit Kingsize-Bett';} else if ($row['room_id'] ==4) {echo 'Deluxe mit Queensize-Bett';} else if ($row['room_id'] ==5) {echo 'Executive Suite';} else if ($row['room_id'] ==6) {echo 'Premier Suite';} else if ($row['room_id'] ==7) {echo 'Signature Suite';} else if ($row['room_id'] ==8) {echo 'Deluxe Suite';}?></p>
+                            <p>Arrival: <?php echo $row['date_start']; ?></p>
+                            <p>Departure: <?php echo $row['date_end']; ?></p>
                             <p>Status: <?php if ($row['status'] =='new') {echo 'Neu';} elseif ($row['status'] == 'confirmed') {echo 'Bestätigt';} elseif ($row['status'] =='canceled') {echo 'Storniert';}?></p>
-                            <p>Preis: <?php echo $row['totalprice']; ?></p>
+                            <p>Price: <?php echo $row['totalprice'];?>€</p>
                         </div>
                     </div>
                 </div>
@@ -89,11 +86,11 @@ require_once("databaseScript/dbaccess.php");
     </div>
 </main>
 
-<footer>
-    <?php include("includes/Footer.php") ?>
-</footer>
 
-<script src="bootstrap.bundle.min.js"></script>
+<?php include("includes/Footer.php") ?>
+
+
+
 </body>
 
 </html>

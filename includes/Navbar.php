@@ -33,7 +33,7 @@ session_start();
         <?php if(isset($_SESSION["username"])): ?>
           <?php if(isset($_SESSION["admin"])): ?>
             <li class="nav-item mx-2">
-            <a class="nav-link text-white" href="Administrationindex.php">Administration</a>
+            <a class="nav-link text-white" href="allBookings.php">Administration</a>
           </li>
           <?php endif; ?>
           <li class="nav-item mx-2">
