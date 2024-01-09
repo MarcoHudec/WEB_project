@@ -97,7 +97,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 if (!isset($invalidFirstnameMessage) && !isset($invalidLastnameMessage) && !isset($invalidSalutationMessage) && !isset($invalidUsernameMessage) && !isset($invalidEmailMessage) && !isset($invalidPasswordMessage) && !isset($invalidPasswordcheckMessage)) {
 
-    require_once("../dbaccess.php");
+    require_once("../databaseScript/dbaccess.php");
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {

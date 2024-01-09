@@ -1,5 +1,5 @@
 <?php
-require_once("dbaccess.php");
+require_once("databaseScript/dbaccess.php");
 ?>
 
 <html lang="en">
