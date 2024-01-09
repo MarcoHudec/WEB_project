@@ -1,67 +1,36 @@
 <?php
-require_once("dbaccess.php");
+require_once("databaseScript/dbaccess.php");
 ?>
+
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
+<html lang="en">
 <head>
     <?php include("includes/adminhead.php") ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="stylee.css">
-    <link rel="stylesheet" href="Admin/common.css">
-    <title>Blogbeitrag hinzufügen</title>
+    <title>Add blog post</title>
     <style>
         .red { color: red; }
         .green { color: green; }
-        .blog-entry {
-            display: flex;
-            justify-content: center;
-            align-content: center;
-            padding: 10px;
-            margin-bottom: 10px;
-            width: 200px;
-            height: 200px;
-        }
-        .blog-entry img {
-            width: 100%;
-            height: 100%;
-            display: inline-block;
-            margin-bottom: 5px;
-        }
-
-
-
+        
+        
         .form-signin {
             width: 100%;
             max-width: 850px;
             padding: 15px;
             margin: auto;
         }
-
-        .btn.btn-primary {
-            margin: 10px 5px 5px;
-        }
-
-
-
-
-
-
-
-
-
     </style>
     
 </head>
 <body >
-<header>
 
 
 
-    <?php include("includes/navbaradmin.php") ?>
 
-</header>
+<?php include("includes/navbaradmin.php") ?>
+
+
 
 <div class="col-lg-10 ms-auto p-4 overflow-hidden">
 <div class="container">
@@ -93,13 +62,7 @@ require_once("dbaccess.php");
             </div>
         </form>
 
-
-
-
-
 <?php
-
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (isset($_POST["submit"])) {
@@ -121,7 +84,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $acceptedtype = ["jpg", "jpeg", "png", "gif"];
 
             if (!in_array($uploadExt, $acceptedtype)) {
-                echo "<div class='red'>Fehler, Datei ist kein Bild!</div>";
+                echo "<div class='red'>Error, file is not an image!</div>";
             } else {
                 $date = new DateTime();
                 $timestamp = $date->getTimestamp();
@@ -136,11 +99,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     // Insert data into the database
                     createDBentry($text, $target_file, $title);
                 } else {
-                    echo "<div class='red'>Upload fehgeschlagen</div>";
+                    echo "<div class='red'>Upload failed</div>";
                 }
             }
         } else {
-            echo "<div class='red'>Bitte alle Felder ausfüllen</div>";
+            echo "<div class='red'>Please fill out all fields</div>";
         }
 
     }
@@ -154,9 +117,9 @@ function createDBentry($c, $path, $title) {
 
 
     if ($stmt->execute()) {
-        echo "<div class='green'>Upload erfolgreich!</div>";
+        header("Location: blog.php");
     } else {
-        echo "<div class='red'>Upload fehlgeschlagen</div>";
+        echo "<div class='red'>Upload failed</div>";
     }
 
     $stmt->close();
@@ -172,7 +135,6 @@ function createDBentry($c, $path, $title) {
 <?php include("includes/scripts.php") ?>
 
 
-<script src="bootstrap.bundle.min.js"></script>
 </body>
 </html>
 

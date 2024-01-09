@@ -88,7 +88,7 @@ require_once("databaseScript/dbaccess.php");
 
 
 <?php include("includes/Footer.php") ?>
-
+<?php include("includes/scripts.php") ?>
 
 
 </body>
