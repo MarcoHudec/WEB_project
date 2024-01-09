@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <?php include("includes/Navbar.php")?>
+    <?php include("includes/navbar.php")?>
 
 
     <header class=" text-black text-center py-4">
@@ -88,7 +88,7 @@
                 </h2>
                 <div id="faqCollapse5" class="accordion-collapse collapse" aria-labelledby="faqHeading5" data-bs-parent="#faqAccordion">
                     <div class="accordion-body">
-                        Details about the hotel staff can be found in <a href="Imprint.php">the imprint.</a>
+                        Details about the hotel staff can be found in <a href="imprint.php">the imprint.</a>
                     </div>
                 </div>
             </div>
@@ -97,7 +97,7 @@
     </div>
 
     
-    <?php include("includes/Footer.php")?>
+    <?php include("includes/footer.php")?>
 
     <?php include("includes/scripts.php")?>
 </body>

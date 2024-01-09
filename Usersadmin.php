@@ -8,7 +8,7 @@ require_once("databaseScript/dbaccess.php");
     <?php include("includes/adminhead.php") ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Useradmin</title>
     <style>
         .user-card {
             margin-bottom: 20px;
@@ -90,7 +90,7 @@ require_once("databaseScript/dbaccess.php");
                         </table>
                         <div class="text-center">
                             <div style="display: flex; justify-content: center; gap: 100px;">
-                                <form method="post" action="useredit.php">
+                                <form method="post" action="userEdit.php">
                                     <input type="hidden" name="edit_user_id" value="<?php echo $userid; ?>">
                                     <input type="hidden" name="username" value="<?php echo $username; ?>">
                                     <input type="hidden" name="useremail" value="<?php echo $useremail; ?>">

@@ -63,7 +63,7 @@ require_once("databaseScript/dbaccess.php");
 
 
 
-<?php include("includes/Navbar.php") ?>
+<?php include("includes/navbar.php") ?>
 
 </header>
 

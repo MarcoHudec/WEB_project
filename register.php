@@ -18,7 +18,7 @@
 </head>
 
 <body>
-    <?php include("includes/Navbar.php")?>
+    <?php include("includes/navbar.php")?>
 
     <section class="h-100 gradient-form" style="background-color: #eee;">
         <div class="container py-5 h-100">
@@ -184,10 +184,9 @@
         </div>
     </section>
 
-    <?php include("includes/Footer.php")?>
+    <?php include("includes/footer.php")?>
 
     <?php include("includes/scripts.php")?>
-    <script src="bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

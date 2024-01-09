@@ -18,6 +18,7 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
+
         }
 
         .heading-section {
@@ -131,7 +132,7 @@
     </style>
 </head>
 
-<?php include("includes/Navbar.php") ?>
+<?php include("includes/navbar.php") ?>
 
 
 
@@ -535,7 +536,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
 </main>
 
-<?php include("includes/Footer.php") ?>
+<?php include("includes/footer.php") ?>
 <?php include("includes/scripts.php") ?>
 
 </html>

@@ -87,7 +87,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 } else {
                     $inactiveMessage = true;
-                    header("Location: ../ourlogin.php?".
+                    header("Location: ../login.php?".
                         "&inactiveMessage=".$inactiveMessage);
                     exit();
 
@@ -115,7 +115,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 
-    header("Location: ../ourlogin.php?".
+    header("Location: ../login.php?".
         "&invalidUsernameMessage=".$invalidUsernameMessage."&username=".$username.
         "&invalidPasswordMessage=".$invalidPasswordMessage."&password=".$password);
     exit();

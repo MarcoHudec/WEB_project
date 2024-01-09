@@ -87,7 +87,7 @@ require_once("databaseScript/dbaccess.php");
 </main>
 
 
-<?php include("includes/Footer.php") ?>
+<?php include("includes/footer.php") ?>
 <?php include("includes/scripts.php") ?>
 
 

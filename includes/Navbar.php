@@ -17,17 +17,17 @@ session_start();
           <a class="text-white nav-link" href="index.php">Home</a>
         </li>
         <li class="nav-item mx-2">
-          <a class="text-white nav-link" href="Reservation.php">Reservation</a>
+          <a class="text-white nav-link" href="reservation.php">Reservation</a>
         </li>
         <li class="nav-item mx-2">
           <a class="text-white nav-link" href="blog.php">Blog</a>
         </li>
         <?php if(!isset($_SESSION["username"])): ?>
         <li class="nav-item mx-2">
-          <a class="text-white nav-link" href="ourlogin.php">Sign in</a>
+          <a class="text-white nav-link" href="login.php">Sign in</a>
         </li>
         <li class="nav-item mx-2">
-          <a class="text-white nav-link" href="ourregister.php">Register</a>
+          <a class="text-white nav-link" href="register.php">Register</a>
         </li>
         <?php endif; ?>
         <?php if(isset($_SESSION["username"])): ?>
@@ -42,7 +42,7 @@ session_start();
                   Profile
               </a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <li><a class="dropdown-item" href="Profile.php">Profile</a></li>
+                  <li><a class="dropdown-item" href="profile.php">Profile</a></li>
                   <li><a class="dropdown-item" href="mybookings.php">My Bookings</a></li>
               </ul>
           </li>

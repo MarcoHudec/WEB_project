@@ -19,10 +19,10 @@
             <a class="nav-link text-white" href="allBookings.php">Bookings</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white" href="Usersadmin.php">Users</a>
+            <a class="nav-link text-white" href="usersAdmin.php">Users</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white" href="Blogadmin.php">Blog</a>
+            <a class="nav-link text-white" href="blogadmin.php">Blog</a>
           </li>
         </ul>
       </div>

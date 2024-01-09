@@ -7,22 +7,15 @@
     <?php include("includes/head.php")?>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
     <title>Homepage</title>
-    <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-    <!-- Core theme CSS (includes Bootstrap)-->
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <
 </head>
 
 <body>
 
     <?php
     // Include the navbar from Navbar.php
-    include('includes/Navbar.php');
+    include('includes/navbar.php');
     ?>
 
 <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
@@ -86,7 +79,7 @@
                             <h5 class="card-title">Single Deluxe Room with sea view</h5>
                             <p class="card-text">Enjoy breathtaking views from this single deluxe room overlooking the sea.</p>
                             <img src="Images/HotelRoom1.jpeg" class="card-img-top img-fluid" alt="Image 1">
-                            <a href="Reservation.php" class="btn btn-primary mt-3">Check Availability</a>
+                            <a href="reservation.php" class="btn btn-primary mt-3">Check Availability</a>
                         </div>
                     </div>
                 </div>
@@ -96,7 +89,7 @@
                             <h5 class="card-title">Family Deluxe Room with sea view</h5>
                             <p class="card-text">Spacious family deluxe room with a stunning view of the sea</p>
                             <img src="Images/HotelRoom2.jpeg" class="card-img-top img-fluid" alt="Image 2">
-                            <a href="Reservation.php" class="btn btn-primary mt-3">Check Availability</a>
+                            <a href="reservation.php" class="btn btn-primary mt-3">Check Availability</a>
                         </div>
                     </div>
                 </div>
@@ -106,7 +99,7 @@
                             <h5 class="card-title">Presidential suite with sea view and complementary butler</h5>
                             <p class="card-text">Indulge in luxury with this presidential suite offering stunning sea views and personalized butler service.</p>
                             <img src="Images/HotelRoom3.jpeg" class="card-img-top img-fluid" alt="Image 3">
-                            <a href="Reservation.php" class="btn btn-primary mt-3">Check Availability</a>
+                            <a href="reservation.php" class="btn btn-primary mt-3">Check Availability</a>
                         </div>
                     </div>
                 </div>
@@ -116,7 +109,7 @@
                             <h5 class="card-title">Presidential suite 2</h5>
                             <p class="card-text">Another luxurious presidential suite option for an opulent stay with all services compilent to our presidential suits.</p>
                             <img src="Images/HotelRoom4.jpeg" class="card-img-top img-fluid" alt="Image 4">
-                            <a href="Reservation.php" class="btn btn-primary mt-3">Check Availability</a>
+                            <a href="reservation.php" class="btn btn-primary mt-3">Check Availability</a>
                         </div>
                     </div>
                 </div>
@@ -182,7 +175,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script> 
     <script src="js/scripts.js"></script>
     --> 
-    <?php include("includes/Footer.php")?>
+    <?php include("includes/footer.php")?>
 
     <?php include("includes/scripts.php")?>
 </body>

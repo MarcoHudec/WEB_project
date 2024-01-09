@@ -163,7 +163,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 
-header("Location: ../ourregister.php?".
+header("Location: ../register.php?".
     "&invalidFirstnameMessage=".$invalidFirstnameMessage."&firstname=".$firstname.
     "&invalidLastnameMessage=".$invalidLastnameMessage."&lastname=".$lastname.
     "&invalidSalutationMessage=".$invalidSalutationMessage."&salutation=".$salutation.

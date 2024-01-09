@@ -34,7 +34,7 @@ require_once("databaseScript/dbaccess.php");
 
 <body>
 
-    <?php include("includes/Navbar.php") ?>
+    <?php include("includes/navbar.php") ?>
     <?php
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
@@ -80,7 +80,7 @@ require_once("databaseScript/dbaccess.php");
                 $password = $_POST["newpassword"];
                 if (strlen($password) < 8 || !preg_match('@[A-Z]@', $password) || !preg_match('@[a-z]@', $password) || !preg_match('@[0-9]@', $password) || !preg_match('@[^\w]@', $password)) {
                     $wrongnewMessage = true;
-                    header("Location: Profile.php?" .
+                    header("Location: profile.php?" .
                     "&oldMessage=" . $oldMessage.
                     "&newMessage=" . $newMessage.
                     "&wrongnewMessage=" . $wrongnewMessage);
@@ -99,7 +99,7 @@ require_once("databaseScript/dbaccess.php");
                 //$db->close();
 
                 $goodMessage = true;
-                header("Location: Profile.php?" .
+                header("Location: profile.php?" .
                     "&goodMessage=" . $goodMessage);
                 exit();
 
@@ -113,7 +113,7 @@ require_once("databaseScript/dbaccess.php");
                 if ($_POST["newpassword"] != $_POST["confirmnewpassword"] && (($_POST["newpassword"]!="" &&  $_POST["confirmnewpassword"]=="") || ($_POST["confirmnewpassword"]!="" && $_POST["newpassword"]=="") || ($_POST["newpassword"]!="" && $_POST["confirmnewpassword"]!=""))) {
                     $newMessage = true;
                 }
-                header("Location: Profile.php?" .
+                header("Location: profile.php?" .
                     "&oldMessage=" . $oldMessage.
                     "&newMessage=" . $newMessage.
                     "&wrongnewMessage=" . $wrongnewMessage);

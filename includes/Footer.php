@@ -14,19 +14,19 @@
           
           <div class="col-md-2">
             <h6 class="text-uppercase font-weight-bold">
-              <a href="Reservation.php" class="text-white nav-link">Reservation</a>
+              <a href="reservation.php" class="text-white nav-link">Reservation</a>
             </h6>
           </div>
           
           <div class="col-md-2">
             <h6 class="text-uppercase font-weight-bold">
-              <a href="Imprint.php" class="text-white nav-link">Imprint</a>
+              <a href="imprint.php" class="text-white nav-link">Imprint</a>
             </h6>
           </div>
           
           <div class="col-md-2">
             <h6 class="text-uppercase font-weight-bold">
-              <a href="Help.php" class="text-white nav-link">FAQ</a>
+              <a href="help.php" class="text-white nav-link">FAQ</a>
             </h6>
           </div>
 
