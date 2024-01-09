@@ -249,7 +249,7 @@ require_once("dbaccess.php");
                                     <div class="mb-4"> <!-- Zusätzlicher Platz unterhalb des "Speichern"-Buttons -->
                                         <div class="d-flex align-items-center justify-content-center">
                                             <input class="btn btn-primary" name="update" type="submit"
-                                                value="Safe">
+                                                value="Save">
                                         </div>
                                     </div>
 

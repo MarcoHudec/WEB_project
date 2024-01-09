@@ -39,6 +39,7 @@ require_once("databaseScript/dbaccess.php");
         <h1 class="custom-heading text-center">
             Bookings List
         </h1>
+        <br></br>
         
         <?php
     // Fetch all bookings from the 'reservations' table
@@ -54,7 +55,7 @@ require_once("databaseScript/dbaccess.php");
                         <table class="table fixed-width-table">
                             <thead>
                                 <tr>
-                                    <th>ID</th>
+                                    <th>Reservation ID</th>
                                     <th>User ID</th>
                                     <th>Room ID</th>
                                     <th>Date Start</th>

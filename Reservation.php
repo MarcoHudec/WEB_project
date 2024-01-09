@@ -369,23 +369,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $cardTitle = 'Standard with King-size Bed';
                 $cardText = 'Experience comfort and space in our standard room with a luxurious king-size bed, ideal for a relaxed stay.';
                 break;
+            case 'Standard mit Queensize-Bett':
+                $imageURL = 'Images/HotelRoom4.jpeg';
+                $cardTitle = 'Standard with Queen-size Bed';
+                $cardText = 'Enjoy a cozy stay in our standard room with a comfortable queen-size bed for a restful sleep.';
+                break;
             case 'Deluxe mit Kingsize-Bett':
                 $imageURL = 'Images/HotelRoom2.jpeg';
                 $cardTitle = 'Deluxe with King-size Bed';
                 $cardText = 'Enjoy elegance and sophistication in our deluxe room, equipped with a spacious king-size bed for a luxurious retreat.';
-                break;
-            case 'Standard mit Queensize-Bett':
-                $imageURL = 'Images/HotelRoom3.jpeg';
-                $cardTitle = 'Standard with Queen-size Bed';
-                $cardText = 'Enjoy a cozy stay in our standard room with a comfortable queen-size bed for a restful sleep.';
-                break;
+                break;    
             case 'Deluxe mit Queensize-Bett':
                 $imageURL = 'Images/HotelRoom4.jpeg';
                 $cardTitle = 'Deluxe with Queen-size Bed';
                 $cardText = 'Experience luxury and style in our deluxe room, furnished with a plush queen-size bed for a truly comfortable experience.';
                 break;
             case 'Executive Suite':
-                $imageURL = 'Images/HotelRoom5.jpeg';
+                $imageURL = 'Images/HotelRoom3.jpeg';
                 $cardTitle = 'Executive Suite';
                 $cardText = 'A sophisticated space for comfort and productivity, ideal for business travelers seeking refinement.';
                 break;
@@ -394,11 +394,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $cardTitle = 'Premier Suite';
                 $cardText = 'An exclusive accommodation with premium amenities and an elevated experience for discerning guests.';
                 break;
-            case 'Signature Suite':
-                $imageURL = 'Images/HotelRoom7.jpeg';
-                $cardTitle = 'Signature Suite';
-                $cardText = 'A distinctive and individually designed suite showcasing unique design elements and luxurious accents.';
-                break;
+
             default:
                 $imageURL = 'Images/HotelRoom1.jpeg';
                 $cardTitle = 'Standard with King-size Bed';
@@ -500,6 +496,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="center-elements">
                 <h5 class="card-title">Complete your reservation</h5>
                 <br></br>
+
+                <?php
+if (isset($_GET['room-selected-btn'])) {
+    $selectedRoom = $_GET['room-selected'];
+    echo '<div class="text-center">';
+    echo '<h3>You selected: ' . $selectedRoom . '</h3>';
+    echo '</div>';
+}
+?>
+
+
                 <div class="mb-3">
                     <label for="start-date" class="form-label">Check-in</label>
                     <input type="date" class="form-control" id="start-date" name="start-date" value="<?php echo isset($_POST['start-date']) ? $_POST['start-date'] : ''; ?>">
