@@ -3,138 +3,123 @@
 
 <head>
     <?php include("includes/head.php") ?>
-    <?php include("includes/Navbar.php") ?>
+    
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>Reservation Form</title>
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-        rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
-        crossorigin="anonymous">
+    
     <style>
         /* Add more styling to improve the form's appearance */
 
 
         /* Add a class to hide/show elements */
 
-        p2 {
-            font-size: 20px;
-        }
+        .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
 
-        .hidden {
-            display: none;
-        }
+.heading-section {
+    margin-bottom: 30px;
+}
 
-        .reservation-form {
-            width: 100%;
-            max-width: 450px;
-            padding: 15px;
-            max-height: 1000px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background-color: #f9f9f9;
-            flex: 0 0 300px;
-            margin-top: 50px; 
-            
-        }
+.content-section {
+    display: flex;
+}
 
-        .form-label {
-            font-weight: bold;
-        }
+.card-section {
+    display: flex;
+    flex-wrap: wrap; /* Erlaubt das Umfließen der Karten, falls der Bildschirm zu klein ist */
+    justify-content: flex-start; /* Richtet die Karten am Anfang des Containers aus */
+    gap: 20px; /* Fügt Abstand zwischen den Karten hinzu */
+}
 
-        .form-control {
-            width: 100%;
-            margin-bottom: 1rem;
-            padding: 0.375rem 0.75rem;
-            border: 1px solid #ced4da;
-            border-radius: 0.25rem;
-        }
+.card {
+    flex: 1 1 calc(50% - 20px); /* Passt die Breite jeder Karte an, um zwei Karten nebeneinander zu ermöglichen, berücksichtigt den Abstand */
+    margin-bottom: 20px; /* Abstand nach unten für jede Karte */
+}
 
-        .form-select {
-            width: 100%;
-            margin-bottom: 1rem;
-            padding: 0.375rem 0.75rem;
-            border: 1px solid #ced4da;
-            border-radius: 0.25rem;
-        }
+.card img.card-img-top {
+    width: 100%; /* Stellt sicher, dass das Bild die gesamte Breite der Karte einnimmt */
+    height: auto; /* Behält das Seitenverhältnis des Bildes bei */
+}
 
-        .form-check-input {
-            width: 1.2rem;
-            height: 1.2rem;
-            margin-right: 0.5rem;
-        }
+.reservation-form {
+    width: 100%;
+    max-width: 450px;
+    padding: 15px;
+    max-height: 1000px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    flex: 0 0 300px;
+    margin-top: 50px;
+}
 
-        .btn {
-            padding: 0.75rem 1rem; /* Change the padding to adjust the button size */
-            font-size: 1rem; /* Adjust the font size */
-        }
+.form-label {
+    font-weight: bold;
+}
 
+.form-control, .form-select {
+    width: 100%;
+    margin-bottom: 1rem;
+    padding: 0.375rem 0.75rem;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+}
 
-        .btn-primary {
-            width: 50%;
-            padding: 0.5rem 0.5rem;
-            border-radius: 0.25rem;
-            margin: auto;
-            display: block;
-        }
+.form-check-input {
+    width: 1.2rem;
+    height: 1.2rem;
+    margin-right: 0.5rem;
+}
 
-        .btn-primary:hover {
-            background-color: #0d6efd;
-            border-color: #0d6efd;
-        }
+.btn {
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+}
 
-        .card {
-            max-width: 500px; /* Adjust the max-width to your preferred width */
-            margin: 50px; /* Center the card horizontally */
-            
-        }
+.btn-primary {
+    width: 50%;
+    padding: 0.5rem 0.5rem;
+    border-radius: 0.25rem;
+    margin: auto;
+    display: block;
+}
 
-        img.card-img-top {
-            width: 50%;
-            height: auto;
-            max-width: 100%; /* Allow the image to resize within the card */
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
+.btn-primary:hover {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
 
-        .custom-heading {
-            padding-bottom: 30px;
-            padding-top: 30px;
-            font-size: 30px;
-            position: center;
-        }
+.center-elements {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
 
-        .center-elements {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
+.total-price {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 
+.price-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
 
-        .total-price {
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
-
-        .price-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
-
-        }
-
-        .custom-price {
-            font-size: 1rem;
-            font-weight: bold;
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
+.custom-price {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
 
         
 
@@ -143,7 +128,7 @@
     </style>
 </head>
 
-
+<?php include("includes/Navbar.php") ?>
 
 
 
@@ -325,16 +310,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 
-<main class="container" style="display: flex; flex-wrap: wrap;">
+<main class="container">
     
-
+<div class="heading-section text-center">
     <h1 class="custom-heading">
         Reservation
     </h1>
+</div>
 
-
+<div class="content-section" style="display: flex;">
     <!-- Card Section -->
-    <div class="card-section" style="flex-basis: 50%; margin-right: 20px;">
+    <div class="card-section" style="flex-grow: 2; display: flex; flex-wrap: wrap; justify-content: flex-start; margin-right: 20px;">
     
 
     <?php
@@ -369,23 +355,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $cardTitle = 'Standard with King-size Bed';
                 $cardText = 'Experience comfort and space in our standard room with a luxurious king-size bed, ideal for a relaxed stay.';
                 break;
-            case 'Standard mit Queensize-Bett':
-                $imageURL = 'Images/HotelRoom4.jpeg';
-                $cardTitle = 'Standard with Queen-size Bed';
-                $cardText = 'Enjoy a cozy stay in our standard room with a comfortable queen-size bed for a restful sleep.';
-                break;
             case 'Deluxe mit Kingsize-Bett':
                 $imageURL = 'Images/HotelRoom2.jpeg';
                 $cardTitle = 'Deluxe with King-size Bed';
                 $cardText = 'Enjoy elegance and sophistication in our deluxe room, equipped with a spacious king-size bed for a luxurious retreat.';
-                break;    
+                break;
+            case 'Standard mit Queensize-Bett':
+                $imageURL = 'Images/HotelRoom3.jpeg';
+                $cardTitle = 'Standard with Queen-size Bed';
+                $cardText = 'Enjoy a cozy stay in our standard room with a comfortable queen-size bed for a restful sleep.';
+                break;
             case 'Deluxe mit Queensize-Bett':
                 $imageURL = 'Images/HotelRoom4.jpeg';
                 $cardTitle = 'Deluxe with Queen-size Bed';
                 $cardText = 'Experience luxury and style in our deluxe room, furnished with a plush queen-size bed for a truly comfortable experience.';
                 break;
             case 'Executive Suite':
-                $imageURL = 'Images/HotelRoom3.jpeg';
+                $imageURL = 'Images/HotelRoom4.jpeg';
                 $cardTitle = 'Executive Suite';
                 $cardText = 'A sophisticated space for comfort and productivity, ideal for business travelers seeking refinement.';
                 break;
@@ -394,7 +380,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $cardTitle = 'Premier Suite';
                 $cardText = 'An exclusive accommodation with premium amenities and an elevated experience for discerning guests.';
                 break;
-
+            case 'Signature Suite':
+                $imageURL = 'Images/HotelRoom7.jpeg';
+                $cardTitle = 'Signature Suite';
+                $cardText = 'A distinctive and individually designed suite showcasing unique design elements and luxurious accents.';
+                break;
             default:
                 $imageURL = 'Images/HotelRoom1.jpeg';
                 $cardTitle = 'Standard with King-size Bed';
@@ -491,22 +481,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <!-- Form Section -->
     
     
-    <div class="reservation-form" style="flex: 0 0 300px;">
+    <div class="reservation-form" style="flex-grow: 1;">
         <form method="post" action="">
             <div class="center-elements">
                 <h5 class="card-title">Complete your reservation</h5>
                 <br></br>
-
-                <?php
-if (isset($_GET['room-selected-btn'])) {
-    $selectedRoom = $_GET['room-selected'];
-    echo '<div class="text-center">';
-    echo '<h3>You selected: ' . $selectedRoom . '</h3>';
-    echo '</div>';
-}
-?>
-
-
                 <div class="mb-3">
                     <label for="start-date" class="form-label">Check-in</label>
                     <input type="date" class="form-control" id="start-date" name="start-date" value="<?php echo isset($_POST['start-date']) ? $_POST['start-date'] : ''; ?>">
@@ -602,9 +581,7 @@ if (isset($_GET['room-selected-btn'])) {
         <br>
         <br>
 
-        <div class="text-center">
-        <a class="btn btn-secondary text-white" href="mybookings.php" role="button">My bookings</a>
-        </div>
+        
 
 
 
@@ -612,12 +589,13 @@ if (isset($_GET['room-selected-btn'])) {
 
     <br>
     <br>
-
+                </div>
 </main>
 
-<footer>
+
     <?php include("includes/Footer.php") ?>
-</footer>
+    <?php include("includes/scripts.php") ?>
+
 
 
 
