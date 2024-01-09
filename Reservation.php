@@ -3,128 +3,131 @@
 
 <head>
     <?php include("includes/head.php") ?>
-    
+
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>Reservation Form</title>
-    
+
     <style>
         /* Add more styling to improve the form's appearance */
 
 
         /* Add a class to hide/show elements */
 
-        .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
+        .container-reservation {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
 
-.heading-section {
-    margin-bottom: 30px;
-}
+        .heading-section {
+            margin-bottom: 30px;
+        }
 
-.content-section {
-    display: flex;
-}
+        .content-section {
+            display: flex;
+        }
 
-.card-section {
-    display: flex;
-    flex-wrap: wrap; /* Erlaubt das Umfließen der Karten, falls der Bildschirm zu klein ist */
-    justify-content: flex-start; /* Richtet die Karten am Anfang des Containers aus */
-    gap: 20px; /* Fügt Abstand zwischen den Karten hinzu */
-}
+        .card-section {
+            display: flex;
+            flex-wrap: wrap;
+            /* Erlaubt das Umfließen der Karten, falls der Bildschirm zu klein ist */
+            justify-content: flex-start;
+            /* Richtet die Karten am Anfang des Containers aus */
+            gap: 20px;
+            /* Fügt Abstand zwischen den Karten hinzu */
+        }
 
-.card {
-    flex: 1 1 calc(50% - 20px); /* Passt die Breite jeder Karte an, um zwei Karten nebeneinander zu ermöglichen, berücksichtigt den Abstand */
-    margin-bottom: 20px; /* Abstand nach unten für jede Karte */
-}
+        .card {
+            flex: 1 1 calc(50% - 20px);
+            /* Passt die Breite jeder Karte an, um zwei Karten nebeneinander zu ermöglichen, berücksichtigt den Abstand */
+            margin-bottom: 20px;
+            /* Abstand nach unten für jede Karte */
+        }
 
-.card img.card-img-top {
-    width: 100%; /* Stellt sicher, dass das Bild die gesamte Breite der Karte einnimmt */
-    height: auto; /* Behält das Seitenverhältnis des Bildes bei */
-}
+        .card img.card-img-top {
+            width: 100%;
+            /* Stellt sicher, dass das Bild die gesamte Breite der Karte einnimmt */
+            height: auto;
+            /* Behält das Seitenverhältnis des Bildes bei */
+        }
 
-.reservation-form {
-    width: 100%;
-    max-width: 450px;
-    padding: 20px;
-    max-height: 1000px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #f9f9f9;
-    flex: 0 0 300px;
-    margin-left: 100px;
-}
+        .reservation-form {
+            width: 100%;
+            max-width: 450px;
+            padding: 20px;
+            max-height: 1000px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            flex: 0 0 300px;
+            margin-left: 100px;
+        }
 
-.form-label {
-    font-weight: bold;
-}
+        .form-label {
+            font-weight: bold;
+        }
 
-.form-control, .form-select {
-    width: 100%;
-    margin-bottom: 1rem;
-    padding: 0.375rem 0.75rem;
-    border: 1px solid #ced4da;
-    border-radius: 0.25rem;
-}
+        .form-control,
+        .form-select {
+            width: 100%;
+            margin-bottom: 1rem;
+            padding: 0.375rem 0.75rem;
+            border: 1px solid #ced4da;
+            border-radius: 0.25rem;
+        }
 
-.form-check-input {
-    width: 1.2rem;
-    height: 1.2rem;
-    margin-right: 0.5rem;
-}
+        .form-check-input {
+            width: 1.2rem;
+            height: 1.2rem;
+            margin-right: 0.5rem;
+        }
 
-.btn {
-    padding: 0.75rem 1rem;
-    font-size: 1rem;
-}
+        .btn {
+            padding: 0.75rem 1rem;
+            font-size: 1rem;
+        }
 
-.btn-primary {
-    width: 50%;
-    padding: 0.5rem 0.5rem;
-    border-radius: 0.25rem;
-    margin: auto;
-    display: block;
-}
+        .btn-primary {
+            width: 50%;
+            padding: 0.5rem 0.5rem;
+            border-radius: 0.25rem;
+            margin: auto;
+            display: block;
+        }
 
-.btn-primary:hover {
-    background-color: #0d6efd;
-    border-color: #0d6efd;
-}
+        .btn-primary:hover {
+            background-color: #0d6efd;
+            border-color: #0d6efd;
+        }
 
-.center-elements {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
+        .center-elements {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
 
-.total-price {
-    font-size: 1.5rem;
-    font-weight: bold;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
+        .total-price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
 
-.price-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-}
+        .price-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
 
-.custom-price {
-    font-size: 1rem;
-    font-weight: bold;
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-        
-
-        
-
+        .custom-price {
+            font-size: 1rem;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 
@@ -287,20 +290,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 
-<main class="container">
-    
-<div class="heading-section text-center">
-    <h1 class="custom-heading">
-        Reservation
-    </h1>
-</div>
+<main class="container-reservation">
 
-<div class="content-section" style="display: flex;">
-    <!-- Card Section -->
-    <div class="card-section" style="flex-grow: 2; display: flex; flex-wrap: wrap; justify-content: flex-start; margin-right: 20px;">
-    
+    <div class="heading-section text-center">
+        <h1 class="custom-heading">
+            Reservation
+        </h1>
+    </div>
 
-    <?php
+    <div class="content-section" style="display: flex;">
+        <!-- Card Section -->
+        <div class="card-section"
+            style="flex-grow: 2; display: flex; flex-wrap: wrap; justify-content: flex-start; margin-right: 20px;">
+
+
+            <?php
     // Fetch room types from the database
     $query = "SELECT DISTINCT room FROM rooms"; // Change the query to fit your database schema
     $stmt = $db->prepare($query);
@@ -393,17 +397,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     ?>
 
-        
-        <input type="hidden" name="selected-room-id" value="<?php echo $roomId; ?>">
-        <input type="hidden" name="selected-room-type" value="<?php echo $roomType; ?>">
-        <input type="hidden" name="selected-card-price" value="<?php echo $cardPrice; ?>">
-        <!-- Other hidden fields for additional prices if needed -->
+
+            <input type="hidden" name="selected-room-id" value="<?php echo $roomId; ?>">
+            <input type="hidden" name="selected-room-type" value="<?php echo $roomType; ?>">
+            <input type="hidden" name="selected-card-price" value="<?php echo $cardPrice; ?>">
+            <!-- Other hidden fields for additional prices if needed -->
 
 
-    </div>
-
-
-
+        </div>
 
 
 
@@ -413,23 +414,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 
-    <!-- Filter Section -->
 
-    
 
-    <br>
-    <br>
 
-    <!-- Form Section -->
-    
-    
-    <div class="reservation-form" style="flex-grow: 1;">
-        <form method="post" action="">
-            <div class="center-elements">
-                <h5 class="card-title">Complete your reservation</h5>
-                <br></br>
-                
-                <?php
+        <!-- Filter Section -->
+
+
+
+        <br>
+        <br>
+
+        <!-- Form Section -->
+
+
+        <div class="reservation-form" style="flex-grow: 1;">
+            <form method="post" action="">
+                <div class="center-elements">
+                    <h5 class="card-title">Complete your reservation</h5>
+                    <br></br>
+
+                    <?php
                 if (isset($_GET['card-title'])) {
                 $selectedCardTitle = $_GET['card-title'];
                 echo' <label class="form-label">Selected Room</label>';
@@ -439,65 +443,78 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 }
                 ?>
 
-                <div class="mb-3">
-                    <label for="start-date" class="form-label">Check-in</label>
-                    <input type="date" class="form-control" id="start-date" name="start-date" value="<?php echo isset($_POST['start-date']) ? $_POST['start-date'] : ''; ?>">
-                </div>
-                <div class="mb-3">
-                    <label for="end-date" class="form-label">Check-out</label>
-                    <input type="date" class="form-control" id="end-date" name="end-date" value="<?php echo isset($_POST['end-date']) ? $_POST['end-date'] : ''; ?>">
-                </div>
+                    <div class="mb-3">
+                        <label for="start-date" class="form-label">Check-in</label>
+                        <input type="date" class="form-control" id="start-date" name="start-date"
+                            value="<?php echo isset($_POST['start-date']) ? $_POST['start-date'] : ''; ?>">
+                    </div>
+                    <div class="mb-3">
+                        <label for="end-date" class="form-label">Check-out</label>
+                        <input type="date" class="form-control" id="end-date" name="end-date"
+                            value="<?php echo isset($_POST['end-date']) ? $_POST['end-date'] : ''; ?>">
+                    </div>
 
 
-                <?php if (!empty($dateError)) : ?>
+                    <?php if (!empty($dateError)) : ?>
                     <div class="alert alert-danger" role="alert">
                         <?php echo $dateError; ?>
                     </div>
-                <?php endif; ?>
+                    <?php endif; ?>
 
-                <?php if (!empty($dateError2)) : ?>
+                    <?php if (!empty($dateError2)) : ?>
                     <div class="alert alert-danger" role="alert">
                         <?php echo $dateError2; ?>
                     </div>
-                <?php endif; ?>
+                    <?php endif; ?>
 
-                <?php if (!empty($dateError3)) : ?>
+                    <?php if (!empty($dateError3)) : ?>
                     <div class="alert alert-danger" role="alert">
                         <?php echo $dateError3; ?>
                     </div>
-                <?php endif; ?>
+                    <?php endif; ?>
 
 
-                <div class="mb-3">
-                <div class="form-check">
-    <input class="form-check-input" type="checkbox" value="yes" id="breakfast" name="breakfast" <?php echo (isset($_POST['breakfast']) && $_POST['breakfast'] === 'yes') ? 'checked' : ''; ?>>
-    <label class="form-check-label" for="breakfast">Board option <span class="price-container"><?php echo "(".$breakfastPrice. "€ per night)"; ?></span></label>
-</div>
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="yes" id="breakfast" name="breakfast"
+                                <?php echo (isset($_POST['breakfast']) && $_POST['breakfast']==='yes' ) ? 'checked' : ''
+                                ; ?>>
+                            <label class="form-check-label" for="breakfast">Board option <span class="price-container">
+                                    <?php echo "(".$breakfastPrice. "€ per night)"; ?>
+                                </span></label>
+                        </div>
 
-                </div>
-                <div class="mb-3">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="yes" id="pets" name="pets" <?php echo (isset($_POST['pets']) && $_POST['pets'] === 'yes') ? 'checked' : ''; ?>>
-                        <label class="form-check-label" for="pets">Pets <span class="price-container"><?php echo "(".$petsPrice. "€ per night)"; ?></span></label>
+                    </div>
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="yes" id="pets" name="pets" <?php echo
+                                (isset($_POST['pets']) && $_POST['pets']==='yes' ) ? 'checked' : '' ; ?>>
+                            <label class="form-check-label" for="pets">Pets <span class="price-container">
+                                    <?php echo "(".$petsPrice. "€ per night)"; ?>
+                                </span></label>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="yes" id="parking" name="parking"
+                                <?php echo (isset($_POST['parking']) && $_POST['parking']==='yes' ) ? 'checked' : '' ;
+                                ?>>
+                            <label class="form-check-label" for="parking">Parking<span class="price-container">
+                                    <?php echo "(".$parkingPrice. "€ per night)"; ?>
+                                </span></label>
+                        </div>
                     </div>
                 </div>
-                <div class="mb-3">
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" value="yes" id="parking" name="parking" <?php echo (isset($_POST['parking']) && $_POST['parking'] === 'yes') ? 'checked' : ''; ?>>
-                        <label class="form-check-label" for="parking">Parking<span class="price-container"><?php echo "(".$parkingPrice. "€ per night)"; ?></span></label>
-                    </div>
-                </div>
-            </div>
 
 
-            <br></br>
-            <div class="text-center">
-                <!-- Button to calculate price -->
-                <button type="submit" class="btn btn-primary" name="calculate-price">Calculate total price</button>
+                <br></br>
+                <div class="text-center">
+                    <!-- Button to calculate price -->
+                    <button type="submit" class="btn btn-primary" name="calculate-price">Calculate total price</button>
 
 
-                <!-- Display total price -->
-                <?php if (isset($_POST['calculate-price'])) : ?>
+                    <!-- Display total price -->
+                    <?php if (isset($_POST['calculate-price'])) : ?>
                     <div class="total-price">
                         <?php
                         if ((isset($_POST['calculate-price'])) && empty($dateError) && empty($dateError2) && empty($dateError3)) {
@@ -508,53 +525,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         }
                         ?>
 
-
-
-
-
-
-
-
                     </div>
-                <?php endif; ?>
-
-
-                <div class="total-price">
-                    <?php
-                    if(!isset($_POST['calculate-price'])) {
-                        echo'<label class="form-label">Total</label>';
-                    }
-                    ?>
+                    <?php endif; ?>
+                    <br>
+                    <button type="submit" class="btn btn-primary" name="submit-form">Reserve room</button>
                 </div>
-
-                <br></br>       
-                <br></br>
-                <button type="submit" class="btn btn-primary" name="submit-form">Reserve room</button>
-            </div>
-        </form>
-
-        <br>
-        <br>
-
-        
-
-
-
+            </form>
+        </div>
     </div>
-
-    <br></br>
-    <br></br>
-                </div>
 </main>
 
-
-    <?php include("includes/Footer.php") ?>
-    <?php include("includes/scripts.php") ?>
-
-
-
-
-
-
+<?php include("includes/Footer.php") ?>
+<?php include("includes/scripts.php") ?>
 
 </html>
