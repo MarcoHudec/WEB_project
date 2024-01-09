@@ -48,13 +48,13 @@
 .reservation-form {
     width: 100%;
     max-width: 450px;
-    padding: 15px;
+    padding: 20px;
     max-height: 1000px;
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #f9f9f9;
     flex: 0 0 300px;
-    margin-top: 50px;
+    margin-left: 100px;
 }
 
 .form-label {
@@ -273,32 +273,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
 
-
-
-
-
-
-
-
 }
 
-
-
-
-
-
-
 ?>
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -394,19 +371,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         
 
         echo '<div class="card">
-                <img src="' . $imageURL . '" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">' . $cardTitle . '</h5>
-                    <p class="card-text">' . $cardText . '</p>
-                    <form method="get" action="">
-                        <p2 class="custom-price">' . $cardPrice . '€ per night</p2>
-                    </form>
-                </div>
-                <div class="card-footer text-center">
+            <img src="' . $imageURL . '" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">' . $cardTitle . '</h5>
+                <p class="card-text">' . $cardText . '</p>
+                <form method="get" action="">
+                    <p2 class="custom-price">' . $cardPrice . '€ per night</p2>
+                </form>
+            </div>
+            <div class="card-footer text-center">
+                <form method="get" action="">
                     <input type="hidden" name="room-type" value="' . $type . '">
+                    <input type="hidden" name="card-title" value="' . $cardTitle . '">
                     <button type="submit" class="btn btn-primary" name="room-selected">Select room</button>
-                </div>
-              </div>';
+                </form>
+            </div>
+        </div>';
+
 
         
     }
@@ -420,45 +401,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
-
-
-
 
 
 
@@ -486,6 +428,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="center-elements">
                 <h5 class="card-title">Complete your reservation</h5>
                 <br></br>
+                
+                <?php
+                if (isset($_GET['card-title'])) {
+                $selectedCardTitle = $_GET['card-title'];
+                echo' <label class="form-label">Selected Room</label>';
+                echo "$selectedCardTitle <br></br>";
+
+
+                }
+                ?>
+
                 <div class="mb-3">
                     <label for="start-date" class="form-label">Check-in</label>
                     <input type="date" class="form-control" id="start-date" name="start-date" value="<?php echo isset($_POST['start-date']) ? $_POST['start-date'] : ''; ?>">
@@ -516,12 +469,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
                 <div class="mb-3">
-                    <label for="breakfast" class="form-label">Board option</label>
-                    <span class="price-container"><?php echo "(".$breakfastPrice. "€ pro Nacht)"; ?></span>
-                    <select class="form-select" id="breakfast" name="breakfast">
-                        <option value="yes" <?php echo (isset($_POST['breakfast']) && $_POST['breakfast'] === 'yes') ? 'selected' : ''; ?>>Yes</option>
-                        <option value="no" <?php echo (isset($_POST['breakfast']) && $_POST['breakfast'] === 'no') ? 'selected' : ''; ?>>No</option>
-                    </select>
+                <div class="form-check">
+    <input class="form-check-input" type="checkbox" value="yes" id="breakfast" name="breakfast" <?php echo (isset($_POST['breakfast']) && $_POST['breakfast'] === 'yes') ? 'checked' : ''; ?>>
+    <label class="form-check-label" for="breakfast">Board option <span class="price-container"><?php echo "(".$breakfastPrice. "€ per night)"; ?></span></label>
+</div>
+
                 </div>
                 <div class="mb-3">
                     <div class="form-check">
@@ -536,6 +488,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
                 </div>
             </div>
+
+
+            <br></br>
             <div class="text-center">
                 <!-- Button to calculate price -->
                 <button type="submit" class="btn btn-primary" name="calculate-price">Calculate total price</button>
@@ -547,7 +502,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <?php
                         if ((isset($_POST['calculate-price'])) && empty($dateError) && empty($dateError2) && empty($dateError3)) {
 
-                            echo 'total price: ' . number_format($totalPrice, 2) . ' Euro';
+                            echo 'total price: ' . number_format($totalPrice, 2) . ' €';
                         } else {
                             echo 'total price: ';
                         }
@@ -567,14 +522,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="total-price">
                     <?php
                     if(!isset($_POST['calculate-price'])) {
-                        echo'Total:';
+                        echo'<label class="form-label">Total</label>';
                     }
                     ?>
                 </div>
 
-
-                <!-- Button to submit the form -->
-                <button type="submit" class="btn btn-primary" name="submit-form">Reservieren</button>
+                <br></br>       
+                <br></br>
+                <button type="submit" class="btn btn-primary" name="submit-form">Reserve room</button>
             </div>
         </form>
 
@@ -587,8 +542,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     </div>
 
-    <br>
-    <br>
+    <br></br>
+    <br></br>
                 </div>
 </main>
 
