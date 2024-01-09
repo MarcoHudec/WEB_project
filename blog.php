@@ -1,14 +1,12 @@
 <?php
-require_once("dbaccess.php");
+require_once("databaseScript/dbaccess.php");
 ?>
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/html">
+<html lang="en">
 <head>
     <?php include("includes/head.php") ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="stylee.css">
     <title>Blog</title>
     <style>
 
@@ -31,10 +29,24 @@ require_once("dbaccess.php");
 
 
 
-        .card-img-top {
+        .card-img-top, .blog-entry img {
+                max-width: 100%;
+                height: auto;
+            }
+
+        .blog-image {
             width: 300px;
             height: 300px;
+            object-fit: cover; /* Dies sorgt dafür, dass das Bild richtig zugeschnitten wird, ohne verzerrt zu werden */
         }
+
+/* Für kleinere Bildschirme */
+@media (max-width: 768px) {
+    .blog-image {
+        max-width: 100%;
+        max-height: 300px; /* Begrenzt die Höhe auf maximal 300px */
+    }
+}
 
 
 
@@ -73,12 +85,13 @@ require_once("dbaccess.php");
             while ($stmt->fetch()) {
                 echo "<div class='col-md-12 mb-4'>"; // Display one post per row
                 echo "<div class='card shadow-sm'>";
-                echo "<a href='$bild_url'><img src='$bild_url' class='card-img-top' alt='picture' ></a>";
+                echo "<div class='card-head'>";
+                echo "<img src='$bild_url' class='card-img-top img-fluid blog-image' alt='picture' ></a>";
                 echo "<div class='card-body'>";
                 echo "<h5 class='card-title'>$title</h5>";
-                echo "<p class='card-text'>$text</p>";
-                echo "<p class='card-text'><small class='text-muted'>$date</small></p>";
-                echo "</div></div></div>";
+                echo "<p class='card-text' style='text-align: left;'>$text</p>";
+                echo "<p class='card-date'><small class='text-muted'>$date</small></p>";
+                echo "</div></div></div></div>";
                 echo "<hr>";
             }
 
@@ -89,14 +102,14 @@ require_once("dbaccess.php");
     </main>
 </div>
 
-<footer>
+
 
     <?php include("includes/footer.php") ?>
     <?php include("includes/scripts.php") ?>
 
-</footer>
 
 
-<script src="bootstrap.bundle.min.js"></script>
+
+
 </body>
 </html>
