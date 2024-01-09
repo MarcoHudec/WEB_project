@@ -103,7 +103,7 @@ if (!isset($invalidFirstnameMessage) && !isset($invalidLastnameMessage) && !isse
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (isset($_POST["register"]) && isset($_POST["username"]) && isset($_POST["password"]) && isset($_POST["email"]) && isset($_POST["firstname"]) && isset($_POST["lastname"]) && isset($_POST["salutation"]) && isset($_POST["passwordcheck"]) && (($_POST["password"])==($_POST["passwordcheck"]))) {
-        // TODO
+        
 
         $query = "INSERT INTO users (username, password, email, firstname, lastname, salutation, role, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         $stmt = $db->prepare($query);

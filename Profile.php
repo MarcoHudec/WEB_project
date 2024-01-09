@@ -39,7 +39,7 @@ require_once("databaseScript/dbaccess.php");
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if (isset($_POST["update"]) && isset($_POST["username"]) && isset($_POST["email"]) && isset($_POST["firstname"]) && isset($_POST["lastname"]) && isset($_POST["salutation"])) {
-            // TODO
+            
 
             $query = "UPDATE users SET username=?, email=?, firstname=?, lastname=?, salutation=? WHERE id = ?";// . $_SESSION["userid"];
             $stmt = $db->prepare($query);

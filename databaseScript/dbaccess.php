@@ -1,7 +1,5 @@
 <?php
 
-// TODO
-
 $dbhost = "localhost";
 $dbuser = "root";
 $dbpassword = "";

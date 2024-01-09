@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if (isset($_POST["update"]) && isset($_POST["sid"])) {
-        // TODO
+         
 
         if (isset($_POST["password"]) && !empty($_POST["password"])) {
 
