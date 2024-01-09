@@ -39,7 +39,7 @@
                                         <h4 class="mt-1 mb-5 pb-1">Login</h4>
                                     </div>
 
-                                    <form method="post" action="logic/loginvalidationnew.php">
+                                    <form method="post" action="logic/loginvalidation.php">
                                         <p>Please login to your account</p>
 
                                         <div class="form-outline mb-4">
