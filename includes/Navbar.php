@@ -36,8 +36,15 @@ session_start();
             <a class="nav-link text-white" href="allBookings.php">Administration</a>
           </li>
           <?php endif; ?>
-          <li class="nav-item mx-2">
-            <a class="nav-link text-white" href="Profile.php">Profile</a>
+          <li class="nav-item dropdown mx-2">
+              <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown2" role="button"
+                  data-bs-toggle="dropdown" aria-expanded="false">
+                  Profile
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><a class="dropdown-item" href="Profile.php">Profile</a></li>
+                  <li><a class="dropdown-item" href="mybookings.php">My Bookings</a></li>
+              </ul>
           </li>
           <li class="nav-item mx-2">
             <a class="nav-link text-white" href="logic/logout.php">Logout</a>
