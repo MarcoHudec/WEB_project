@@ -26,7 +26,7 @@ require_once("databaseScript/dbaccess.php");
             overflow: hidden;
             /* Verhindert, dass Inhalt aus der Zelle herausragt */
             text-align: center;
-            /* Ausrichtung des Textess */
+            /* Ausrichtung des Textes */
         }
     </style>
 </head>
@@ -39,13 +39,13 @@ require_once("databaseScript/dbaccess.php");
                 Users
             </h1>
             <?php
-                //if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                $query = "SELECT * FROM users ORDER BY id ASC";
-                $stmt = $db->prepare($query);
-                $stmt->execute();
-                $stmt->bind_result($userid, $username, $userpassword, $useremail, $userfirstname, $userlastname, $usersalutation, $userrole, $userstatus);
+        //if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $query = "SELECT * FROM users ORDER BY id ASC";
+        $stmt = $db->prepare($query);
+        $stmt->execute();
+        $stmt->bind_result($userid, $username, $userpassword, $useremail, $userfirstname, $userlastname, $usersalutation, $userrole, $userstatus);
 
-                while ($stmt->fetch()) {
+        while ($stmt->fetch()) {
             ?>
             <div class="row">
                 <div class="col-md-12">
@@ -112,14 +112,14 @@ require_once("databaseScript/dbaccess.php");
                 </div>
             </div>
             <?php
-                }
-                $stmt->close();
-            ?>
+        }
+        $stmt->close();
+        //}
+        ?>
 
         </div>
     </div>
+    <?php include("includes/scripts.php") ?>
 </body>
-
-<?php include("includes/scripts.php") ?>
 
 </html>

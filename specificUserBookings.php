@@ -78,7 +78,7 @@
                                                     <td><?php echo $row['date_end']; ?></td>
                                                     <td><?php echo $row['status']; ?></td>
                                                     <td><?php echo $row['date_reservation']; ?></td>
-                                                    <td><?php echo $row['totalprice']; ?></td>
+                                                    <td><?php echo $row['totalprice'] . ' €'; ?></td>
                                                     <td><a href="adminBookingsDetailed.php?id=<?php echo $row['id']; ?>">Details anzeigen</a></td>
                                                 </tr>
                                                 <?php

@@ -480,7 +480,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <input class="form-check-input" type="checkbox" value="yes" id="breakfast" name="breakfast"
                                 <?php echo (isset($_POST['breakfast']) && $_POST['breakfast']==='yes' ) ? 'checked' : ''
                                 ; ?>>
-                            <label class="form-check-label" for="breakfast">Breakfast <span class="price-container">
+                            <label class="form-check-label" for="breakfast">Board option <span class="price-container">
                                     <?php echo "(".$breakfastPrice. "€ per night)"; ?>
                                 </span></label>
                         </div>
