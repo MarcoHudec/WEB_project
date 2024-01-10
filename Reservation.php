@@ -529,7 +529,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
                     <?php endif; ?>
                     <br>
-                    <button type="submit" class="btn btn-primary" name="submit-form">Reserve room</button>
+                    <?php 
+                    if(isset($_SESSION["active"])) {?>
+                        
+                        <button type="submit" class="btn btn-primary" name="submit-form">Reserve room</button>
+                        <p class="text-success">Your Reservation was successful</p>
+                    <?php } else{?>
+                        <p class="text-danger">You have to be logged in to reserve a room</p>
+                        <?php }
+                    ?>
                 </div>
             </form>
         </div>
