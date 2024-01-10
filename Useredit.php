@@ -6,12 +6,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (isset($_POST["search"]) && (isset($_POST["sid"]))) {
 
+        // Check if the ID field is not empty and get users informations.
         if (($_POST["sid"]) != null) {
             $query = "SELECT * FROM users WHERE id = ?";
             $stmt = $db->prepare($query);
             $suserid = $_POST["sid"];
             $stmt->bind_param("i", $suserid);
-            $stmt->execute(); //datenbank anfrage: liefert nur text!
+            $stmt->execute(); 
             $stmt->bind_result($suserid, $susername, $suserpassword, $suseremail, $suserfirstname, $suserlastname, $susersalutation, $suserrole, $suserstatus);
             $stmt->fetch();
 
@@ -20,20 +21,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         } 
 
     }
+    // Check if update button was clicked and an ID is set.
+    if (isset($_POST["update"]) && isset($_POST["sid"]) && !empty($_POST["username"]) && !empty($_POST["email"]) && !empty($_POST["firstname"]) && !empty($_POST["lastname"])) { 
 
-    if (isset($_POST["update"]) && isset($_POST["sid"])) {
-         
+        // Check if password is set and not empty.
         if (isset($_POST["password"]) && !empty($_POST["password"])) {
 
+            // Prepare an SQL query to update all user fields including password.
             $query = "UPDATE users SET username=?, password=?, email=?, firstname=?, lastname=?, salutation=?, role=?, status=? WHERE id=?";
             $stmt = $db->prepare($query);
             $stmt->bind_param("ssssssssi", $username, $userpassword, $useremail, $userfirstname, $userlastname, $usersalutation, $userrole, $userstatus, $userid);
 
+            // Prepare an SQL query to update all user fields except password.
         } else {
             $query = "UPDATE users SET username=?, email=?, firstname=?, lastname=?, salutation=?, role=?, status=? WHERE id=?";
             $stmt = $db->prepare($query);
             $stmt->bind_param("sssssssi", $username, $useremail, $userfirstname, $userlastname, $usersalutation, $userrole, $userstatus, $userid);
 
+            // Retrieve and assign form data to variables.
         }
         if (isset($_POST["username"])) {
             $username = $_POST["username"];
@@ -110,7 +115,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <h1 class="text-center">
                     Edit User
                 </h1>
-
+                <!-- ID to search User-->
                 <form method="post">
                     <div style="text-align: center;">
                         <div style="display: inline-block; width: 20%;"> 
@@ -125,7 +130,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div class="form-signin">
                         <button class="w-100 btn btn-lg btn-primary" name="search" type="submit">Search by ID</button>
                     </div>
-
+                    <!-- Users data is shown and can be changed -->
                     <div class="mb-3">
                         <div class="row">
                             <div class="col-md-6">
@@ -144,7 +149,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         
                             <div class="col-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="username" name="username" placeholder="Username"
+                                    <input type="text" class="form-control" id="username" name="username" 
                                         value="<?php if(isset($susername)) {echo $susername;} elseif(isset($_POST['username'])) {echo $susername=$_POST['username'];}?>">
                                     <label for="username">Username</label>
                                 </div>
@@ -157,7 +162,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <div class="col-md-6">
                                 <div class="form-floating">
                                     <input type="text" class="form-control" id="firstname" name="firstname"
-                                        placeholder="Firstname"
                                         value="<?php if(isset($suserfirstname)) {echo $suserfirstname;} elseif(isset($_POST['userfirstname'])) {echo $userfirstname=$_POST['userfirstname'];}?>">
                                     <label for="firstname">Firstname</label>
                                 </div>
@@ -166,7 +170,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             <div class="col-md-6">
                                 <div class="form-floating">
                                     <input type="text" class="form-control" id="lastname" name="lastname"
-                                        placeholder="Lastname"
                                         value="<?php if(isset($suserlastname)) {echo $suserlastname;} elseif(isset($_POST['userlastname'])) {echo $suserlastname=$_POST['userlastname'];}?>">
                                     <label for="lastname">Lastname</label>
                                 </div>
@@ -178,7 +181,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="email" class="form-control" id="email" name="email" placeholder="E-Mail"
+                                    <input type="email" class="form-control" id="email" name="email" 
                                         value="<?php if(isset($suseremail)) {echo $suseremail;} elseif(isset($_POST['useremail'])) {echo $suseremail=$_POST['useremail'];}?>">
                                     <label for="email">E-Mail</label>
                                 </div>
@@ -186,8 +189,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="password" class="form-control" id="password" name="password"
-                                        placeholder="Password" value="">
+                                    <input type="password" class="form-control" id="password" name="password" value="">
                                     <label for="password">Password</label>
                                 </div>
                             </div>

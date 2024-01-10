@@ -18,15 +18,10 @@ require_once("databaseScript/dbaccess.php");
 
         .fixed-width-table {
             width: 100%;
-            /* Setzt die Breite der Tabelle auf 100% des Elternelements */
             table-layout: fixed;
-            /* Ermöglicht gleichmäßige Spaltenbreiten */
             word-wrap: break-word;
-            /* Stellt sicher, dass lange Wörter innerhalb der Zelle umgebrochen werden */
             overflow: hidden;
-            /* Verhindert, dass Inhalt aus der Zelle herausragt */
             text-align: center;
-            /* Ausrichtung des Textes */
         }
     </style>
 </head>
@@ -39,7 +34,8 @@ require_once("databaseScript/dbaccess.php");
                 Users
             </h1>
             <?php
-        //if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+        // displaying users in a table
         $query = "SELECT * FROM users ORDER BY id ASC";
         $stmt = $db->prepare($query);
         $stmt->execute();
@@ -114,7 +110,6 @@ require_once("databaseScript/dbaccess.php");
             <?php
         }
         $stmt->close();
-        //}
         ?>
 
         </div>

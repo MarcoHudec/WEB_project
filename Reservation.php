@@ -557,8 +557,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_SESSION["active"])) { ?>
         <!-- Button to reserve room -->
         <button type="submit" class="btn btn-primary" name="submit-form">Reserve room</button>
-        <!-- Display reservation success message -->
-        <p class="text-success">Your Reservation was successful</p>
     <?php } else { ?>
         <!-- Display message for users not logged in -->
         <p class="text-danger">You have to be logged in to reserve a room</p>

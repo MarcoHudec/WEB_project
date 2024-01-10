@@ -7,9 +7,7 @@ require_once("databaseScript/dbaccess.php");
 
 <head>
     <?php include("includes/head.php") ?>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Profil</title>
+    <title>Profile</title>
 
 </head>
 
@@ -19,14 +17,16 @@ require_once("databaseScript/dbaccess.php");
     <?php
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
+         // Check if update button was clicked and necessary fields are set for updating user info
         if (isset($_POST["update"]) && isset($_POST["username"]) && isset($_POST["email"]) && isset($_POST["firstname"]) && isset($_POST["lastname"]) && isset($_POST["salutation"])) {
             
-
+             // SQL query to update user info
             $query = "UPDATE users SET username=?, email=?, firstname=?, lastname=?, salutation=? WHERE id = ?";// . $_SESSION["userid"];
             $stmt = $db->prepare($query);
             $userid = $_SESSION["userid"];
             $stmt->bind_param("sssssi", $username, $useremail, $userfirstname, $userlastname, $usersalutation, $userid);
 
+            // Retrieve and assign form data to variables
             $username = $_POST["username"];
             $useremail = $_POST["email"];
             $userfirstname = $_POST["firstname"];
@@ -35,14 +35,14 @@ require_once("databaseScript/dbaccess.php");
 
             $stmt->execute();
             $stmt->close();
-            //$db->close();
             $_SESSION["username"] = $username;
 
         }
 
+        // Check if fields are set for updating password
         if (isset($_POST["update"]) && isset($_POST["oldpassword"]) && isset($_POST["newpassword"]) && isset($_POST["confirmnewpassword"])) {
 
-
+            // SQL query to select current user password
             $query = "SELECT users.password FROM users WHERE id = ?";
             $stmt = $db->prepare($query);
             $userid = $_SESSION["userid"];
@@ -53,8 +53,11 @@ require_once("databaseScript/dbaccess.php");
             $stmt->fetch();
 
             $stmt->close();
-            //db->close();
-
+    
+            // Check if new passwords match and meet criteria
+            // Check if old password is correct
+            // Update password in database if all conditions are met
+            // Redirect with appropriate messages
             if ($_POST["newpassword"] == $_POST["confirmnewpassword"] && $_POST["newpassword"]!= "" && $_POST["confirmnewpassword"]!= "") {
                 
                 $password = $_POST["newpassword"];
@@ -69,7 +72,7 @@ require_once("databaseScript/dbaccess.php");
 
                 if(password_verify($_POST["oldpassword"], $userpassword)){
                     
-                    $query = "UPDATE users SET password=? WHERE id = ?";// . $_SESSION["userid"];
+                    $query = "UPDATE users SET password=? WHERE id = ?";
                     $stmt = $db->prepare($query);
                     $stmt->bind_param("si", $userpassword, $userid);
 
@@ -104,20 +107,19 @@ require_once("databaseScript/dbaccess.php");
             }
         }
    }
-    //if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $query = "SELECT * FROM users WHERE id = ?";// . $_SESSION["userid"];
+    
+   // Retrieve user data from database to display in form
+    $query = "SELECT * FROM users WHERE id = ?";
     $stmt = $db->prepare($query);
     $userid = $_SESSION["userid"];
     $stmt->bind_param("i", $userid);
-    $stmt->execute(); //datenbank anfrage: liefert nur text!
+    $stmt->execute(); 
     $stmt->bind_result($userid, $username, $userpassword, $useremail, $userfirstname, $userlastname, $usersalutation, $userrole, $userstatus);
     $stmt->fetch();
 
 
     $stmt->close();
-    //$db->close();
-
-//}
+    
 ?>
 
 
@@ -133,7 +135,7 @@ require_once("databaseScript/dbaccess.php");
                                     <h3 class="mt-1 mb-5 pb-1">User Profile</h3>
                                 </div>
                                 <form action="" method="post">
-                                    <!-- Hier die vorhandenen Benutzerdaten anzeigen -->
+                                    <!-- Display user data in form fields for editing -->
                                     <div class="mb-3">
                                         <div class="row">
                                             <div class="col-6 mb-3">
@@ -161,7 +163,6 @@ require_once("databaseScript/dbaccess.php");
                                         </div>
                                     </div>
 
-                                    <!-- Hier weitere Eingabefelder für die Bearbeitung der Daten hinzufügen -->
                                     <div class="mb-3">
                                         <div class="row">
                                             <div class="col-6 mb-3">
@@ -196,10 +197,10 @@ require_once("databaseScript/dbaccess.php");
 
 
                                     <hr class="my-4">
-                                    <!-- Trennlinie zwischen den persönlichen Daten und dem Passwort -->
+                                    <!-- Separation line between personal data and password -->
 
                                     <h3>Change Password:</h3>
-
+                                    <!-- Section for changing password -->                       
                                     <div class="mb-3">
                                         <div class="form-floating">
                                             <input type="password" class="form-control" id="oldPassword"
@@ -265,8 +266,12 @@ require_once("databaseScript/dbaccess.php");
         </div>
     </section>
 </body>
+
+
 <?php include("includes/footer.php") ?>
-    <?php include("includes/scripts.php")?>
+<?php include("includes/scripts.php")?>
+
+
 </html>
 
 

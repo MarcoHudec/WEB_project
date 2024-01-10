@@ -4,8 +4,10 @@
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-    //$invalidEmail = $invalidPassword = false;
 
+    // Validation for each field in the registration form
+    // Checks for empty fields, pattern matching, and other validation rules
+    // Sets error messages if validation fails
     if (isset($_POST["firstname"]))
     {
         $firstname = $_POST["firstname"];
@@ -94,22 +96,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     }
 
-
+// If there are no validation errors, proceed to insert the user into the database
 if (!isset($invalidFirstnameMessage) && !isset($invalidLastnameMessage) && !isset($invalidSalutationMessage) && !isset($invalidUsernameMessage) && !isset($invalidEmailMessage) && !isset($invalidPasswordMessage) && !isset($invalidPasswordcheckMessage)) {
 
     require_once("../databaseScript/dbaccess.php");
 
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
+    // Check if all required POST fields are set
     if (isset($_POST["register"]) && isset($_POST["username"]) && isset($_POST["password"]) && isset($_POST["email"]) && isset($_POST["firstname"]) && isset($_POST["lastname"]) && isset($_POST["salutation"]) && isset($_POST["passwordcheck"]) && (($_POST["password"])==($_POST["passwordcheck"]))) {
         
-
+         // Prepare SQL query to insert user into the database
         $query = "INSERT INTO users (username, password, email, firstname, lastname, salutation, role, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         $stmt = $db->prepare($query);
 
         $stmt->bind_param("ssssssss", $username, $userpassword, $useremail, $userfirstname, $userlastname, $usersalutation, $userrole, $userstatus);
 
+
+        // Bind form data to the prepared statement
+        // Hash the password
+        // Set default values for role and status
         $username = $_POST["username"];
         $userpassword = password_hash($_POST["password"], PASSWORD_DEFAULT);
         $useremail = $_POST["email"];
@@ -121,13 +127,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $stmt->execute();
         $stmt->close();
-        //$db->close();
 
     }
 }
 
 
-
+    // Start a new session and set session variables
     session_start();
     $_SESSION["active"] = true;
     $_SESSION["username"] = $username;
@@ -136,12 +141,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $query = "SELECT users.id FROM users WHERE username = ?";
     $stmt = $db->prepare($query);
 
-    $stmt->bind_param("s", $username); //bind_param id ins ? reingeben //i = integer
-    $stmt->execute(); //datenbank anfrage: liefert nur text!
+    $stmt->bind_param("s", $username); 
+    $stmt->execute(); 
     $stmt->bind_result( $userid);
     $stmt->fetch();
     $stmt->close();
-    //$db->close()
+   
 
     $_SESSION["userid"] = $userid;
 
@@ -157,7 +162,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
 
-
+// Redirect back to the registration page with error messages and form data if validation fails
 header("Location: ../register.php?".
     "&invalidFirstnameMessage=".$invalidFirstnameMessage."&firstname=".$firstname.
     "&invalidLastnameMessage=".$invalidLastnameMessage."&lastname=".$lastname.

@@ -5,12 +5,14 @@
     <?php include("includes/head.php")?>
     <style>
         .circle-image {
+            /* CSS style for circular images */
             border-radius: 50%;
             max-width: 100%;
             max-height: 200px;
             height: auto;
         }
         .ceo-card {
+            /* CSS style for CEO information cards */
             text-align: center;
             margin-bottom: 30px;
             padding: 20px;
@@ -18,6 +20,7 @@
             background-color: #eee;
         }
         body {
+            /* CSS style for the body element */
             background-color: #eee; 
             color: #333; 
         }
@@ -31,6 +34,8 @@
 
 <div class="container mt-5">
     <h1 class="text-center">Imprint</h1>
+
+    <!-- Section for imprint information about the hotel -->
     <div class="row justify-content-center">
         <div class="col-md-6 text-center">
             <p>
@@ -56,6 +61,8 @@
                 <strong>Disclaimer:</strong><br>
                 We do not assume liability for the content of external links. The operators of the linked pages are solely responsible for their content.
             </p>
+
+             <!-- Section for CEO information -->
             <div class="row mt-4">
                 <div class="col-md-6">
                     <div class="ceo-card">

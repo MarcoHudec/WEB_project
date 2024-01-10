@@ -4,15 +4,15 @@
 <head>
     <?php include("includes/head.php")?>
     <title>Registration Page</title>
-    <link href="bootstrap.min.css" rel="stylesheet">
 
     <style>
+        /* CSS for a gradient background */
         .gradient-custom-2 {
             background: #fccb90;
             background: -webkit-linear-gradient(to right, #007BFF, #6EC1E4, #20C997, #17C671);
             background: linear-gradient(to right, #007BFF, #6EC1E4, #20C997, #17C671);
         }
-        
+
     </style>
 
 </head>
@@ -33,9 +33,11 @@
                                         <h4 class="mt-1 mb-5 pb-1">Registration</h4>
                                     </div>
 
+                                     <!-- Registration form starts here -->
                                     <form action="logic/registervalidation.php" method="post">
                                     <p>Please fill in the registration details</p>
-
+                                    <!-- Form fields for salutation, first name, last name, username, email, password, confirm password -->
+                                    <!-- PHP code is used for form validation feedback -->
                                     <div class="form-outline mb-4">
                                         <label class="form-label" for="salutation">Salutation</label>
                                         <select class="form-select <?php if (!empty($_GET["invalidSalutationMessage"])) {
@@ -49,7 +51,6 @@
                                         } else {
                                             echo '';
                                         } ?>" aria-label="Default select example" name="salutation">
-                                            <option value="" <?php if (!empty($_GET["salutation"])) { echo 'selected'; } else { echo "";} ?>>Select</option>
                                             <option value="male" <?php if (!empty($_GET["salutation"])) {
                                                 if ($_GET["salutation"] =="male") { echo 'selected'; } else { echo "";}} ?>>Mr</option>
                                             <option value="female" <?php if (!empty($_GET["salutation"])) {
@@ -170,6 +171,7 @@
                                     </form>
                                 </div>
                             </div>
+                            <!-- Right side of the card with promotional content -->
                             <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
                                 <div class="text-white px-3 py-4 p-md-5 mx-md-4">
                                     <h4 class="mb-4 text-center">Hotel Zadar</h4>

@@ -11,6 +11,7 @@ require_once("databaseScript/dbaccess.php");
     <title>Blogadmin</title>
     <style>
         .form-signin {
+            /* CSS for form styling */
             width: 100%;
             max-width: 850px;
             padding: 15px;
@@ -33,6 +34,7 @@ require_once("databaseScript/dbaccess.php");
             <h1 class="custom-heading text-center">Add Blogpost</h1>
 
 
+            <!-- Form for submitting a new blog post -->
             <form action="" id="ticketform" method="POST" enctype="multipart/form-data">
                 <div class="form-floating mb-3">
                     <input type="text" class="form-control" name="title" id="title" placeholder="Headline" value="<?= !empty($_POST["title"]) ? ($_POST["title"]) : '' ?>">
@@ -57,6 +59,11 @@ require_once("databaseScript/dbaccess.php");
             </form>
 
             <?php
+                // PHP script to handle form submission
+                // Checks if form is submitted and validates input fields
+                // Processes file upload and inserts blog post data into the database
+                // Shows error messages for invalid inputs or upload failures
+                // Redirects to blog page on successful upload
                 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                     if (isset($_POST["submit"])) {
@@ -103,6 +110,8 @@ require_once("databaseScript/dbaccess.php");
                     }
                 }
 
+
+                //function to create DBentry
                 function createDBentry($c, $path, $title) {
                     global $db;
                     $date = date('Y-m-d H:i:s');
@@ -126,9 +135,7 @@ require_once("databaseScript/dbaccess.php");
     </div>
 </div>
 
-    <?php include("includes/scripts.php") ?>
-
-
+<?php include("includes/scripts.php") ?>
 </body>
 </html>
 

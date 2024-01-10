@@ -1,9 +1,11 @@
+<!-- footer for user pages-->
 <footer class="text-center text-white" style="background-color: #3f51b5">
    
     <div class="container">
      
       <section class="mt-2">
        
+        <!-- row with links to important pages -->
         <div class="row text-center d-flex justify-content-center pt-3">
          
           <div class="col-md-2">
@@ -44,15 +46,15 @@
   </footer>
 
   <script>
-  // JavaScript, um die Navbar beim Scrollen zu ändern
+  // JavaScript to change the navbar style on scroll
   window.addEventListener("scroll", function() {
     var navbar = document.querySelector(".navbar");
     if (window.scrollY > 10) {
       navbar.classList.remove("transparent-navbar");
-      navbar.style.background = "#3f51b5"; // Hintergrundfarbe ändern
+      navbar.style.background = "#3f51b5"; // Change the background color
     } else {
       navbar.classList.add("transparent-navbar");
-      navbar.style.background = "transparent"; // Zurück zur transparenten Farbe
+      navbar.style.background = "transparent"; // Revert to transparent background
     }
   });
 </script>

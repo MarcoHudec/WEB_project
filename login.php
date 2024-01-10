@@ -5,14 +5,11 @@
     <?php include("includes/head.php")?>
     <title>Login Page</title>
     <style>
+        /* CSS for a gradient background */
         .gradient-custom-2 {
             background: linear-gradient(to right, #007BFF, #6EC1E4, #20C997, #17C671);
         }
         
-        /* Additional CSS for the Navbar */
-        .navbar.bg-scroll {
-            transition: background 0.5s;
-        }
     </style>
 </head>
 
@@ -35,8 +32,11 @@
                                     </div>
 
                                     <form method="post" action="logic/loginvalidation.php">
+                                        <!-- Login form starts here -->
                                         <p>Please login to your Account</p>
 
+                                        <!-- Form fields for username and password -->
+                                        <!-- PHP code is used for form validation feedback -->
                                         <div class="form-outline mb-4">
                                             <label class="form-label" for="username">Username</label>
                                             <input type="text" class="form-control <?php if (!empty($_GET["invalidUsernameMessage"])) {
@@ -69,7 +69,9 @@
                                             <?= !empty($_GET["invalidPasswordMessage"]) ? '<div class="invalid-feedback is-invalid">' . $_GET["invalidPasswordMessage"] . '</div>' : '' ?>
                                         </div>
 
+                                        
                                         <?php
+                                            // Display a message if the account is inactive
                                             if(isset($_GET["inactiveMessage"])) {
                                                 echo '<p class="text-danger">Your Account is inactive pls contact an Admin!</p>';
                                             }
@@ -88,6 +90,7 @@
 
                                 </div>
                             </div>
+                            <!-- Right side of the card with promotional content -->
                             <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
                                 <div class="text-white px-3 py-4 p-md-5 mx-md-4">
                                     <h4 class="mb-4 text-center">Hotel Zadar</h4>
