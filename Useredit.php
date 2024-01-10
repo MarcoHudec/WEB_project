@@ -91,16 +91,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <title>User Editing</title>
 
     <style>
-        .form-floating,
-        .form-select {
-            margin: 10px;
-        }
-
-        .form-select {
-            width: 95% !important;
-            height: 75%;
-        }
-
         .form-signin {
             max-width: 850px;
             padding: 15px;
@@ -136,83 +126,107 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <button class="w-100 btn btn-lg btn-primary" name="search" type="submit">Search by ID</button>
                     </div>
 
-                    <div class="row">
-                        <div class="col-md-6">
-                            <select class="form-select"
-                                aria-label="Default select example" name="salutation">
-                                <option value="male" <?php if (isset($susersalutation)){if ($susersalutation=='male' ) {
-                                    echo 'selected' ; } else { echo "" ;}} elseif(isset($_POST['usersalutation']) && ($_POST['usersalutation']=='male')) {echo 'selected';} else{"";} ?>>Mr</option>
-                                <option value="female" <?php if(isset($susersalutation)){if ($susersalutation=='female' ) {
-                                    echo 'selected' ; } else { echo "" ;}} elseif(isset($_POST['usersalutation']) && ($_POST['usersalutation']=='female')) {echo 'selected';} else{"";} ?>>Mrs</option>
-                                <option value="divers" <?php if(isset($susersalutation)){if ($susersalutation=='divers' )
-                                    {echo 'selected' ; } else { echo "" ;}} elseif(isset($_POST['usersalutation']) && ($_POST['usersalutation']=='divers')) {echo 'selected';} else{"";} ?>>Divers</option>
-                            </select>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="form-floating">
-                                <input type="text" class="form-control" id="username" name="username"
-                                    placeholder="Username"
-                                    value="<?php if(isset($susername)) {echo $susername;} elseif(isset($_POST['username'])) {echo $susername=$_POST['username'];}?>">
-                                <label for="username">Username</label>
+                    <div class="mb-3">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <select class="form-select" aria-label="Default select example" id ="salutation" name="salutation">
+                                        <option value="male" <?php if (isset($susersalutation)){if ($susersalutation=='male' ) {
+                                            echo 'selected' ; } else { echo "" ;}} elseif(isset($_POST['usersalutation']) && ($_POST['usersalutation']=='male')) {echo 'selected';} else{"";} ?>>Mr</option>
+                                        <option value="female" <?php if(isset($susersalutation)){if ($susersalutation=='female' ) {
+                                            echo 'selected' ; } else { echo "" ;}} elseif(isset($_POST['usersalutation']) && ($_POST['usersalutation']=='female')) {echo 'selected';} else{"";} ?>>Mrs</option>
+                                        <option value="divers" <?php if(isset($susersalutation)){if ($susersalutation=='divers' )
+                                            {echo 'selected' ; } else { echo "" ;}} elseif(isset($_POST['usersalutation']) && ($_POST['usersalutation']=='divers')) {echo 'selected';} else{"";} ?>>Divers</option>
+                                    </select>
+                                    <label for="salutation">Salutation</label>
+                                </div>
                             </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="form-floating">
-                                <input type="text" class="form-control" id="firstname" name="firstname"
-                                    placeholder="Firstname"
-                                    value="<?php if(isset($suserfirstname)) {echo $suserfirstname;} elseif(isset($_POST['userfirstname'])) {echo $userfirstname=$_POST['userfirstname'];}?>">
-                                <label for="firstname">Firstname</label>
+                        
+                            <div class="col-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="username" name="username" placeholder="Username"
+                                        value="<?php if(isset($susername)) {echo $susername;} elseif(isset($_POST['username'])) {echo $susername=$_POST['username'];}?>">
+                                    <label for="username">Username</label>
+                                </div>
                             </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="form-floating">
-                                <input type="text" class="form-control" id="lastname" name="lastname"
-                                    placeholder="Lastname"
-                                    value="<?php if(isset($suserlastname)) {echo $suserlastname;} elseif(isset($_POST['userlastname'])) {echo $suserlastname=$_POST['userlastname'];}?>">
-                                <label for="lastname">Lastname</label>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="form-floating">
-                                <input type="email" class="form-control" id="email" name="email" placeholder="E-Mail"
-                                    value="<?php if(isset($suseremail)) {echo $suseremail;} elseif(isset($_POST['useremail'])) {echo $suseremail=$_POST['useremail'];}?>">
-                                <label for="email">E-Mail</label>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <div class="form-floating">
-                                <input type="password" class="form-control" id="password" name="password"
-                                    placeholder="Password" value="">
-                                <label for="password">Password</label>
-                            </div>
-                        </div>
-
-                        <div class="col-md-6">
-                            <select class="form-select" aria-label="Default
-                                select example" name="role">
-                                <option value="user" <?php if (isset($suserrole)){if ($suserrole=='user' ) {
-                                    echo 'selected' ; } else { echo "" ;}} elseif(isset($_POST['userrole']) && ($_POST['userrole']=='user')) {echo 'selected';} else{"";}?>>User</option>
-                                <option value="admin" <?php if (isset($suserrole)){if ($suserrole=='admin' ) {
-                                    echo 'selected' ; } else { echo "" ;}} elseif(isset($_POST['userrole']) && ($_POST['userrole']=='admin')) {echo 'selected';} else{"";}?>>Admin</option>
-                            </select>
-                        </div>
-                        <div class="col-md-6">
-                            <select class="form-select" aria-label="Default select example" name="status">
-                                <option value="active" <?php if (isset($suserstatus)){if ($suserstatus=='active' ) {
-                                    echo 'selected' ; } else { echo "" ;}} elseif(isset($_POST['userstatus']) && ($_POST['userstatus']=='active')) {echo 'selected';} else{"";}?>>Active</option>
-                                <option value="inactive" <?php if (isset($suserstatus)){if ($suserstatus=='inactive' ) {
-                                    echo 'selected' ; } else { echo "" ;}} elseif(isset($_POST['userstatus']) && ($_POST['userstatus']=='inactive')) {echo 'selected';} else{"";}?>>Inactive</option>
-                            </select>
-                        </div>
-
-                        <div class="form-signin">
-                            <button class="w-100 btn btn-lg btn-primary" name="update" type="submit">Safe</button>
                         </div>
                     </div>
+
+                    <div class="mb-3">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="firstname" name="firstname"
+                                        placeholder="Firstname"
+                                        value="<?php if(isset($suserfirstname)) {echo $suserfirstname;} elseif(isset($_POST['userfirstname'])) {echo $userfirstname=$_POST['userfirstname'];}?>">
+                                    <label for="firstname">Firstname</label>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="lastname" name="lastname"
+                                        placeholder="Lastname"
+                                        value="<?php if(isset($suserlastname)) {echo $suserlastname;} elseif(isset($_POST['userlastname'])) {echo $suserlastname=$_POST['userlastname'];}?>">
+                                    <label for="lastname">Lastname</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="E-Mail"
+                                        value="<?php if(isset($suseremail)) {echo $suseremail;} elseif(isset($_POST['useremail'])) {echo $suseremail=$_POST['useremail'];}?>">
+                                    <label for="email">E-Mail</label>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input type="password" class="form-control" id="password" name="password"
+                                        placeholder="Password" value="">
+                                    <label for="password">Password</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <select class="form-select" aria-label="Default
+                                        select example" name="role">
+                                        <option value="user" <?php if (isset($suserrole)){if ($suserrole=='user' ) {
+                                            echo 'selected' ; } else { echo "" ;}} elseif(isset($_POST['userrole']) && ($_POST['userrole']=='user')) {echo 'selected';} else{"";}?>>User</option>
+                                        <option value="admin" <?php if (isset($suserrole)){if ($suserrole=='admin' ) {
+                                            echo 'selected' ; } else { echo "" ;}} elseif(isset($_POST['userrole']) && ($_POST['userrole']=='admin')) {echo 'selected';} else{"";}?>>Admin</option>
+                                    </select>
+                                    <label for="role">Role</label>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <select class="form-select" aria-label="Default select example" name="status">
+                                        <option value="active" <?php if (isset($suserstatus)){if ($suserstatus=='active' ) {
+                                            echo 'selected' ; } else { echo "" ;}} elseif(isset($_POST['userstatus']) && ($_POST['userstatus']=='active')) {echo 'selected';} else{"";}?>>Active</option>
+                                        <option value="inactive" <?php if (isset($suserstatus)){if ($suserstatus=='inactive' ) {
+                                            echo 'selected' ; } else { echo "" ;}} elseif(isset($_POST['userstatus']) && ($_POST['userstatus']=='inactive')) {echo 'selected';} else{"";}?>>Inactive</option>
+                                    </select>
+                                    <label for="status">Status</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-signin">
+                        <button class="w-100 btn btn-lg btn-primary" name="update" type="submit">Safe</button>
+                    </div>
+                    
                 </form>
             </main>
         </div>
