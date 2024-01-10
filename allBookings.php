@@ -18,6 +18,17 @@ if (isset($_GET['statusFilter'])) {
 // Execute the query and store the result in the $result variable
 $result = $db->query($query);
 ?>
+<?php
+session_start();
+?>
+
+<?php
+if(!isset($_SESSION["admin"])): {
+    header("Location: index.php");
+}
+?>
+
+<?php endif; ?>
 
 
 <!DOCTYPE html>

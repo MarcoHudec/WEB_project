@@ -1,5 +1,6 @@
 <?php
 require_once("databaseScript/dbaccess.php");
+session_start();
 
 // Check if the form is submitted via POST method
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -42,6 +43,13 @@ if (isset($_GET['id'])) {
 }
 ?>
 
+<?php
+if(!isset($_SESSION["admin"])): {
+    header("Location: index.php");
+}
+?>
+
+<?php endif; ?>
 
 
 <!DOCTYPE html>

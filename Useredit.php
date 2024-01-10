@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 require_once("databaseScript/dbaccess.php");
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -85,6 +85,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
+
+<?php
+if(!isset($_SESSION["admin"])): {
+    header("Location: index.php");
+}
+?>
+
+<?php endif; ?>
 
 <!DOCTYPE html>
 <html lang="en">
