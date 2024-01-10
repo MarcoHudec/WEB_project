@@ -65,7 +65,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
         .fixed-width-table {
             width: 100%; /* Setzt die Breite der Tabelle auf 100% des Elternelements */
-            table-layout: fixed; /* Ermöglicht gleichmäßige Spaltenbreiten */
+            
             word-wrap: break-word; /* Stellt sicher, dass lange Wörter innerhalb der Zelle umgebrochen werden */
             overflow: hidden; /* Verhindert, dass Inhalt aus der Zelle herausragt */
             text-align: center; /* Ausrichtung des Textess */
@@ -96,19 +96,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <table class="table fixed-width-table">
                         <thead>
                             <tr>
-                                <th>ID</th>
+                            
                                 <th>User ID</th>
                                 <th>Room ID</th>
                                 <th>Date Start</th>
                                 <th>Date End</th>
                                 <th>Status</th>
-                                <th>Date Reservation</th>
+                                <th>Reservation Date</th>
+                                <th>Breakfast</th>
+                                <th>Parking</th>
+                                <th>Pets</th>
                                 <th>Total Price</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td><?php echo $row['id']; ?></td>
                                 <td><?php echo $row['user_id']; ?></td>
                                 <td><?php echo $row['room_id']; ?></td>
                                 <td><?php echo $row['date_start']; ?></td>
@@ -121,12 +123,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     </select>
                                 </td>
                                 <td><?php echo $row['date_reservation']; ?></td>
+                                <td><?php echo $row['breakfast']; ?></td>
+                                <td><?php echo $row['parkingspot']; ?></td>
+                                <td><?php echo $row['pet']; ?></td>
                                 <td><?php echo $row['totalprice']; ?>€</td>
                             </tr>
                         </tbody>
                     </table>
                     <div style="text-align: center;">
-                        <button type="submit" class="btn btn-primary">Safe</button>
+                        <button type="submit" class="btn btn-primary">Save</button>
                     </div>
                 </form>
             </div>

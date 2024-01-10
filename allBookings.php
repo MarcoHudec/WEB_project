@@ -2,13 +2,13 @@
 require_once("databaseScript/dbaccess.php");
 
 // Fetch all bookings from the 'reservations' table
-$query = "SELECT * FROM reservations ORDER BY id ASC";
+$query = "SELECT * FROM reservations ORDER BY id DESC";
 
 if (isset($_GET['statusFilter'])) {
     $statusFilter = $_GET['statusFilter'];
     // If a filter is selected, modify the query to include the status filter
     if ($statusFilter !== 'All') {
-        $query = "SELECT * FROM reservations WHERE status = '$statusFilter' ORDER BY id ASC";
+        $query = "SELECT * FROM reservations WHERE status = '$statusFilter' ORDER BY id DESC";
     }
 }
 
