@@ -92,8 +92,6 @@ $result = $db->query($query);
                                             <th>Date Start</th>
                                             <th>Date End</th>
                                             <th>Status</th>
-                                            <th>Date Reservation</th>
-                                            <th>Total Price</th>
                                             <th>Details</th>
                                         </tr>
                                     </thead>
@@ -105,8 +103,6 @@ $result = $db->query($query);
                                             <td><?php echo $row['date_start']; ?></td>
                                             <td><?php echo $row['date_end']; ?></td>
                                             <td><?php echo $row['status']; ?></td>
-                                            <td><?php echo $row['date_reservation']; ?></td>
-                                            <td><?php echo $row['totalprice']; ?>€</td>
                                             <td><a href="adminBookingsDetailed.php?id=<?php echo $row['id']; ?>">Show Details</a></td>
                                         </tr>
                                     </tbody>
