@@ -56,7 +56,7 @@ require_once("databaseScript/dbaccess.php");
 
         <?php
         $userId = $_SESSION["userid"];
-        $query = "SELECT * FROM reservations WHERE user_id = ?";
+        $query = "SELECT * FROM reservations WHERE user_id = ? ORDER BY date_start";
         $stmt = $db->prepare($query);
         $stmt->bind_param("i", $userId);
         $stmt->execute();
