@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 
-
 <head>
-    <title>Login Page</title>
     <?php include("includes/head.php")?>
+    <title>Login Page</title>
     <style>
         .gradient-custom-2 {
-            background: #fccb90;
-            background: -webkit-linear-gradient(to right, #007BFF, #6EC1E4, #20C997, #17C671);
             background: linear-gradient(to right, #007BFF, #6EC1E4, #20C997, #17C671);
         }
         
@@ -17,13 +14,11 @@
             transition: background 0.5s;
         }
     </style>
-
 </head>
 
 <body>
 
     <?php include("includes/navbar.php")?>
-
 
     <section class="h-100 gradient-form" style="background-color: #eee;">
         <div class="container py-5 h-100">
@@ -40,7 +35,7 @@
                                     </div>
 
                                     <form method="post" action="logic/loginvalidation.php">
-                                        <p>Please login to your account</p>
+                                        <p>Please login to your Account</p>
 
                                         <div class="form-outline mb-4">
                                             <label class="form-label" for="username">Username</label>
@@ -70,27 +65,23 @@
                                                 echo 'is-valid';
                                             } else {
                                                 echo '';
-                                            } ?>" id="Password" name="password" placeholder="Enter your Password" value="<?php if(isset($_COOKIE["password"])) { echo $_COOKIE["password"]; } else if (!empty($_GET["password"])) { echo ($_GET["password"]); } ?>">
+                                            } ?>" id="password" name="password" placeholder="Enter your Password" value="<?php if(isset($_COOKIE["password"])) { echo $_COOKIE["password"]; } else if (!empty($_GET["password"])) { echo ($_GET["password"]); } ?>">
                                             <?= !empty($_GET["invalidPasswordMessage"]) ? '<div class="invalid-feedback is-invalid">' . $_GET["invalidPasswordMessage"] . '</div>' : '' ?>
                                         </div>
 
-                                        <div class="checkbox mb-3">
-                                            <label>
-                                                <input type="checkbox" value="remember-me" name="remember" <?php if(isset($_COOKIE["password"])) { echo "checked";} ?>> Stay logged in
-                                            </label>
-                                        </div>
+                                        <?php
+                                            if(isset($_GET["inactiveMessage"])) {
+                                                echo '<p class="text-danger">Your Account is inactive pls contact an Admin!</p>';
+                                            }
+                                        ?>
 
                                         <div class="text-center pt-1 mb-3 pb-1">
                                             <button class="btn btn-primary fa-lg gradient-custom-2" type="submit" style="width: 100%;">Log in</button>
                                         </div>
-                                        
-                                        <div class="text-center pt-1 mb-5 pb-1">
-                                            <a class="text-muted" href="#!">Forgot password?</a>
-                                        </div>
 
-                                        <div class="d-flex align-items-center justify-content-center pb-4">
+                                        <div class="d-flex align-items-center justify-content-center pb-2">
                                             <p class="mb-0 me-2">Don't have an account?</p>
-                                            <a href="Registration.php" class="btn btn-outline-danger">Create new</a>
+                                            <a href="register.php" class="btn btn-outline-info">Create new</a>
                                         </div>
 
                                     </form>
@@ -110,9 +101,10 @@
         </div>
     </section>
 
-    <?php include("includes/footer.php")?>
-
-    <?php include("includes/scripts.php")?>
+    
 </body>
+
+    <?php include("includes/footer.php")?>
+    <?php include("includes/scripts.php")?>
 
 </html>

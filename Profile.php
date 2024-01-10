@@ -1,34 +1,15 @@
 <?php
-
-
-
 require_once("databaseScript/dbaccess.php");
-
-
-
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-
+    <?php include("includes/head.php") ?>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="stylee.css">
     <title>Profil</title>
-    <?php include("includes/head.php") ?>
-    <style>
-        .red {
-            color: red;
-        }
-
-        .green {
-            color: green;
-        }
-    </style>
 
 </head>
 
@@ -74,9 +55,8 @@ require_once("databaseScript/dbaccess.php");
             $stmt->close();
             //db->close();
 
-            if ($_POST["newpassword"] == $_POST["confirmnewpassword"] && password_verify($_POST["oldpassword"], $userpassword)) {
-
-            
+            if ($_POST["newpassword"] == $_POST["confirmnewpassword"] && $_POST["newpassword"]!= "" && $_POST["confirmnewpassword"]!= "") {
+                
                 $password = $_POST["newpassword"];
                 if (strlen($password) < 8 || !preg_match('@[A-Z]@', $password) || !preg_match('@[a-z]@', $password) || !preg_match('@[0-9]@', $password) || !preg_match('@[^\w]@', $password)) {
                     $wrongnewMessage = true;
@@ -86,22 +66,25 @@ require_once("databaseScript/dbaccess.php");
                     "&wrongnewMessage=" . $wrongnewMessage);
                     exit();
                 }
+
+                if(password_verify($_POST["oldpassword"], $userpassword)){
                     
-                $query = "UPDATE users SET password=? WHERE id = ?";// . $_SESSION["userid"];
-                $stmt = $db->prepare($query);
-                $stmt->bind_param("si", $userpassword, $userid);
+                    $query = "UPDATE users SET password=? WHERE id = ?";// . $_SESSION["userid"];
+                    $stmt = $db->prepare($query);
+                    $stmt->bind_param("si", $userpassword, $userid);
 
-                $userpassword = password_hash($_POST["newpassword"], PASSWORD_DEFAULT);
+                    $userpassword = password_hash($_POST["newpassword"], PASSWORD_DEFAULT);
 
 
-                $stmt->execute();
-                $stmt->close();
-                //$db->close();
+                    $stmt->execute();
+                    $stmt->close();
+                    //$db->close();
 
-                $goodMessage = true;
-                header("Location: profile.php?" .
-                    "&goodMessage=" . $goodMessage);
-                exit();
+                    $goodMessage = true;
+                    header("Location: profile.php?" .
+                        "&goodMessage=" . $goodMessage);
+                    exit();
+                }
 
             } else {
 
@@ -156,9 +139,6 @@ require_once("databaseScript/dbaccess.php");
                                             <div class="col-6 mb-3">
                                                 <div class="form-floating">
                                                     <select class="form-select" id="salutation" name="salutation">
-                                                        <option value="" <?php if (!empty($usersalutation)) {
-                                                            echo 'selected' ; } else { echo "" ;} ?>
-                                                            >Select</option>
                                                         <option value="male" <?php if($usersalutation=='male' ){
                                                             echo 'selected' ; } ?>>Mr</option>
                                                         <option value="female" <?php if($usersalutation=='female' ){
@@ -244,9 +224,32 @@ require_once("databaseScript/dbaccess.php");
                                         </div>
                                     </div>
 
-                                    <!-- Hier weitere Eingabefelder für die Bearbeitung der Daten hinzufügen -->
+                                    <?php
+                                        if(isset($_GET["oldMessage"])) {
+                                            if($_GET["oldMessage"]) {
+                                                echo '<p class="text-danger text-center">Old password is incorrect!</p>';
+                                            }
+                                        }
 
-                                    <div class="mb-4"> <!-- Zusätzlicher Platz unterhalb des "Speichern"-Buttons -->
+                                        if(isset($_GET["newMessage"])) {
+                                        if($_GET["newMessage"]) {
+                                            echo '<p class="text-danger text-center">New passwords do not match!</p>';
+                                        }
+                                        }
+
+                                        if(isset($_GET["wrongnewMessage"])) {
+                                            if($_GET["wrongnewMessage"]) {
+                                                echo '<p class="text-danger text-center">New password must be at least 8 characters long and contain letters, numbers and special characters!</p>';
+                                            }
+                                        }
+
+
+                                        if (isset($_GET["goodMessage"])) {
+                                            echo '<p class="text-success text-center">Password has been changed succesfully!</p>';
+                                        }
+                                    ?>
+
+                                    <div class="mb-4"> 
                                         <div class="d-flex align-items-center justify-content-center">
                                             <input class="btn btn-primary" name="update" type="submit"
                                                 value="Save">
@@ -254,34 +257,6 @@ require_once("databaseScript/dbaccess.php");
                                     </div>
 
                                 </form>
-
-                                <?php
-
-        if(isset($_GET["oldMessage"])) {
-            if($_GET["oldMessage"]) {
-                echo '<p class="red">Old password is incorrect!</p>';
-            }
-        }
-
-        if(isset($_GET["newMessage"])) {
-        if($_GET["newMessage"]) {
-            echo '<p class="red">New passwords do not match!</p>';
-        }
-        }
-
-        if(isset($_GET["wrongnewMessage"])) {
-            if($_GET["wrongnewMessage"]) {
-                echo '<p class="red">New password must be at least 8 characters long and contain letters, numbers and special characters!</p>';
-            }
-        }
-
-
-        if (isset($_GET["goodMessage"])) {
-            echo '<p class="green">Password has been changed succesfully!</p>';
-        }
-
-
-        ?>
                             </div>
                         </div>
                     </div>
@@ -289,16 +264,9 @@ require_once("databaseScript/dbaccess.php");
             </div>
         </div>
     </section>
-
-
-    <?php include("includes/footer.php") ?>
-    <?php include("includes/scripts.php")?>
-
-
-
-
 </body>
-
+<?php include("includes/footer.php") ?>
+    <?php include("includes/scripts.php")?>
 </html>
 
 

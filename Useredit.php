@@ -17,25 +17,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
             $stmt->close();
-            //$db->close();
         } 
 
     }
 
     if (isset($_POST["update"]) && isset($_POST["sid"])) {
          
-
         if (isset($_POST["password"]) && !empty($_POST["password"])) {
 
             $query = "UPDATE users SET username=?, password=?, email=?, firstname=?, lastname=?, salutation=?, role=?, status=? WHERE id=?";
             $stmt = $db->prepare($query);
-
             $stmt->bind_param("ssssssssi", $username, $userpassword, $useremail, $userfirstname, $userlastname, $usersalutation, $userrole, $userstatus, $userid);
 
         } else {
             $query = "UPDATE users SET username=?, email=?, firstname=?, lastname=?, salutation=?, role=?, status=? WHERE id=?";
             $stmt = $db->prepare($query);
-
             $stmt->bind_param("sssssssi", $username, $useremail, $userfirstname, $userlastname, $usersalutation, $userrole, $userstatus, $userid);
 
         }
@@ -101,12 +97,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         .form-select {
-            width: 96% !important;
-            height: 74%;
+            width: 95% !important;
+            height: 75%;
         }
 
         .form-signin {
-            width: 100%;
             max-width: 850px;
             padding: 15px;
             margin: auto;
@@ -122,7 +117,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="container">
             <main class="form-signin">
 
-                <h1 class="custom-heading text-center">
+                <h1 class="text-center">
                     Edit User
                 </h1>
 
@@ -143,12 +138,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                     <div class="row">
                         <div class="col-md-6">
-                            <select class="form-select <?php if (!empty($_GET["invalidsalutationMessage"])) { if
-                                (isset($_GET["salutation"])) { echo 'is-invalid' ; } else { echo "" ; } } else if
-                                (isset($_GET["salutation"])) { echo 'is-valid' ; } else { echo '' ; } ?>"
+                            <select class="form-select"
                                 aria-label="Default select example" name="salutation">
-                                <option value="" <?php if (!isset($susersalutation)) { echo 'selected' ;} else { echo "" ;} 
-                                    ?>>Select</option>
                                 <option value="male" <?php if (isset($susersalutation)){if ($susersalutation=='male' ) {
                                     echo 'selected' ; } else { echo "" ;}} elseif(isset($_POST['usersalutation']) && ($_POST['usersalutation']=='male')) {echo 'selected';} else{"";} ?>>Mr</option>
                                 <option value="female" <?php if(isset($susersalutation)){if ($susersalutation=='female' ) {
@@ -201,12 +192,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </div>
 
                         <div class="col-md-6">
-                            <select class="form-select <?php if (!empty($_GET[" invalidRoleMessage"])) { if
-                                (isset($_GET["role"])) { echo 'is-invalid' ; } else { echo "" ; } } else if
-                                (isset($_GET["role"])) { echo 'is-valid' ; } else { echo '' ; } ?>" aria-label="Default
+                            <select class="form-select" aria-label="Default
                                 select example" name="role">
-                                <option value="" <?php if (!isset($suserrole)) {echo 'selected' ; } else { echo "" ;} ?>
-                                    >Choose Role</option>
                                 <option value="user" <?php if (isset($suserrole)){if ($suserrole=='user' ) {
                                     echo 'selected' ; } else { echo "" ;}} elseif(isset($_POST['userrole']) && ($_POST['userrole']=='user')) {echo 'selected';} else{"";}?>>User</option>
                                 <option value="admin" <?php if (isset($suserrole)){if ($suserrole=='admin' ) {
@@ -215,8 +202,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         </div>
                         <div class="col-md-6">
                             <select class="form-select" aria-label="Default select example" name="status">
-                                <option value="" <?php if (!isset($suserstatus)) {echo 'selected' ; } else { echo "" ;}
-                                    ?>>Choose Status</option>
                                 <option value="active" <?php if (isset($suserstatus)){if ($suserstatus=='active' ) {
                                     echo 'selected' ; } else { echo "" ;}} elseif(isset($_POST['userstatus']) && ($_POST['userstatus']=='active')) {echo 'selected';} else{"";}?>>Active</option>
                                 <option value="inactive" <?php if (isset($suserstatus)){if ($suserstatus=='inactive' ) {
@@ -232,11 +217,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </main>
         </div>
     </div>
-
-<?php include("includes/scripts.php") ?>
-
 </body>
-
+<?php include("includes/scripts.php") ?>
 </html>
 
 <?php

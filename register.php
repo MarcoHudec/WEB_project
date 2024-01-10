@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
-    <title>Registration Page</title>
     <?php include("includes/head.php")?>
+    <title>Registration Page</title>
     <link href="bootstrap.min.css" rel="stylesheet">
 
     <style>
@@ -140,7 +140,7 @@
                                             } else {
                                                 echo '';
                                             } ?>" id="password" name="password"
-                                                placeholder="Passwort"
+                                                placeholder="Password"
                                                 value="<?= !empty($_GET["password"]) ? ($_GET["password"]) : '' ?>">
                                             <?= !empty($_GET["invalidPasswordMessage"]) ? '<div class="invalid-feedback is-invalid">' . $_GET["invalidPasswordMessage"] . '</div>' : '' ?>
                                         </div>
@@ -158,7 +158,7 @@
                                             } else {
                                                 echo '';
                                             } ?>" id="passwordcheck" name="passwordcheck"
-                                                placeholder="Passwort wiederholen"
+                                                placeholder="Repeat Password"
                                                 value="<?= !empty($_GET["passwordcheck"]) ? ($_GET["passwordcheck"]) : '' ?>">
                                             <?= !empty($_GET["invalidPasswordcheckMessage"]) ? '<div class="invalid-feedback is-invalid">' . $_GET["invalidPasswordcheckMessage"] . '</div>' : '' ?>
                                         </div>
@@ -183,10 +183,8 @@
             </div>
         </div>
     </section>
-
-    <?php include("includes/footer.php")?>
-
-    <?php include("includes/scripts.php")?>
 </body>
+<?php include("includes/footer.php")?>
+<?php include("includes/scripts.php")?>
 
 </html>
