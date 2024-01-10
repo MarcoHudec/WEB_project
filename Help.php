@@ -6,8 +6,8 @@
     <?php include("includes/head.php")?>
     <style>
         body {
-            background-color: #eee; /* Dunkle Hintergrundfarbe (z.B., #333 für Schwarz) */
-            color: #333; /* Weiße Textfarbe für den Kontrast */
+            background-color: #eee; 
+            color: #333; 
         }
     </style>
 </head>
@@ -32,7 +32,7 @@
                 </h2>
                 <div id="faqCollapse1" class="accordion-collapse collapse" aria-labelledby="faqHeading1" data-bs-parent="#faqAccordion">
                     <div class="accordion-body">
-                        To sign in, click the "Sign In" button and enter your login information.
+                        To sign in, click the "Sign In" button on top right and enter your login information.
                     </div>
                 </div>
             </div>
@@ -46,7 +46,7 @@
                 </h2>
                 <div id="faqCollapse2" class="accordion-collapse collapse" aria-labelledby="faqHeading2" data-bs-parent="#faqAccordion">
                     <div class="accordion-body">
-                        You can change your password by signing into your account and accessing the settings.
+                        You can change your password by going into your profile and accessing the settings.
                     </div>
                 </div>
             </div>
@@ -96,10 +96,7 @@
         </div>
     </div>
 
-    
-    <?php include("includes/footer.php")?>
-
-    <?php include("includes/scripts.php")?>
 </body>
-
+<?php include("includes/footer.php")?>
+<?php include("includes/scripts.php")?>
 </html>

@@ -129,7 +129,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     session_start();
-    $_SESSION["eingeloggt"] = true;
+    $_SESSION["active"] = true;
     $_SESSION["username"] = $username;
 
 
@@ -143,12 +143,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->close();
     //$db->close()
 
-
     $_SESSION["userid"] = $userid;
-
-
-
-
 
     header("Location: ../index.php");
     exit();

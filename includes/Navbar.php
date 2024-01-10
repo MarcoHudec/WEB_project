@@ -22,7 +22,7 @@ session_start();
         <li class="nav-item mx-2">
           <a class="text-white nav-link" href="blog.php">Blog</a>
         </li>
-        <?php if(!isset($_SESSION["username"])): ?>
+        <?php if(!isset($_SESSION["active"])): ?>
         <li class="nav-item mx-2">
           <a class="text-white nav-link" href="login.php">Sign in</a>
         </li>
@@ -30,7 +30,7 @@ session_start();
           <a class="text-white nav-link" href="register.php">Register</a>
         </li>
         <?php endif; ?>
-        <?php if(isset($_SESSION["username"])): ?>
+        <?php if(isset($_SESSION["active"])): ?>
           <?php if(isset($_SESSION["admin"])): ?>
             <li class="nav-item mx-2">
             <a class="nav-link text-white" href="allBookings.php">Administration</a>

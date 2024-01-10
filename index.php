@@ -17,27 +17,27 @@
     include('includes/navbar.php');
     ?>
 
-<div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active" data-bs-interval="5000">
-      <img src="Images/Hotel2.jpg" class="d-block w-100" style="max-height: 800px" alt="...">
+    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active" data-bs-interval="5000">
+        <img src="Images/Hotel2.jpg" class="d-block w-100" style="max-height: 800px" alt="...">
+        </div>
+        <div class="carousel-item" data-bs-interval="5000">
+        <img src="Images/Hotel3.jpg" class="d-block w-100" style="max-height: 800px" alt="...">
+        </div>
+        <div class="carousel-item" data-bs-interval="5000">
+        <img src="Images/Hotel4.jpg" class="d-block w-100" style="max-height: 800px" alt="...">
+        </div>
     </div>
-    <div class="carousel-item" data-bs-interval="5000">
-      <img src="Images/Hotel3.jpg" class="d-block w-100" style="max-height: 800px" alt="...">
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
     </div>
-    <div class="carousel-item" data-bs-interval="5000">
-      <img src="Images/Hotel4.jpg" class="d-block w-100" style="max-height: 800px" alt="...">
-    </div>
-  </div>
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
 
 
 
@@ -45,22 +45,16 @@
         <div class="container my-4">
             <div class="row justify-content-center">
                 <div class="col-lg-6">
-                <h2>Hotel Zadar</h2>
-                    <br></br>
+                    <h2>Hotel Zadar</h2>
                     <p class="lead">Treat yourself with an experience</p>
                     <p class="lead">Discover Croatia's warmest hospitality at our hotel. Immerse yourself in local culture and relax in our elegant facilities. Welcome to an unforgettable experience in the heart of Croatia</p>
-                        
-
                 </div>
             </div>
         </div>
     </section>
 
-
-    
-
-    <section class="py-5">
-        <div class="container my-5">
+    <section >
+        <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-6">
                     <h2>Our Rooms</h2>
@@ -70,7 +64,7 @@
             </div>
         </div>
 
-        <div class="container py-5">
+        <div class="container">
             <div class="row">
                 <div class="col-md-6">
                     <div class="card mb-4">
@@ -118,65 +112,57 @@
 
 
 
+
+
+
+    
+
+<section>
+    <div class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-6">
+                <h2>Our Facilities</h2>
+                <p class="lead">We make sure you feel relaxed and have a pleasant stay</p>
+                <p class="lead">Experience luxurious comfort in our hotel rooms. Enjoy an array of fun activities, from exploring local markets to relaxing by the pool and savoring Croatian cuisine. Your stay with us promises both relaxation and adventure</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Golf</h5>
+                        <p class="card-text">Get out and do sports with out golfing activity.</p>
+                        <img src="Images/golf.jpeg" class="card-img-top" alt="Pool Image">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Waterpark</h5>
+                        <p class="card-text">Enjoy thrilling rides and activities in our waterpark.</p>
+                        <img src="Images/waterslides.jpg" class="card-img-top" alt="Waterpark Image">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Beach</h5>
+                        <p class="card-text">Experience the serenity of our private beach.</p>
+                        <img src="Images/Beach.jpg" class="card-img-top" alt="Beach Image">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
-
-
     
-
-<section class="py-5">
-<div class="container my-5">
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
-                    <h2>Our Facilities</h2>
-                    <p class="lead">We make sure you feel relaxed and have a pleasant stay</p>
-                    <p class="lead">Experience luxurious comfort in our hotel rooms. Enjoy an array of fun activities, from exploring local markets to relaxing by the pool and savoring Croatian cuisine. Your stay with us promises both relaxation and adventure</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="container py-5">
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="card mb-4">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Golf</h5>
-                            <p class="card-text">Get out and do sports with out golfing activity.</p>
-                            <img src="Images/golf.jpeg" class="card-img-top" alt="Pool Image">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card mb-4">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Waterpark</h5>
-                            <p class="card-text">Enjoy thrilling rides and activities in our waterpark.</p>
-                            <img src="Images/waterslides.jpg" class="card-img-top" alt="Waterpark Image">
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card mb-4">
-                        <div class="card-body text-center">
-                            <h5 class="card-title">Beach</h5>
-                            <p class="card-text">Experience the serenity of our private beach.</p>
-                            <img src="Images/Beach.jpg" class="card-img-top" alt="Beach Image">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
-    
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script> 
-    <script src="js/scripts.js"></script>
-    --> 
-    <?php include("includes/footer.php")?>
-
-    <?php include("includes/scripts.php")?>
 </body>
 
+<?php include("includes/footer.php")?>
+<?php include("includes/scripts.php")?>
 </html>
